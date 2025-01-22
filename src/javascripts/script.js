@@ -30,3 +30,150 @@ function loco() {
 
 }
 loco()
+
+// var loader = gsap.timeline()
+// loader
+// .from("#main",{
+//     backgroundColor:"#F5E31A",
+//     duration: .5,
+//     delay:2
+// },"a")
+// .from(".header-text",{
+//     bottom:"0%",
+//     duration: 1,
+//     delay:2
+// },"a")
+
+
+function aboutAnimation() {
+    var isAbout = false;
+    var previousLink = ""
+
+    document.querySelector("#nav-about").addEventListener("click", function () {
+        document.querySelectorAll("nav p").forEach(function(link){
+            if(link.classList.contains("active")){
+                previousLink = link.textContent.toLowerCase()
+            }
+        })
+        isAbout = !isAbout;
+        openAbout()
+    })
+    document.querySelector("#closeAbout").addEventListener("click", function () {
+        isAbout = !isAbout;
+        openAbout()
+        document.querySelectorAll("nav p").forEach(function(link){
+            if(link.textContent.toLowerCase() === previousLink){
+                link.classList.add("active")
+            }
+        })
+    })
+
+    function openAbout() {
+        if (isAbout) {
+            gsap.set("nav", { backgroundColor: "#fff" })
+            gsap.to("#main", {
+                top: "calc(100% - 50px)",
+                ease: "power3.out",
+                duration: .8
+            })
+            gsap.to("#about-page", {
+                top: "-50px",
+                ease: "power3.out",
+                duration: .8
+            })
+        } else {
+            document.querySelector("#nav-about").classList.remove("active")
+            gsap.set("nav", { backgroundColor: "transparent" })
+            gsap.to("#main", {
+                top: "0%",
+                ease: "power3.out",
+                duration: .8
+            })
+            gsap.to("#about-page", {
+                top: "-100%",
+                ease: "power3.out",
+                duration: .8
+            })
+        }
+    }
+}
+aboutAnimation()
+
+
+function filterAnimation() {
+    const allFilter = document.querySelectorAll("#filter-container p")
+    allFilter.forEach(function (filter) {
+        filter.addEventListener("click", function () {
+            allFilter.forEach(function (item) {
+                item.classList.remove("active");
+            });
+            this.classList.add("active");
+        })
+    })
+
+    document.querySelector("#nav-project").addEventListener("click", function () {
+        allFilter.forEach(function (item) {
+            item.classList.remove("active");
+        });
+        allFilter[allFilter.length -1].classList.add("active");
+    })
+    const navLink = document.querySelectorAll("nav p")
+    navLink.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLink.forEach(function (item) {
+                item.classList.remove("active");
+            });
+            this.classList.add("active");
+        })
+    })
+    
+}
+filterAnimation() 
+
+function projectAnimation() {
+    document.querySelectorAll(".project").forEach(function (project) {
+        project.addEventListener("mouseover", function () {
+            project.classList.add("active");
+            let video = project.querySelector("video");
+            if (video) {  // Ensure video exists before accessing properties
+                video.currentTime = 0;
+                video.play();
+            }
+        })
+        project.addEventListener("mouseleave", function () {
+            project.classList.remove("active");
+        })
+    })
+}
+projectAnimation()
+
+function footerAnimation() {
+    const updateTime = () => {
+        const date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        hours = hours % 12 || 12; // Convert 24-hour to 12-hour format
+        minutes = minutes.toString().padStart(2, '0'); // Ensure two-digit minutes
+
+        const timeString = `${hours}:${minutes} ${ampm}`;
+
+        document.querySelector("#time").textContent = timeString; // Update the DOM
+
+        return timeString; // Return the formatted time string
+    };
+    updateTime();
+    setInterval(updateTime, 60000);
+
+
+    document.querySelector(".rt-btm input").addEventListener("focus", function () {
+        document.querySelector("#input-placeholder").style.display = "none";
+    })
+    document.querySelector(".rt-btm input").addEventListener("blur", function (e) {
+        if (e.target.value == "") {
+            document.querySelector("#input-placeholder").style.display = "block";
+        }
+    })
+}
+footerAnimation()

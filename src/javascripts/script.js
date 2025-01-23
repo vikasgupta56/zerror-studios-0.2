@@ -31,18 +31,65 @@ function loco() {
 }
 loco()
 
-// var loader = gsap.timeline()
-// loader
-// .from("#main",{
-//     backgroundColor:"#F5E31A",
-//     duration: .5,
-//     delay:2
-// },"a")
-// .from(".header-text",{
-//     bottom:"0%",
-//     duration: 1,
-//     delay:2
-// },"a")
+var loader = gsap.timeline()
+loader
+.from(".upper", {
+    opacity: 0,
+    duration: .8,
+    timingFunction: "ease-in-out",
+    delay: 1.5,
+    stagger: {
+        from: "center",
+        amount: .2
+    }
+}, "a")
+
+.from(".lower", {
+    opacity: 0,
+    duration: .8,
+    timingFunction: "ease-in-out",
+    stagger: {
+        amount: .2
+    },
+    delay: 1.6,
+}, "a")
+
+.from("#main", {
+    backgroundColor: "#F5E31A",
+    duration: .8,
+    timingFunction: "ease-in-out",
+}, "b")
+
+.from(".header-text", {
+    bottom: "0%",
+    duration: .8,
+    timingFunction: "ease-in",
+}, "b")
+
+.from("#page2", {
+    opacity: 0,
+    y: 10,
+    duration: .8,
+    delay:-.2,
+    timingFunction: "ease-in-out",
+}, "c")
+
+.from("#filter-container", {
+    opacity: 0,
+    y: 10,
+    duration: .8,
+    delay:-.2,
+    timingFunction: "ease-in-out",
+}, "c")
+
+.from("nav", {
+    opacity: 0,
+    duration: .8,
+    delay:-.2,
+    timingFunction: "ease-in-out",
+}, "c")
+
+
 
 
 function aboutAnimation() {

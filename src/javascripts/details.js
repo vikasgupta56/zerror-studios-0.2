@@ -85,6 +85,40 @@ function aboutAnimation() {
 }
 aboutAnimation()
 
+var loader = gsap.timeline()
+loader
+.from("#page1 h2,#page1 h3",{
+    y:"160%",
+    duration:.8
+},"a")
+.from("nav",{
+    y:"-100%",
+    opacity:0,
+    duration:.8,
+},"a")
+.from("#page2",{
+    y:"50%",
+    duration:.8,
+    delay:-.2
+})
+
+
+document.querySelectorAll(".banner-poster").forEach(function(poster){
+    console.log(poster);
+    
+    gsap.to(poster,{
+        clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration:.8,
+        scrollTrigger:{
+            trigger: poster,
+            scroller:"#main",
+            start: "top 90%",
+            end: "top 70%",
+        }
+    })
+})
+
+
 function projectAnimation() {
     document.querySelectorAll(".project").forEach(function (project) {
         project.addEventListener("mouseover", function () {
@@ -101,9 +135,6 @@ function projectAnimation() {
     })
 }
 projectAnimation()
-
-
-
 
 function footerAnimation() {
     const updateTime = () => {

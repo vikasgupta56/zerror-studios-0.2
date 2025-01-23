@@ -1,0 +1,13 @@
+{
+    "routes": [
+      {
+        "src": "/details",
+        "dest": "/details.html"
+      },
+      {
+        "src": "/",
+        "dest": "/index.html"
+      }
+    ]
+  }
+  

@@ -173,13 +173,12 @@ nav img{
   flex-wrap: wrap;
 }
 
-
 .empty-space{
   opacity: 0;
 }
 .project-small .showcase{
   width: 100%;
-  height: 470px;
+  height: 415px;
   background-color: rgba(128, 128, 128, 0.112);
   margin-bottom: 8px;
   position: relative;
@@ -217,14 +216,14 @@ nav img{
   margin-bottom: 40px;
 }
 .project-small h3{
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   line-height: .8;
   font-family: para;
   text-transform: uppercase;
 }
 .project-small h4{
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   line-height: .8;
   font-family: paraItalic;
@@ -244,14 +243,14 @@ nav img{
 }
 
 .project-large h3{
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   line-height: .8;
   font-family: para;
   text-transform: uppercase;
 }
 .project-large h4{
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   line-height: .8;
   font-family: paraItalic;

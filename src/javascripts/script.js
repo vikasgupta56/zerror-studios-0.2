@@ -63,30 +63,30 @@ loader
 .from(".header-text", {
     bottom: "0%",
     duration: .8,
-    timingFunction: "ease-in",
+    ease: "power3.out",
 }, "b")
 
 .from("#page2", {
     opacity: 0,
     y: 10,
-    duration: .8,
-    delay:-.2,
-    timingFunction: "ease-in-out",
+    duration: 1,
+    delay:-.5,
+    ease: "power3.out",
 }, "c")
 
 .from("#filter-container", {
     opacity: 0,
     y: 10,
-    duration: .8,
-    delay:-.2,
-    timingFunction: "ease-in-out",
+    duration: 1,
+    delay:-.5,
+    ease: "power3.out",
 }, "c")
 
 .from("nav", {
     opacity: 0,
-    duration: .8,
-    delay:-.2,
-    timingFunction: "ease-in-out",
+    duration: 1,
+    delay:-.5,
+    ease: "power3.out",
 }, "c")
 
 

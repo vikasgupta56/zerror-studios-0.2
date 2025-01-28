@@ -31,25 +31,17 @@ function loco() {
 }
 loco()
 
-function detailLoader() {
-    var loader = gsap.timeline()
-    loader
-        .from("#page1 h2,#page1 h3", {
-            y: "160%",
-            duration: .8
-        }, "a")
-        .from("nav", {
-            y: "-100%",
-            opacity: 0,
-            duration: .8,
-        }, "a")
-        .from("#page2", {
-            y: "50%",
-            duration: .8,
-            delay: -.2
-        })
-}
-detailLoader()
+gsap.to("#studio-contact", {
+    scrollTrigger: {
+        trigger: "#studio-2", 
+        scroller: "#main", 
+        start: "top top", 
+        end: "bottom top", 
+        scrub: true, 
+        pin: "#studio-contact"
+    }
+});
+
 
 function serviceAnimation() {
     var isService = false;
@@ -106,66 +98,3 @@ function serviceAnimation() {
 serviceAnimation()
 
 
-document.querySelectorAll(".banner-poster").forEach(function (poster) {
-    console.log(poster);
-
-    gsap.to(poster, {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: .8,
-        scrollTrigger: {
-            trigger: poster,
-            scroller: "#main",
-            start: "top 90%",
-            end: "top 70%",
-        }
-    })
-})
-
-
-function projectAnimation() {
-    document.querySelectorAll(".project").forEach(function (project) {
-        project.addEventListener("mouseover", function () {
-            project.classList.add("active");
-            let video = project.querySelector("video");
-            if (video) {  // Ensure video exists before accessing properties
-                video.currentTime = 0;
-                video.play();
-            }
-        })
-        project.addEventListener("mouseleave", function () {
-            project.classList.remove("active");
-        })
-    })
-}
-projectAnimation()
-
-function footerAnimation() {
-    const updateTime = () => {
-        const date = new Date();
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-
-        hours = hours % 12 || 12; // Convert 24-hour to 12-hour format
-        minutes = minutes.toString().padStart(2, '0'); // Ensure two-digit minutes
-
-        const timeString = `${hours}:${minutes} ${ampm}`;
-
-        document.querySelector("#time").textContent = timeString; // Update the DOM
-
-        return timeString; // Return the formatted time string
-    };
-    updateTime();
-    setInterval(updateTime, 60000);
-
-
-    document.querySelector(".rt-btm input").addEventListener("focus", function () {
-        document.querySelector("#input-placeholder").style.display = "none";
-    })
-    document.querySelector(".rt-btm input").addEventListener("blur", function (e) {
-        if (e.target.value == "") {
-            document.querySelector("#input-placeholder").style.display = "block";
-        }
-    })
-}
-footerAnimation()

@@ -34,60 +34,61 @@ body {
   height: 100%;
 }
 
-#about-page{
+/* SERVICE CSS START */
+
+#service-page {
   position: fixed;
   top: -100%;
   left: 0;
-  background-color: #F5E31A;
+  background-color: #f5e31a;
   height: 100vh;
   width: 100%;
   z-index: 9;
   padding-top: 50px;
 }
-#about-top{
+#service-top {
   width: 100%;
   padding: 8px 13px;
   display: flex;
   align-items: center;
   justify-content: end;
 }
-#about-top p{
+#service-top p {
   font-family: headingb;
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;
 }
 
-#main{
-  position: relative;
-  width: 100%;
-  background-color: white;
-}
-
-nav{
+nav {
   position: absolute;
-  bottom: -50px;
+  bottom: -40px;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
   z-index: 2;
 }
-nav p.active{
-  opacity: 1 !important; 
+nav p.active {
+  opacity: 1 !important;
 }
-nav a{
+#logo{
+  font-family: headingb;
+  font-weight: 900;
+  font-size: 20px;
+}
+nav a {
   text-decoration: none;
   color: black;
 }
-nav img{
+nav img {
   height: 30px;
-  filter:grayscale(100%) brightness(0%) contrast(100%);
+  filter: grayscale(100%) brightness(0%) contrast(100%);
 }
-#nav-right{
+#nav-right {
   display: flex;
   align-items: center;
   font-family: headingb;
@@ -95,13 +96,23 @@ nav img{
   text-transform: capitalize;
   gap: 20px;
 }
-#nav-right p{
+#nav-right p {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
-#nav-right p:hover{
+#nav-right p:hover {
   opacity: 1;
 }
+
+/* SERVICE CSS  END */
+
+#main{
+  position: relative;
+  width: 100%;
+  background-color: white;
+}
+
+/* PAGE1 CSS START */
 
 #page1{
   position: relative;
@@ -161,6 +172,11 @@ nav img{
 #filter-container p:hover{
   background-color: #F5F5F5;
 }
+
+/* PAGE1 CSS END */
+
+/* PAGE2 CSS START */
+
 #page2{
   width: 100%;
   padding: 0 13px;
@@ -261,6 +277,10 @@ nav img{
   text-transform: capitalize;
 }
 
+/* PAGE2 CSS END */
+
+/* PAGE3 CSS START */
+
 #page3{
   height: 85vh;
   width: 100%;
@@ -306,58 +326,48 @@ nav img{
   color: rgba(0, 0, 0, 0.688);
 }
 
-footer{
-  height: 160px;
+/* PAGE3 CSS END */
+
+/* FOOTER CSS START */
+
+footer {
   width: 100%;
-  background-color: #F5E31A;
-  display: flex;
-  align-items: center;
+  background-color: white;
   padding: 8px 12px;
   font-family: headingb;
   font-size: 14px;
 }
-#ft-lf{
-  width: 67%;
-  height: 100%;
-}
-#ft-rt{
-  width: 33%;
-  height: 100%;
+#footer-pt1{
+  width: 18%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1vw;
+  margin-bottom: 100px;
 }
-.rt-top{
+.ft-title{
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+#footer-pt2{
   width: 100%;
   display: flex;
-  align-items: start;
+  justify-content: space-between;
+  align-items: end;
+}
+#ft-lf {
+  width: fit-content;
+  height: 100%;
+}
+#ft-rt {
+  width: 33%;
+}
+.rt-top {
+  width: 100%;
+  display: flex;
+  align-items: end;
   justify-content: space-between;
 }
-.rt-top p{
+.rt-top p {
   line-height: 1.5;
 }
-.rt-btm{
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center; 
-  gap: 10px;
-  border-bottom: 1px solid black;
-}
-.rt-btm input{
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding: 4px;
-}
-#input-placeholder{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-.rt-btm i{
-  font-size: 15px;
-}
+/* FOOTER CSS END */

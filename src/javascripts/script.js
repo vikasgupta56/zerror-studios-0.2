@@ -31,7 +31,8 @@ function loco() {
 }
 loco()
 
-var loader = gsap.timeline()
+function homeLoader(){
+    var loader = gsap.timeline()
 loader
 .from(".upper", {
     opacity: 0,
@@ -88,26 +89,28 @@ loader
     delay:-.5,
     ease: "power3.out",
 }, "c")
+}
+homeLoader()
 
 
 
 
-function aboutAnimation() {
-    var isAbout = false;
+function serviceAnimation() {
+    var isService = false;
     var previousLink = ""
 
-    document.querySelector("#nav-about").addEventListener("click", function () {
+    document.querySelector("#nav-service").addEventListener("click", function () {
         document.querySelectorAll("nav p").forEach(function(link){
             if(link.classList.contains("active")){
                 previousLink = link.textContent.toLowerCase()
             }
         })
-        isAbout = !isAbout;
-        openAbout()
+        isService = !isService;
+        openService()
     })
-    document.querySelector("#closeAbout").addEventListener("click", function () {
-        isAbout = !isAbout;
-        openAbout()
+    document.querySelector("#closeService").addEventListener("click", function () {
+        isService = !isService;
+        openService()
         document.querySelectorAll("nav p").forEach(function(link){
             if(link.textContent.toLowerCase() === previousLink){
                 link.classList.add("active")
@@ -115,28 +118,28 @@ function aboutAnimation() {
         })
     })
 
-    function openAbout() {
-        if (isAbout) {
+    function openService() {
+        if (isService) {
             gsap.set("nav", { backgroundColor: "#fff" })
             gsap.to("#main", {
-                top: "calc(100% - 50px)",
+                top: "calc(100% - 40px)",
                 ease: "power3.out",
                 duration: .8
             })
-            gsap.to("#about-page", {
-                top: "-50px",
+            gsap.to("#service-page", {
+                top: "-40px",
                 ease: "power3.out",
                 duration: .8
             })
         } else {
-            document.querySelector("#nav-about").classList.remove("active")
+            document.querySelector("#nav-service").classList.remove("active")
             gsap.set("nav", { backgroundColor: "transparent" })
             gsap.to("#main", {
                 top: "0%",
                 ease: "power3.out",
                 duration: .8
             })
-            gsap.to("#about-page", {
+            gsap.to("#service-page", {
                 top: "-100%",
                 ease: "power3.out",
                 duration: .8
@@ -144,7 +147,7 @@ function aboutAnimation() {
         }
     }
 }
-aboutAnimation()
+serviceAnimation()
 
 
 function filterAnimation() {

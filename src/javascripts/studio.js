@@ -31,16 +31,261 @@ function loco() {
 }
 loco()
 
+var tls = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#studio-1",
+        scroller: "#main",
+        start: "top 0%",
+        end: "top -100%",
+        scrub: 1,
+        pin:true
+    }
+})
+
+tls
+.to("#studio-para1",{
+    opacity: 0,
+    duration:.6
+})
+.to("#studio-para2",{
+    top: 0,
+    duration:.8
+})
+.to("#studio-para3",{
+    opacity: 1,
+    duration:.6
+})
+.to("#studio-para2",{
+    opacity: 0,
+    duration:.6
+})
+.to("#studio-para3",{
+    top: 0,
+    duration:.8
+})
+.to("#studio-para4",{
+    opacity: 1,
+    duration:.6
+})
+
+
+function brandLogoAnimation() {
+    var tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#studio-brand",
+            scroller: "#main",
+            start: "top 10%",
+            end: "top 0%",
+            scrub: true,
+            // markers: true
+        }
+    })
+
+    tl
+        .to(".b1", {
+            opacity: 1
+        })
+        .to(".b2", {
+            opacity: 1
+        })
+        .to(".b3", {
+            opacity: 1
+        })
+        .to(".b4", {
+            opacity: 1
+        })
+
+}
+brandLogoAnimation()
+
+
+function memberAnimation(){
+    
+gsap.from(".m1", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m1",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m2", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m2",
+        scroller: "#main",
+        start: "top 50%",
+        end: "top 30%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m3", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m3",
+        scroller: "#main",
+        start: "top 60%",
+        end: "top 40%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m4", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m4",
+        scroller: "#main",
+        start: "top 50%",
+        end: "top 30%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m5", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m5",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m6", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m6",
+        scroller: "#main",
+        start: "top 60%",
+        end: "top 40%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m7", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m7",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m8", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m8",
+        scroller: "#main",
+        start: "top 50%",
+        end: "top 30%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m9", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m9",
+        scroller: "#main",
+        start: "top 60%",
+        end: "top 40%",
+        scrub: true,
+    }
+});
+
+
+gsap.from(".m10", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m10",
+        scroller: "#main",
+        start: "top 50%",
+        end: "top 30%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m11", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m11",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m12", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m12",
+        scroller: "#main",
+        start: "top 60%",
+        end: "top 40%",
+        scrub: true,
+    }
+});
+
+gsap.from(".m13", {
+    opacity: 0,
+    y: 200,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".m13",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    }
+});
+
+}
+memberAnimation()
+
+
 gsap.to("#studio-contact", {
     scrollTrigger: {
-        trigger: "#studio-2", 
-        scroller: "#main", 
-        start: "top top", 
-        end: "bottom top", 
-        scrub: true, 
+        trigger: "#studio-2",
+        scroller: "#main",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
         pin: "#studio-contact"
     }
 });
+
 
 
 function serviceAnimation() {

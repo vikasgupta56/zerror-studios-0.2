@@ -152,7 +152,17 @@ nav img {
   font-size: 14px;
 }
 #studio-para {
+  position: relative;
   width: 57.5%;
+}
+#studio-para2{
+  position: absolute;
+  top: 100%;
+}
+#studio-para3,#studio-para4{
+  position: absolute;
+  top: 100%;
+  opacity: 0;
 }
 #studio-para p {
   width: 65%;
@@ -181,6 +191,7 @@ nav img {
 #studio-brand .brand-row img{
   height: 80px;
   filter: grayscale(100%) brightness(0%) contrast(100%);
+  opacity: 0;
 }
 #studio-brand .brand-row p{
   font-family: headingb;

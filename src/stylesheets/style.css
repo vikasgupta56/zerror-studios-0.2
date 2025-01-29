@@ -128,10 +128,10 @@ nav img {
 }
 
 .header-text h2{
-  font-size:3.9vw;
+  font-size:3vw;
   text-align: center;
   font-family: paraItalic;
-  line-height: .7;
+  line-height: .9;
 }
 .header-text h2 span{
   display: inline-block;

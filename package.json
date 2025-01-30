@@ -13,6 +13,6 @@
     "vite-plugin-restart": "^0.4.1"
   },
   "dependencies": {
-    "vercel": "^39.3.0"
+    "vercel": "^39.4.2"
   }
 }

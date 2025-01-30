@@ -44,7 +44,7 @@ body {
   height: 100vh;
   width: 100%;
   z-index: 9;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 #service-top {
   width: 100%;
@@ -58,6 +58,40 @@ body {
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;
+}
+
+
+#service-offer{
+  width: 100%;
+  height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+#our-service{
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+#our-service .services{
+  height: 100%;
+}
+
+#our-service .services p {
+  font-family: headingb;
+  font-size: 17px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.service-title{
+  padding-bottom: 5px;
+  /* border-bottom: 1px solid #000; */
+  font-size: 14px !important;
+}
+
+.service-title-main{
+  font-size: 14px !important;
 }
 
 nav {
@@ -127,7 +161,7 @@ nav img {
 }
 
 #studio-title {
-  width: 57.5%;
+  width: 60%;
 }
 #studio-title #word {
   width: 20%;
@@ -140,6 +174,7 @@ nav img {
   font-weight: 500;
   line-height:1;
   color: black;
+  white-space: nowrap;
 }
 #studio-desc {
   width: 100%;
@@ -153,7 +188,7 @@ nav img {
 }
 #studio-para {
   position: relative;
-  width: 57.5%;
+  width: 60%;
 }
 #studio-para2{
   position: absolute;
@@ -181,7 +216,7 @@ nav img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px;
+  padding:50px;
 }
 #studio-brand .brand-row{
   display: flex;
@@ -189,7 +224,7 @@ nav img {
   align-items: center;
 }
 #studio-brand .brand-row img{
-  height: 80px;
+  width:130px;
   filter: grayscale(100%) brightness(0%) contrast(100%);
   opacity: 0;
 }

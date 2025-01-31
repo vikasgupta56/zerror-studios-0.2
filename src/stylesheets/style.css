@@ -143,7 +143,7 @@ nav img {
 #main{
   position: relative;
   width: 100%;
-  background-color: #F9F9F9;
+  background-color: #fff;
 }
 
 /* PAGE1 CSS START */
@@ -213,8 +213,43 @@ nav img {
 
 #page2{
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 0 13px;
+}
+
+#flip-filter-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 13px; */
+  /* padding-bottom: 50px; */
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.336);
+  transition: all ease .6s;
+}
+.options-fl-main{
+  width: calc(100%/4);
+}
+.options-fl{
+  width: fit-content;
+  display: flex;
+  align-items: start;
+}
+#flip-filter-container p{
+  font-family: para;
+  text-transform: capitalize;
+  font-size: 25px;
+  line-height: .8;
+  margin-bottom: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease .3s;
+}
+#flip-filter-container .options-fl:hover p{ 
+  font-family: paraItalic;
 }
 #page2 .project{
   text-decoration: none;
@@ -228,7 +263,7 @@ nav img {
   flex-wrap: wrap;
 }
 
-#all-project{
+#all-project,#filter-project{
   display: none;
   opacity: 0;
 }
@@ -322,7 +357,7 @@ nav img {
 /* PAGE3 CSS START */
 
 #page3{
-  height: 85vh;
+  height: 60vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -332,7 +367,7 @@ nav img {
 
 
 #page3 h2{
-  font-size:3.9vw;
+  font-size:3.5vw;
   text-align: center;
   font-family: paraItalic;
   line-height: .7;

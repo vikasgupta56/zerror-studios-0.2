@@ -44,6 +44,149 @@ window.onload = function () {
     });
 };
 
+const porjectData = [
+    {
+        sectors: [
+            {
+                name: "Art",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Fashion",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Hospitality",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Sustainability",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Beauty",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Finance",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Lifestyle",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Technology",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Entertainment",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Food & Beverage",
+                projects: [1, 2, 3]
+            },
+            {
+                name: "Sports",
+                projects: [1, 2, 3]
+            }
+        ]
+    },
+    {
+        clients: [
+            {
+                client: "MoMA",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Gucci",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Marriott International",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Tesla",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "L'Oréal",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Goldman Sachs",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Nike",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Google",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Netflix",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Starbucks",
+                projects: [1, 2, 3]
+            },
+            {
+                client: "Adidas",
+                projects: [1, 2, 3]
+            }
+        ]
+    },
+    {
+        services: [
+            {
+                service: "Web Development",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "UI/UX Design",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Digital Marketing",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Branding",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "SEO Optimization",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "E-commerce Solutions",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Mobile App Development",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Software Development",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Content Creation",
+                projects: [1, 2, 3]
+            },
+            {
+                service: "Social Media Management",
+                projects: [1, 2, 3]
+            }
+        ]
+    }
+]
+
 function homeLoader() {
     const urlParams = new URLSearchParams(window.location.search);
     const mainFilter = urlParams.get('mainFilter');
@@ -107,9 +250,6 @@ function homeLoader() {
         }, "c")
 }
 homeLoader()
-
-
-
 
 function serviceAnimation() {
     var isService = false;
@@ -185,7 +325,7 @@ window.onload = function () {
         })
         var navLink = document.querySelectorAll("nav p")
         navLink.forEach(function (link) {
-                link.classList.remove("active");
+            link.classList.remove("active");
         })
         document.querySelector("#nav-project").classList.add("active");
 
@@ -207,6 +347,10 @@ window.onload = function () {
     }
 };
 
+const filterList = document.querySelector("#flip-filter-container")
+const sectorBtn = document.querySelector("#sectors-btn")
+const clientBtn = document.querySelector("#client-btn")
+const serviceBtn = document.querySelector("#service-btn")
 
 function filterAnimation() {
     const allFilter = document.querySelectorAll("#filter-container p")
@@ -216,6 +360,9 @@ function filterAnimation() {
                 item.classList.remove("active");
             });
             if (this.textContent.toLowerCase() === "all") {
+                filterList.style.opacity = "0";
+                filterList.style.height = "0";
+                filterList.style.padding = "0"
                 document.querySelector("#nav-project").classList.add("active");
             }
             else {
@@ -245,6 +392,12 @@ function filterAnimation() {
     // ALL PROJECT FILTER
     document.querySelectorAll(".all-project-button").forEach(function (btn) {
         btn.addEventListener("click", function () {
+
+            document.querySelectorAll(".listing-filter").forEach(function (p) {
+                p.querySelector(".name-space").textContent = ``
+                p.querySelector(".name-project-count").textContent = ``
+                p.querySelector(".filter-close").innerHTML = ``
+            })
 
             history.pushState(null, '', '/?mainFilter=all');
             const urlParams = new URLSearchParams(window.location.search);
@@ -296,7 +449,16 @@ function filterAnimation() {
     //FEATURED PROJECT FILTER
     document.querySelector("#featured-btn").addEventListener("click", function () {
 
+        document.querySelectorAll(".listing-filter").forEach(function (p) {
+            p.querySelector(".name-space").textContent = ``
+            p.querySelector(".name-project-count").textContent = ``
+            p.querySelector(".filter-close").innerHTML = ``
+        })
+
         history.pushState(null, '', '/');
+        filterList.style.opacity = "0";
+        filterList.style.height = "0";
+        filterList.style.padding = "0"
 
         const page2Height = document.querySelector("#page2").getBoundingClientRect().top
         const currentContainer = document.querySelector(currentCategory)
@@ -339,8 +501,164 @@ function filterAnimation() {
             })
     })
 
+    // LISTING FILTER
+    document.querySelector("#flip-filter-container").addEventListener("click", function (e) {
+
+        if (e.target.tagName === "P") {
+
+            allFilter.forEach(function (filter) {
+                if (filter.classList.contains("active")) {
+                    filter.querySelector(".name-space").textContent = ` : ${e.target.textContent}`
+                    filter.querySelector(".name-project-count").textContent = `(1)`
+                    filter.querySelector(".filter-close").innerHTML = `<i class="ri-close-line"></i>`
+                }
+            })
+
+            filterList.style.opacity = "0";
+            filterList.style.height = "0";
+            filterList.style.padding = "0"
+
+            // const page2Height = document.querySelector("#page2").getBoundingClientRect().top
+            const currentContainer = document.querySelector(currentCategory)
+            const projectContainer = document.querySelector("#filter-project")
+
+            // if (currentCategory === '#featured-project') {
+            //     gsap.to(window, {
+            //         scrollTo: { y: 0, autoKill: false },
+            //         duration: 1
+            //     })
+            //     return; // Exit early, skipping the timeline
+            // }
+
+            var tl = gsap.timeline()
+            tl
+                .to(currentContainer, {
+                    // onStart: function () {
+                    //     gsap.to(window, {
+                    //         scrollTo: { y: 0, autoKill: false },
+                    //         duration: 1
+                    //     })
+                    // },
+                    opacity: 0,
+                    ease: "power3.out",
+                    duration: .5,
+                    onComplete: function () {
+                        gsap.set(currentContainer, { display: "none" })
+                    }
+                })
+                .to(projectContainer, {
+                    opacity: 1,
+                    ease: "power3.out",
+                    duration: .5,
+                    onStart: function () {
+                        gsap.set(projectContainer, { display: "flex" })
+                    },
+                    onComplete: function () {
+                        currentCategory = "#filter-project"
+                    }
+                })
+
+
+
+        }
+    })
+
+
 }
 filterAnimation()
+
+function filterListing() {
+
+
+    sectorBtn.addEventListener("click", function () {
+
+        document.querySelectorAll(".listing-filter").forEach(function (p) {
+            p.querySelector(".name-space").textContent = ``
+            p.querySelector(".name-project-count").textContent = ``
+            p.querySelector(".filter-close").innerHTML = ``
+        })
+
+        filterList.style.height = "150px";
+        filterList.style.padding = "13px 13px 50px 13px"
+        filterList.style.opacity = "1";
+
+        filterList.innerHTML = "";
+        porjectData[0].sectors.forEach(function (sector) {
+            var divw = document.createElement("div")
+            var div = document.createElement("div")
+            var span = document.createElement("span")
+            var p = document.createElement("p")
+            p.textContent = sector.name
+            span.textContent = `(${sector.projects.length})`
+            divw.classList.add("options-fl-main")
+            div.classList.add("options-fl")
+            div.appendChild(p)
+            div.appendChild(span)
+            divw.appendChild(div)
+            filterList.appendChild(divw)
+        })
+    })
+
+    clientBtn.addEventListener("click", function () {
+        document.querySelectorAll(".listing-filter").forEach(function (p) {
+            p.querySelector(".name-space").textContent = ``
+            p.querySelector(".name-project-count").textContent = ``
+             p.querySelector(".filter-close").innerHTML = ``
+        })
+
+        filterList.style.height = "150px";
+        filterList.style.padding = "13px 13px 50px 13px"
+        filterList.style.opacity = "1";
+
+        filterList.innerHTML = "";
+        porjectData[1].clients.forEach(function (client) {
+            var divw = document.createElement("div")
+            var div = document.createElement("div");
+            var span = document.createElement("span");
+            var p = document.createElement("p")
+            p.textContent = client.client
+            span.textContent = `(${client.projects.length})`
+            divw.classList.add("options-fl-main")
+            div.classList.add("options-fl")
+            div.appendChild(p)
+            div.appendChild(span)
+            divw.appendChild(div)
+            filterList.appendChild(divw)
+        })
+    })
+
+    serviceBtn.addEventListener("click", function () {
+
+        document.querySelectorAll(".listing-filter").forEach(function (p) {
+            p.querySelector(".name-space").textContent = ``
+            p.querySelector(".name-project-count").textContent = ``
+            p.querySelector(".filter-close").innerHTML = ``
+        })
+
+        filterList.style.height = "150px";
+        filterList.style.padding = "13px 13px 50px 13px"
+        filterList.style.opacity = "1";
+
+        filterList.innerHTML = "";
+        porjectData[2].services.forEach(function (service) {
+            var divw = document.createElement("div")
+            var div = document.createElement("div")
+            var span = document.createElement("span")
+            var p = document.createElement("p")
+            p.textContent = service.service
+            span.textContent = `(${service.projects.length})`
+            divw.classList.add("options-fl-main")
+            div.classList.add("options-fl")
+            div.appendChild(p)
+            div.appendChild(span)
+            divw.appendChild(div)
+            filterList.appendChild(divw)
+        })
+    })
+
+}
+filterListing()
+
 
 function projectAnimation() {
     document.querySelectorAll(".project").forEach(function (project) {

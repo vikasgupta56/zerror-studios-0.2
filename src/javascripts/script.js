@@ -49,47 +49,47 @@ const porjectData = [
         sectors: [
             {
                 name: "Art",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Fashion",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Hospitality",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Sustainability",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Beauty",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Finance",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Lifestyle",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Technology",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Entertainment",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Food & Beverage",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 name: "Sports",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             }
         ]
     },
@@ -97,47 +97,47 @@ const porjectData = [
         clients: [
             {
                 client: "MoMA",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Gucci",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Marriott International",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Tesla",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "L'Oréal",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Goldman Sachs",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Nike",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Google",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Netflix",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Starbucks",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 client: "Adidas",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             }
         ]
     },
@@ -145,43 +145,43 @@ const porjectData = [
         services: [
             {
                 service: "Web Development",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "UI/UX Design",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Digital Marketing",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Branding",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "SEO Optimization",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "E-commerce Solutions",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Mobile App Development",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Software Development",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Content Creation",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             },
             {
                 service: "Social Media Management",
-                projects: [1, 2, 3]
+                projects: [1, 2, 3,4]
             }
         ]
     }
@@ -509,7 +509,7 @@ function filterAnimation() {
             allFilter.forEach(function (filter) {
                 if (filter.classList.contains("active")) {
                     filter.querySelector(".name-space").textContent = ` : ${e.target.textContent}`
-                    filter.querySelector(".name-project-count").textContent = `(1)`
+                    filter.querySelector(".name-project-count").textContent = `(4)`
                     filter.querySelector(".filter-close").innerHTML = `<i class="ri-close-line"></i>`
                 }
             })

@@ -111,9 +111,10 @@ nav p.active {
 }
 #logo{
   font-family: headingb;
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 16px;
 }
+
 nav a {
   text-decoration: none;
   color: black;
@@ -190,11 +191,11 @@ nav img {
   gap: 5px;
 }
 #filter-container p{
-  color: rgba(0, 0, 0, 0.512);
+  color: rgba(0, 0, 0, 0.589);
   font-family: headingb;
   font-size: 14px;
   text-transform: capitalize;
-  padding: 7px 13px;
+  padding: 4px 13px;
   border-radius: 5px;
   cursor: pointer;
   transition: all ease .1s;
@@ -320,7 +321,7 @@ nav img {
 .project-small h4{
   font-size: 28px;
   font-weight: 500;
-  line-height: .8;
+  line-height: 1.2;
   font-family: paraItalic;
   text-transform: capitalize;
 }
@@ -340,7 +341,7 @@ nav img {
 .project-large h3{
   font-size: 28px;
   font-weight: 500;
-  line-height: .8;
+  line-height: 1.2;
   font-family: para;
   text-transform: uppercase;
 }
@@ -357,12 +358,13 @@ nav img {
 /* PAGE3 CSS START */
 
 #page3{
-  height: 60vh;
+  height:100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 
@@ -384,43 +386,22 @@ nav img {
   font-family: para;
   font-weight: 500;
 }
-#page3 a{
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.512);
-  font-family: headingb;
-  font-size: 14px;
-  text-transform: capitalize;
-  background-color: #F5F5F5;
-  padding: 7px 13px;
-  border-radius: 5px;
-  margin-top: 40px;
-  transition: all ease .1s;
-}
-#page3 a:hover{
-  color: rgba(0, 0, 0, 0.688);
-}
+
 
 /* PAGE3 CSS END */
 
 /* FOOTER CSS START */
 
 footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   padding: 8px 12px;
   font-family: headingb;
   font-size: 14px;
 }
-#footer-pt1{
-  width: 18%;
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
-  margin-bottom: 100px;
-}
-.ft-title{
-  margin-bottom: 5px;
-  font-weight: 600;
-}
+
+
 #footer-pt2{
   width: 100%;
   display: flex;
@@ -428,19 +409,50 @@ footer {
   align-items: end;
 }
 #ft-lf {
-  width: fit-content;
+  width: 20%;
   height: 100%;
 }
-#ft-rt {
-  width: 33%;
-}
+
 .rt-top {
   width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
 }
-.rt-top p {
-  line-height: 1.5;
-}
+
 /* FOOTER CSS END */
+
+
+/* STRIP ANIMATION */
+
+.black-strip{
+  position: relative;
+  transition: all ease .2s;
+  z-index: 2;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+.black-strip::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: all ease .2s;
+}
+
+.black-strip:hover::before{
+  width: 100%;
+}
+.black-strip:hover{
+  color: white !important;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

@@ -111,8 +111,8 @@ nav p.active {
 }
 #logo{
   font-family: headingb;
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 16px;
 }
 nav a {
   text-decoration: none;
@@ -186,8 +186,8 @@ nav img {
   justify-content: space-between;
 }
 .details-project p {
-  font-size: 11px;
-  text-transform: uppercase;
+  font-size: 14px;
+  text-transform: capitalize;
   font-family: headingm;
   width: 25%;
 }
@@ -252,7 +252,7 @@ nav img {
 #page4 {
   width: 100%;
   padding: 13px;
-  margin-top: 13vw;
+  margin: 10vw 0;
 }
 #related-project {
   width: 100%;
@@ -339,7 +339,7 @@ nav img {
 .project-small h4 {
   font-size: 28px;
   font-weight: 500;
-  line-height: 0.8;
+  line-height: 1.2;
   font-family: paraItalic;
   text-transform: capitalize;
 }
@@ -349,22 +349,12 @@ nav img {
 
 footer {
   width: 100%;
-  background-color: white;
   padding: 8px 12px;
   font-family: headingb;
   font-size: 14px;
 }
-#footer-pt1{
-  width: 18%;
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
-  margin-bottom: 100px;
-}
-.ft-title{
-  margin-bottom: 5px;
-  font-weight: 600;
-}
+
+
 #footer-pt2{
   width: 100%;
   display: flex;
@@ -372,19 +362,55 @@ footer {
   align-items: end;
 }
 #ft-lf {
-  width: fit-content;
+  width: 20%;
   height: 100%;
 }
-#ft-rt {
-  width: 33%;
-}
+
 .rt-top {
   width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
 }
-.rt-top p {
-  line-height: 1.5;
+a{
+  color: black;
+  text-decoration: none;
 }
+
 /* FOOTER CSS END */
+
+
+
+/* STRIP ANIMATION */
+
+.black-strip{
+  position: relative;
+  transition: all ease .2s;
+  z-index: 2;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+.black-strip::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: all ease .2s;
+}
+
+.black-strip:hover::before{
+  width: 100%;
+}
+.black-strip:hover{
+  color: white !important;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

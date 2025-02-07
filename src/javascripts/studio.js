@@ -31,6 +31,166 @@ function loco() {
 }
 loco()
 
+const clientData = [
+    {
+        "name": "THR",
+        "logo": "/zs-logos/thr-logo.png",
+        "image": "https://images.prismic.io/malvah-v2/04b80e45-4541-43c3-8e09-531279af5047_Iso.jpg?auto=compress,format"
+    },
+    {
+        "name": "Esquire",
+        "logo": "/zs-logos/esquire.png",
+        "image": "https://images.prismic.io/malvah-v2/4eb25f32-4cf1-4c40-ae23-c1fc3e72d222_S%26P.jpg?auto=compress,format"
+    },
+    {
+        "name": "Manifest",
+        "logo": "/zs-logos/manifest.png",
+        "image": "https://images.prismic.io/malvah-v2/dff6595a-7adc-4278-b833-71d66b99c346_Work+Thumbnail_M%26C.jpg?auto=format,compress"
+    },
+    {
+        "name": "RPSG Media",
+        "logo": "/zs-logos/rpsg.png",
+        "image": "https://images.prismic.io/malvah-v2/13c30cae-4517-49a8-a047-8fc8e1bece85_Pointblank.jpg?auto=compress,format"
+    },
+    {
+        "name": "RPSG Group (IMI)",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/8e6d2447-0195-4f80-9357-afb725558da2_Onion.jpg?auto=compress,format"
+    },
+    {
+        "name": "ResideInBeing",
+        "logo": "/zs-logos/rib.avif",
+        "image": "https://images.prismic.io/malvah-v2/91ad2da3-7088-407b-b96f-cd99c4b6605f_CS_Hailr-16.jpg?auto=format,compress"
+    },
+    {
+        "name": "JustNosh",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/65c628649be9a5b998b598f3_Spot.jpg?auto=format,compress"
+    },
+    {
+        "name": "Hefty Art",
+        "logo": "/zs-logos/hart.png",
+        "image": "https://images.prismic.io/malvah-v2/647a9895-ec45-49ed-80c2-70fde7ddd6fd_Fold7.jpg?auto=compress,format"
+    },
+    {
+        "name": "Khelo Esports",
+        "logo": "/zs-logos/ks.png",
+        "image": "https://images.prismic.io/malvah-v2/64f0261f-3153-4ee0-bd4f-86be7f6189e0_sync.labs.jpg?auto=compress,format"
+    },
+    {
+        "name": "WineeMedia",
+        "logo": "/zs-logos/logo.png",
+        "image": "https://images.prismic.io/malvah-v2/23cd5c52-1a5e-4b7f-acbd-bea70898fe5a_Natro.jpg?auto=compress,format"
+    },
+    {
+        "name": "The Senseis Store",
+        "logo": "/zs-logos/senseis.png",
+        "image": "https://images.prismic.io/malvah-v2/324e85f5-a768-425e-abf8-c110cece74b0_WB.jpg?auto=compress,format"
+    },
+    // {
+    //     "name": "Aadesh Masala",
+    //     "logo": "/zs-logos/Aadesh.png",
+    //     "image": "https://images.prismic.io/malvah-v2/0d82b512-ff6e-4ad0-a2f0-543fc15c2bc6_ESD.jpg?auto=compress,format"
+    // },
+    {
+        "name": "Point Of",
+        "logo": "/zs-logos/point.png",
+        "image": "https://images.prismic.io/malvah-v2/65c626c09be9a5b998b598a9_Locomotive_2.jpg?auto=format,compress"
+    },
+    {
+        "name": "Wealth Fusion",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/65c628769be9a5b998b598f5_MacMedia.jpg?auto=format,compress"
+    },
+    {
+        "name": "Casa Carigar",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/9e16d128-ee3b-4191-b784-15bc1bee9682_Amaren.jpg?auto=compress,format"
+    },
+    {
+        "name": "IGL",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/fd9f6a77-0b3e-4eb0-9f75-a03f135cb556_Kode+Media.jpg?auto=compress,format"
+    },
+    {
+        "name": "The Greek Life",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/3899261c-2583-4e1c-af07-32565e29e63f_Milck.jpg?auto=compress,format"
+    },
+    {
+        "name": "I White Korea",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/4eeab1b9-c0fa-401b-8ee2-8203a9485fcb_R%26R.jpg?auto=compress,format"
+    },
+    {
+        "name": "WhenInMykonos",
+        "logo": "/zs-logos/hart.png",
+        "image": "https://images.prismic.io/malvah-v2/65c628649be9a5b998b598f3_Spot.jpg?auto=format,compress"
+    },
+    {
+        "name": "Mr. & Mrs.",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/f9b97806-7864-4013-b7f8-23a54b1eae03_Heights.jpg?auto=compress,format"
+    },
+    {
+        "name": "Rage Media",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/3899261c-2583-4e1c-af07-32565e29e63f_Milck.jpg?auto=compress,format"
+    },
+    {
+        "name": "Rage Entertainment",
+        "logo": "/zs-logos/hart.png",
+        "image": "https://images.prismic.io/malvah-v2/23cd5c52-1a5e-4b7f-acbd-bea70898fe5a_Natro.jpg?auto=compress,format"
+    },
+    {
+        "name": "Dhamaka Records",
+        "logo": "/zs-logos/nosh.png",
+        "image": "https://images.prismic.io/malvah-v2/41bd22e1-22ff-4ba2-863f-a5a7e7be73e0_Work+Thumbnail_Sunya.jpg?auto=format,compress"
+    },
+    {
+        "name": "Dhamaka Talent",
+        "logo": "/zs-logos/hart.png",
+        "image": "https://images.prismic.io/malvah-v2/91ad2da3-7088-407b-b96f-cd99c4b6605f_CS_Hailr-16.jpg?auto=format,compress"
+    }
+]
+
+function textEffectAnimation() {
+    document.querySelectorAll(".text-effect .effect").forEach(function (element) {
+        var clutter2 = ""
+        element.textContent.split("").forEach(function (letter) {
+            if (letter === " ") {
+                clutter2 += "<span>&nbsp;</span>"
+            } else {
+                clutter2 += `<span>${letter}</span>`
+            }
+        })
+        element.innerHTML = clutter2
+    })
+
+    document.querySelectorAll(".text-effect").forEach(function (elem) {
+        elem.addEventListener("mouseenter", function (e) {
+            gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+            gsap.fromTo(e.currentTarget.children[1].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+        })
+    })
+}
+textEffectAnimation()
 
 function serviceAnimation() {
     var isService = false;
@@ -82,8 +242,8 @@ serviceAnimation()
 
 function snakeTextAnimation() {
     const textElement = document.querySelector("#animated-text");
-    const fullText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai. Born in Mumbai but built for the world, we’re a crew of dreamers, doers, and rule-breakers who believe the internet doesn’t need another meh moment—it needs unforgettable experiences. We don’t just build stuff; we craft digital adventures that make people stop, scroll, and say,“Whoa, who made this?" 
-    const initialText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai." 
+    const fullText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai. Born in Mumbai but built for the world, we’re a crew of dreamers, doers, and rule-breakers who believe the internet doesn’t need another meh moment—it needs unforgettable experiences. We don’t just build stuff; we craft digital adventures that make people stop, scroll, and say,“Whoa, who made this?"
+    const initialText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai."
     const remainingText = fullText.slice(initialText.length);  // Remaining text to append
 
     // Set the initial text
@@ -97,7 +257,7 @@ function snakeTextAnimation() {
             start: "top 0%",   // Start at 50% of the scroll container height
             end: "top -200%",   // End at the bottom of the container
             scrub: 1,           // Scrub for smooth animation
-            pin:true
+            pin: true
         }
     });
 
@@ -116,235 +276,235 @@ function snakeTextAnimation() {
 
 snakeTextAnimation();
 
+function brandListingAnimtion() {
+    var clutter = ""
+    clientData.forEach(function (data, i) {
+        clutter += `<div class="client" data-index=${i}>
+                        <p class="brand-count">${i + 1 > 9 ? i + 1 : `0${i + 1}`}.</p>
+                        <p>${data.name}</p>
+                    </div>`
+    })
+    document.querySelector("#brand-list").innerHTML = clutter
+
+    var showcaseImg = document.querySelector("#brand-showcase-img")
+    var brandLogo = document.querySelector("#brand-logo img")
+    document.querySelectorAll("#brand-listing .client").forEach(function (client) {
+        client.addEventListener("mouseenter", function (e) {
+            if (e.target.dataset.index) {
+                var client = clientData[e.target.dataset.index];
+                showcaseImg.src = client.image;
+                brandLogo.src = client.logo;
+    
+                gsap.set(showcaseImg, { scale: 1 });
+    
+                gsap.fromTo(
+                    showcaseImg,
+                    { scale: 1.08, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    }
+                );
+            }
+        });
+    
+        client.addEventListener("mouseleave", function (e) {
+            gsap.to(showcaseImg, {
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.out",
+            });
+            showcaseImg.src = "/images/blank.png";
+        });
+    });
+    document.querySelector("#brand-listing").addEventListener("mousemove",function(e){
+        const scrollPosition = e.clientY - document.querySelector("#brand-listing").getBoundingClientRect().top
+        gsap.to(document.querySelector("#brand-logo"),{
+            top:scrollPosition,
+        })
+    })
+    document.querySelector("#brand-list").addEventListener("mouseenter",function(){
+        gsap.to(document.querySelector("#brand-logo"),{
+            opacity: 1,
+        })
+    })
+    document.querySelector("#brand-list").addEventListener("mouseleave",function(){
+        gsap.to(document.querySelector("#brand-logo"),{
+            opacity: 0,
+        })
+    })
 
 
-
-
-
-
-
-// var tls = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: "#studio-1",
-//         scroller: "#main",
-//         start: "top 0%",
-//         end: "top -100%",
-//         scrub: 1,
-//         pin: true
-//     }
-// })
-
-// tls
-//     .to("#studio-para1", {
-//         opacity: 0,
-//         duration: .6
-//     })
-//     .to("#studio-para2", {
-//         top: 0,
-//         duration: .8
-//     })
-//     .to("#studio-para3", {
-//         opacity: 1,
-//         duration: .6
-//     })
-//     .to("#studio-para2", {
-//         opacity: 0,
-//         duration: .6
-//     })
-//     .to("#studio-para3", {
-//         top: 0,
-//         duration: .8
-//     })
-//     .to("#studio-para4", {
-//         opacity: 1,
-//         duration: .6
-//     })
-
-
-function brandLogoAnimation() {
-    var tl = gsap.timeline({
+    gsap.to("#brand-showcase", {
         scrollTrigger: {
             trigger: "#studio-brand",
             scroller: "#main",
-            start: "top 10%",
-            end: "bottom 100%",
-            scrub: 1,
-            // markers: true
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            pin: "#brand-showcase"
         }
     });
 
-    tl
-        .from([".b1", ".b2", ".b3", ".b4"], {
-            opacity: 0,
-            stagger: 0.3,
-            immediateRender: true
-        })
-        .from("#about-brand", {
-            opacity: 0,
-            duration: .6,
-        })
 }
-
-brandLogoAnimation();
-
-
-
+brandListingAnimtion()
 
 function memberAnimation() {
-
     gsap.from(".m1", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 300,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m1",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top 60%",
+            end: "top 30%",
             scrub: true,
         }
     });
 
     gsap.from(".m2", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 800,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m2",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 50%",
-            end: "top 30%",
+            start: "top 15%",
+            end: "top 0%",
             scrub: true,
         }
     });
 
     gsap.from(".m3", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 600,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m3",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 60%",
-            end: "top 40%",
+            start: "top 30%",
+            end: "top 15%",
             scrub: true,
         }
     });
 
     gsap.from(".m4", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 1000,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m4",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 50%",
-            end: "top 30%",
+            start: "top -40%",
+            end: "top -50%",
             scrub: true,
         }
     });
 
     gsap.from(".m5", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 600,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m5",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top -10%",
+            end: "top -25%",
             scrub: true,
         }
     });
 
     gsap.from(".m6", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 800,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m6",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 60%",
-            end: "top 40%",
+            start: "top -30%",
+            end: "top -40%",
             scrub: true,
         }
     });
 
     gsap.from(".m7", {
-        opacity: 0,
-        y: 200,
+        opacity:1,
+        y: 800,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m7",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top -90%",
+            end: "top -100%",
             scrub: true,
         }
     });
 
     gsap.from(".m8", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 800,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m8",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 50%",
-            end: "top 30%",
+            start: "top -130%",
+            end: "top -145%",
             scrub: true,
         }
     });
 
     gsap.from(".m9", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 600,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m9",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 60%",
-            end: "top 40%",
+            start: "top -110%",
+            end: "top -125%",
             scrub: true,
         }
     });
 
 
     gsap.from(".m10", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 1000,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m10",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 50%",
-            end: "top 30%",
+            start: "top -185%",
+            end: "top -195%",
             scrub: true,
         }
     });
 
     gsap.from(".m11", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 600,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m11",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 80%",
-            end: "top 50%",
+            start: "top -150%",
+            end: "top -160%",
             scrub: true,
         }
     });
 
     gsap.from(".m12", {
-        opacity: 0,
-        y: 200,
+        opacity: 1,
+        y: 800,
         duration: 1,
         scrollTrigger: {
-            trigger: ".m12",
+            trigger: "#studio-2",
             scroller: "#main",
-            start: "top 60%",
-            end: "top 40%",
+            start: "top -200%",
+            end: "top -210%",
             scrub: true,
         }
     });
@@ -363,7 +523,6 @@ function memberAnimation() {
     });
 
 
-
     gsap.to("#studio-contact", {
         scrollTrigger: {
             trigger: "#studio-2",
@@ -380,6 +539,27 @@ function memberAnimation() {
 }
 memberAnimation()
 
+function footerAnimation() {
+    const updateTime = () => {
+        const date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        hours = hours % 12 || 12; // Convert 24-hour to 12-hour format
+        minutes = minutes.toString().padStart(2, '0'); // Ensure two-digit minutes
+
+        const timeString = `${hours}:${minutes} ${ampm}`;
+
+        document.querySelector("#time").textContent = timeString; // Update the DOM
+
+        return timeString; // Return the formatted time string
+    };
+    updateTime();
+    setInterval(updateTime, 60000);
+
+}
+footerAnimation()
 
 
 

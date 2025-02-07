@@ -187,6 +187,45 @@ const porjectData = [
     }
 ]
 
+function textEffectAnimation() {
+    document.querySelectorAll(".text-effect .effect").forEach(function (element) {
+        var clutter2 = ""
+        element.textContent.split("").forEach(function (letter) {
+            if (letter === " ") {
+                clutter2 += "<span>&nbsp;</span>"
+            } else {
+                clutter2 += `<span>${letter}</span>`
+            }
+        })
+        element.innerHTML = clutter2
+    })
+
+    document.querySelectorAll(".text-effect").forEach(function (elem) {
+        elem.addEventListener("mouseenter", function (e) {
+            gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+            gsap.fromTo(e.currentTarget.children[1].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+        })
+    })
+}
+textEffectAnimation()
+
+
 function homeLoader() {
     const urlParams = new URLSearchParams(window.location.search);
     const mainFilter = urlParams.get('mainFilter');
@@ -363,22 +402,23 @@ function filterAnimation() {
                 filterList.style.opacity = "0";
                 filterList.style.height = "0";
                 filterList.style.padding = "0"
-                document.querySelector("#nav-project").classList.add("active");
+                // document.querySelector("#nav-project").classList.add("active");
             }
             else {
-                document.querySelector("#nav-project").classList.remove("active");
+                // document.querySelector("#nav-project").classList.remove("active");
                 history.pushState(null, '', '/');
             }
             this.classList.add("active");
         })
     })
 
-    document.querySelector("#nav-project").addEventListener("click", function () {
-        allFilter.forEach(function (item) {
-            item.classList.remove("active");
-        });
-        allFilter[allFilter.length - 1].classList.add("active");
-    })
+    // document.querySelector("#nav-project").addEventListener("click", function () {
+    //     allFilter.forEach(function (item) {
+    //         item.classList.remove("active");
+    //     });
+    //     allFilter[allFilter.length - 1].classList.add("active");
+    // })
+
     const navLink = document.querySelectorAll("nav p")
     navLink.forEach(function (link) {
         link.addEventListener("click", function () {

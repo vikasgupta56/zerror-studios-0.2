@@ -14,6 +14,10 @@
   font-family: paraItalic;
   src: url(/fonts/FreightBigProLight-Italic.woff2);
 }
+@font-face {
+  font-family: paraBold;
+  src: url(/fonts/66601c7c6b0d48cf88bbe09a_PPNeueMontreal-SemiBold.woff2);
+}
 ::-webkit-scrollbar {
   display: none !important;
 }
@@ -345,6 +349,7 @@ nav img {
 }
 
 /* PAGE4 CSS END */
+
 /* FOOTER CSS START */
 
 footer {
@@ -353,8 +358,17 @@ footer {
   font-family: headingb;
   font-size: 14px;
 }
-
-
+#footer-pt1{
+  width: 18.5%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.ft-title{
+  margin-bottom: 5px;
+  font-family: paraBold;
+  text-transform: uppercase;
+}
 #footer-pt2{
   width: 100%;
   display: flex;
@@ -362,19 +376,57 @@ footer {
   align-items: end;
 }
 #ft-lf {
-  width: 20%;
+  width: fit-content;
   height: 100%;
 }
-
+#ft-lf p{
+  text-transform: uppercase;
+  font-family: paraBold;
+}
+#ft-rt {
+  width: 33%;
+}
 .rt-top {
   width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
+
 }
-a{
-  color: black;
-  text-decoration: none;
+.rt-top a {
+  font-family: paraBold;
+  text-transform: uppercase;
+}
+.rt-top p{
+  font-family: paraBold;
+  text-transform: uppercase;
+}
+.rt-top #mail{
+  text-transform: lowercase !important;
+}
+.icon-ft{
+  width: 15px;
+  height: 15px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+.icon-ft img{
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+}
+.text-effect{
+  height: 14px;
+  overflow: hidden;
+  margin-bottom: 3px;
+  width: fit-content;
+  cursor: pointer;
+}
+.text-effect span{
+  display: inline-block;
+}
+.text-effect a{
+  display: block;
 }
 
 /* FOOTER CSS END */

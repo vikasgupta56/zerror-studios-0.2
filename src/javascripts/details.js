@@ -51,6 +51,45 @@ function detailLoader() {
 }
 detailLoader()
 
+function textEffectAnimation() {
+    document.querySelectorAll(".text-effect .effect").forEach(function (element) {
+        var clutter2 = ""
+        element.textContent.split("").forEach(function (letter) {
+            if (letter === " ") {
+                clutter2 += "<span>&nbsp;</span>"
+            } else {
+                clutter2 += `<span>${letter}</span>`
+            }
+        })
+        element.innerHTML = clutter2
+    })
+
+    document.querySelectorAll(".text-effect").forEach(function (elem) {
+        elem.addEventListener("mouseenter", function (e) {
+            gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+            gsap.fromTo(e.currentTarget.children[1].querySelectorAll("span"), {
+                y: "0%",
+            }, {
+                y: "-100%",
+                // duration: .8,
+                stagger: {
+                    amount: .2
+                },
+            })
+        })
+    })
+}
+textEffectAnimation()
+
+
 function serviceAnimation() {
     var isService = false;
     var previousLink = ""
@@ -159,13 +198,5 @@ function footerAnimation() {
     setInterval(updateTime, 60000);
 
 
-    document.querySelector(".rt-btm input").addEventListener("focus", function () {
-        document.querySelector("#input-placeholder").style.display = "none";
-    })
-    document.querySelector(".rt-btm input").addEventListener("blur", function (e) {
-        if (e.target.value == "") {
-            document.querySelector("#input-placeholder").style.display = "block";
-        }
-    })
 }
 footerAnimation()

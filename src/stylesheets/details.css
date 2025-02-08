@@ -58,27 +58,26 @@ body {
   justify-content: end;
 }
 #service-top p {
-  font-family: headingb;
+  font-family: paraBold;
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;
 }
 
-
-#service-offer{
+#service-offer {
   width: 100%;
   height: calc(100vh - 75px);
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 13px;
 }
-#our-service{
+#our-service {
   width: 100%;
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
-#our-service .services{
+#our-service .services {
   height: 100%;
 }
 
@@ -88,13 +87,13 @@ body {
   text-transform: capitalize;
   margin-bottom: 5px;
 }
-.service-title{
+.service-title {
   padding-bottom: 5px;
   /* border-bottom: 1px solid #000; */
   font-size: 14px !important;
 }
 
-.service-title-main{
+.service-title-main {
   font-size: 14px !important;
 }
 
@@ -107,13 +106,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 8px 13px;
   z-index: 2;
 }
-nav p.active {
+#nav-right #studio-btn{
+  opacity: .5;
+}
+nav #studio-btn:hover {
   opacity: 1 !important;
 }
-#logo{
+nav #nav-service.active {
+  opacity: 1 !important;
+}
+#logo {
   font-family: headingb;
   font-weight: 600;
   font-size: 16px;
@@ -129,21 +134,20 @@ nav img {
 #nav-right {
   display: flex;
   align-items: center;
-  font-family: headingb;
+  font-family: paraBold;
   font-size: 14px;
   text-transform: capitalize;
   gap: 20px;
 }
-#nav-right p {
+#nav-right #nav-service {
   cursor: pointer;
   opacity: 0.5;
 }
-#nav-right p:hover {
+#nav-right #nav-service:hover {
   opacity: 1;
 }
 
 /* SERVICE CSS  END */
-
 
 #main {
   position: relative;
@@ -162,7 +166,7 @@ nav img {
   justify-content: end;
   padding: 13px;
 }
-#page1 .title-1{
+#page1 .title-1 {
   height: 10vw;
   overflow: hidden;
 }
@@ -170,9 +174,9 @@ nav img {
   font-size: 10vw;
   font-weight: 100;
   font-family: para;
-  line-height: .7;
+  line-height: 0.7;
 }
-#page1 .title-2{
+#page1 .title-2 {
   height: 7vw;
   overflow: hidden;
   margin-bottom: 6.5vw;
@@ -180,7 +184,7 @@ nav img {
 #page1 h3 {
   font-size: 10vw;
   font-weight: 500;
-  line-height: .5;
+  line-height: 0.5;
   text-align: right;
   font-family: paraItalic;
 }
@@ -288,7 +292,7 @@ nav img {
   flex-wrap: wrap;
   padding-top: 20px;
 }
-#projects-related a{
+#projects-related a {
   text-decoration: none;
   color: black;
 }
@@ -354,22 +358,22 @@ nav img {
 
 footer {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 13px;
   font-family: headingb;
   font-size: 14px;
 }
-#footer-pt1{
+#footer-pt1 {
   width: 18.5%;
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
 }
-.ft-title{
+.ft-title {
   margin-bottom: 5px;
   font-family: paraBold;
   text-transform: uppercase;
 }
-#footer-pt2{
+#footer-pt2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -379,7 +383,7 @@ footer {
   width: fit-content;
   height: 100%;
 }
-#ft-lf p{
+#ft-lf p {
   text-transform: uppercase;
   font-family: paraBold;
 }
@@ -391,59 +395,60 @@ footer {
   display: flex;
   align-items: end;
   justify-content: space-between;
-
 }
 .rt-top a {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top p{
+.rt-top p {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top #mail{
+.rt-top #mail {
   text-transform: lowercase !important;
 }
-.icon-ft{
+.icon-ft {
   width: 15px;
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
 }
-.icon-ft img{
+.icon-ft:hover img{
+  transform: translateY(-105%);
+}
+.icon-ft img {
   width: 100%;
   height: 100%;
   filter: invert(1);
+  transition: all ease .3s;
 }
-.text-effect{
+.text-effect {
   height: 14px;
   overflow: hidden;
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
 }
-.text-effect span{
+.text-effect span {
   display: inline-block;
 }
-.text-effect a{
+.text-effect a {
   display: block;
 }
 
 /* FOOTER CSS END */
 
-
-
 /* STRIP ANIMATION */
 
-.black-strip{
+.black-strip {
   position: relative;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
   z-index: 2;
   cursor: pointer;
   width: fit-content;
   margin-bottom: 2px;
 }
-.black-strip::before{
+.black-strip::before {
   content: "";
   position: absolute;
   top: 0;
@@ -452,17 +457,17 @@ footer {
   height: 100%;
   background-color: black;
   z-index: -1;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
-.black-strip:hover::before{
+.black-strip:hover::before {
   width: 100%;
 }
-.black-strip:hover{
+.black-strip:hover {
   color: white !important;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }

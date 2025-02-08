@@ -60,27 +60,26 @@ body {
   justify-content: end;
 }
 #service-top p {
-  font-family: headingb;
+  font-family: paraBold;
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;
 }
 
-
-#service-offer{
+#service-offer {
   width: 100%;
   height: calc(100vh - 75px);
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 13px;
 }
-#our-service{
+#our-service {
   width: 100%;
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
-#our-service .services{
+#our-service .services {
   height: 100%;
 }
 
@@ -90,13 +89,13 @@ body {
   text-transform: capitalize;
   margin-bottom: 5px;
 }
-.service-title{
+.service-title {
   padding-bottom: 5px;
   /* border-bottom: 1px solid #000; */
   font-size: 14px !important;
 }
 
-.service-title-main{
+.service-title-main {
   font-size: 14px !important;
 }
 
@@ -109,13 +108,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 8px 13px;
   z-index: 2;
 }
-nav p.active {
+#nav-right #studio-btn .effect {
+  opacity: 0.5;
+}
+nav #studio-btn.active .effect {
   opacity: 1 !important;
 }
-#logo{
+nav #nav-service.active {
+  opacity: 1 !important;
+}
+#logo {
   font-family: headingb;
   font-weight: 600;
   font-size: 16px;
@@ -136,11 +141,11 @@ nav img {
   text-transform: capitalize;
   gap: 20px;
 }
-#nav-right p {
+#nav-right #nav-service {
   cursor: pointer;
   opacity: 0.5;
 }
-#nav-right p:hover {
+#nav-right #nav-service:hover {
   opacity: 1;
 }
 
@@ -152,8 +157,83 @@ nav img {
   background-color: white;
 }
 
-/* STUDIO PAGE1 START */
+/* SECTION1 CSS START */
 
+#section1-studio {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 180px;
+  padding-bottom: 90px;
+  position: relative;
+}
+#section1-studio  h2{
+  font-family: para;
+  letter-spacing: 2px;
+}
+
+.banner-studio{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(43% 35%, 57% 35%, 57% 80%, 43% 80%)
+}
+.banner-studio img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 120%;
+}
+/* SECTION1 CSS END */
+
+/* SECTION2 CSS START */
+
+#section2-about-studio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 0;
+}
+
+.about-header-text{
+  margin-bottom: 80px;
+}
+#section2-about-studio h3{
+  font-size:4vw;
+  text-align: center;
+  font-family: para;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+#section2-about-studio p{
+  font-family: headingb;
+  font-size: 17px;
+  line-height: 1.3;
+  width: 35%;
+  margin-bottom: 40px;
+}
+
+#section2-about-studio h5{
+  font-size:27px;
+  text-align: center;
+  font-family: para;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  width: 48%;
+  margin-top: 40px;
+}
+
+/* SECTION2 CSS END */
+
+/* STUDIO PAGE1 START */
+/* 
 #studio-1 {
   width: 100%;
   height: 100vh;
@@ -162,7 +242,7 @@ nav img {
   flex-direction: column;
   align-items: end;
   justify-content: center;
-  padding: 12px;
+  padding: 13px;
   color: black;
   padding-top: 10vw;
 }
@@ -179,7 +259,7 @@ nav img {
   font-size: 7vw;
   font-family: para;
   font-weight: 500;
-  line-height:1;
+  line-height: 1;
   color: black;
   white-space: nowrap;
 }
@@ -197,11 +277,12 @@ nav img {
   position: relative;
   width: 60%;
 }
-#studio-para2{
+#studio-para2 {
   position: absolute;
   top: 100%;
 }
-#studio-para3,#studio-para4{
+#studio-para3,
+#studio-para4 {
   position: absolute;
   top: 100%;
   opacity: 0;
@@ -219,52 +300,51 @@ nav img {
   height: 20vh;
 }
 
-#text-container p{
+#text-container p {
   column-count: 2;
   width: 50%;
-}
-
+} */
 
 /* STUDIO PAGE1 END */
 
 /* STUDIO BRNAD START */
 
-#studio-brand{
+#studio-brand {
   width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: start;
   justify-content: space-between;
-  padding:0 12px;
+  padding: 0 13px;
   margin: 30px 0;
 }
-#brand-showcase{
+#brand-showcase {
   width: 50%;
-  height:100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.showcase-img{
+.showcase-img {
   width: 380px;
   height: 60%;
   overflow: hidden;
 }
-.showcase-img img{
+.showcase-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
   user-select: none;
 }
-#brand-listing{
+#brand-listing {
   width: 50%;
   padding-top: 60px;
   padding-bottom: 80px;
   position: relative;
 }
-#brand-logo{
+#brand-logo {
   position: absolute;
   width: 150px;
   height: 90px;
@@ -276,11 +356,11 @@ nav img {
   transform: translateY(-50%);
   opacity: 0;
 }
-#brand-logo img{
+#brand-logo img {
   width: 80%;
   filter: grayscale(100%) brightness(0) contrast(100%);
 }
-#brand-listing h4{
+#brand-listing h4 {
   text-transform: uppercase;
   font-family: paraBold;
   font-size: 14px;
@@ -289,22 +369,22 @@ nav img {
   margin-bottom: 15px;
 }
 
-#brand-listing .client{
+#brand-listing .client {
   display: flex;
   width: 100%;
   gap: 30px;
   font-family: headingb;
   font-size: 20px;
-  text-transform: capitalize;  
-  padding-bottom: 12px;
-  opacity: .5;
-  transition: opacity ease .3s;
+  text-transform: capitalize;
+  padding-bottom: 13px;
+  opacity: 0.5;
+  transition: opacity ease 0.3s;
   cursor: default;
 }
-#brand-listing .client:hover{
+#brand-listing .client:hover {
   opacity: 1;
 }
-.brand-count{
+.brand-count {
   width: 20px;
 }
 /* STUDIO BRNAD END */
@@ -313,13 +393,13 @@ nav img {
 
 #studio-2 {
   width: 100%;
-  min-height: 200vh;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  padding: 13px;
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 52vh;
+  padding-top: 54px;
+  padding-bottom:37px;
 }
 #studio-team {
   width: 72%;
@@ -327,11 +407,11 @@ nav img {
 #team-members {
   width: 100%;
   display: flex;
-  gap: 12px;
+  gap: 13px;
   flex-wrap: wrap;
 }
 .member {
-  width: calc((100% / 3) - 12px);
+  width: calc((100% / 3) - 13px);
 }
 .member img {
   width: 100%;
@@ -371,32 +451,56 @@ nav img {
 
 footer {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 13px;
   font-family: headingb;
   font-size: 14px;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
 }
-#footer-pt1{
+#footer-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-layer {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.399);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+#footer-pt1 {
   width: 18.5%;
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
 }
-.ft-title{
+.ft-title {
   margin-bottom: 5px;
   font-family: paraBold;
   text-transform: uppercase;
 }
-#footer-pt2{
+#footer-pt2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: end;
+  position: relative;
+  z-index: 2;
 }
 #ft-lf {
   width: fit-content;
-  height: 100%;
 }
-#ft-lf p{
+#ft-lf p {
   text-transform: uppercase;
   font-family: paraBold;
 }
@@ -408,59 +512,65 @@ footer {
   display: flex;
   align-items: end;
   justify-content: space-between;
-
 }
 .rt-top a {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top p{
+.rt-top p {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top #mail{
+.rt-top #mail {
   text-transform: lowercase !important;
 }
-.icon-ft{
+.icon-ft {
   width: 15px;
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
 }
-.icon-ft img{
+.icon-ft:hover img {
+  transform: translateY(-105%);
+}
+.icon-ft img {
   width: 100%;
   height: 100%;
   filter: invert(1);
+  transition: all ease 0.3s;
 }
-.text-effect{
+.text-effect {
   height: 14px;
   overflow: hidden;
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
+  font-family: paraBold !important;
 }
-.text-effect span{
+.Instagram{
+  height: 18px;
+}
+.text-effect span {
   display: inline-block;
 }
-.text-effect a{
+.text-effect a {
   display: block;
+  font-family: paraBold !important;
 }
 
 /* FOOTER CSS END */
 
-
-
 /* STRIP ANIMATION */
 
-.black-strip{
+.black-strip {
   position: relative;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
   z-index: 2;
   cursor: pointer;
   width: fit-content;
   margin-bottom: 2px;
 }
-.black-strip::before{
+.black-strip::before {
   content: "";
   position: absolute;
   top: 0;
@@ -469,17 +579,17 @@ footer {
   height: 100%;
   background-color: black;
   z-index: -1;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
-.black-strip:hover::before{
+.black-strip:hover::before {
   width: 100%;
 }
-.black-strip:hover{
+.black-strip:hover {
   color: white !important;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
   display: inline-block;

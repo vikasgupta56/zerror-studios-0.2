@@ -58,7 +58,7 @@ body {
   justify-content: end;
 }
 #service-top p {
-  font-family: headingb;
+  font-family: paraBold;
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;
@@ -70,7 +70,7 @@ body {
   height: calc(100vh - 75px);
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 13px;
 }
 #our-service{
   width: 100%;
@@ -107,10 +107,16 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 8px 13px;
   z-index: 2;
 }
-nav p.active {
+#nav-right #studio-btn{
+  opacity: .5;
+}
+nav #studio-btn:hover {
+  opacity: 1 !important;
+}
+nav #nav-service.active {
   opacity: 1 !important;
 }
 #logo{
@@ -118,7 +124,6 @@ nav p.active {
   font-weight: 600;
   font-size: 16px;
 }
-
 nav a {
   text-decoration: none;
   color: black;
@@ -130,16 +135,16 @@ nav img {
 #nav-right {
   display: flex;
   align-items: center;
-  font-family: headingb;
+  font-family: paraBold;
   font-size: 14px;
   text-transform: capitalize;
   gap: 20px;
 }
-#nav-right p {
+#nav-right #nav-service {
   cursor: pointer;
   opacity: 0.5;
 }
-#nav-right p:hover {
+#nav-right #nav-service:hover {
   opacity: 1;
 }
 
@@ -189,7 +194,7 @@ nav img {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 12px;
+  padding: 13px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -220,6 +225,7 @@ nav img {
   width: 100%;
   min-height: 50vh;
   padding: 0 13px;
+  margin-bottom: calc(10vw - 40px);
 }
 
 #flip-filter-container{
@@ -400,7 +406,7 @@ nav img {
 
 footer {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 13px;
   font-family: headingb;
   font-size: 14px;
 }
@@ -456,10 +462,14 @@ footer {
   margin: 15px 0;
   overflow: hidden;
 }
+.icon-ft:hover img{
+  transform: translateY(-105%);
+}
 .icon-ft img{
   width: 100%;
   height: 100%;
   filter: invert(1);
+  transition: all ease .3s;
 }
 .text-effect{
   height: 14px;

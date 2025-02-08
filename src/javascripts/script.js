@@ -294,23 +294,17 @@ function serviceAnimation() {
     var isService = false;
     var previousLink = ""
 
-    document.querySelector("#nav-service").addEventListener("click", function () {
-        document.querySelectorAll("nav p").forEach(function (link) {
-            if (link.classList.contains("active")) {
-                previousLink = link.textContent.toLowerCase()
-            }
-        })
+    document.querySelector("#nav-service").addEventListener("click", function (e) {
+        this.classList.add("active");
+        // document.querySelector("#studio-btn").classList.remove("active");
         isService = !isService;
         openService()
     })
     document.querySelector("#closeService").addEventListener("click", function () {
         isService = !isService;
         openService()
-        document.querySelectorAll("nav p").forEach(function (link) {
-            if (link.textContent.toLowerCase() === previousLink) {
-                link.classList.add("active")
-            }
-        })
+        this.classList.remove("active");
+        // document.querySelector("#studio-btn").classList.add("active");
     })
 
     function openService() {

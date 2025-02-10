@@ -1,35 +1,28 @@
-function loco() {
-    gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(TextPlugin);
 
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+// Initialize Lenis
+function smoothScroll() {
 
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector("#main"),
-        smooth: true
+    const lenis = new Lenis({
+        duration: 2,
+        smooth: true,
+        autoRaf: true,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
     });
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-    locoScroll.on("scroll", ScrollTrigger.update);
+    window.scrollTo(0, 0);
+    lenis.scrollTo(0);
 
-    // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
-    ScrollTrigger.scrollerProxy("#main", {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-        getBoundingClientRect() {
-            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-        pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-    });
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
 
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-    ScrollTrigger.refresh();
-
+    requestAnimationFrame(raf);
 }
-loco()
+smoothScroll()
+
+
 
 function detailLoader() {
     var loader = gsap.timeline()
@@ -89,6 +82,57 @@ function textEffectAnimation() {
 }
 textEffectAnimation()
 
+function serviceListingAnimation(){
+    const serviceDets = [
+        "Conducting workshops to define your target audience, services, and brand differentiators",
+        "Defining your brand’s mission, vision, and market positioning.",
+        "Creating brand voice, style guides, and communication strategies",
+        "Designing logos, color schemes, typography, icons, and grids to represent your brand.",
+        "Developing impactful designs for both print and digital media.",
+        "Defining your messaging to effectively connect with users.",
+        "Crafting user-centric designs for seamless navigation and interaction.",
+        "Designing visually appealing and functional websites.",
+        "Writing compelling content that aligns with your brand voice.",
+        "Integrating visuals that tell your brand’s story and enhance user experience.",
+        "Building responsive, fast, and beautiful websites.",
+        "Adding dynamic and smooth animations for a modern web experience.",
+        "Customizing content management systems for easy updates and control.",
+        "Ensuring robust, scalable functionality to support your website’s performance.",
+        "Designing intuitive user experiences based on market research and analytics.",
+        "Building visually engaging, user-friendly interfaces for seamless shopping.",
+        "Ensuring a smooth, fast, and responsive shopping experience.",
+        "Customizing Shopify to meet your unique eCommerce needs.",
+        "Scalable and reliable hosting to support your growing business.",
+        "Implementing best-in-class security protocols to protect your data and customers.",
+        "Providing ongoing maintenance and technical support to ensure your store remains efficient.",
+        "Developing content management systems tailored to your specific requirements.",
+        "Tailored solutions for digital content creation and publishing.",
+        "Building engaging platforms to share your brand’s message with the world.",
+        "Creating unique digital marketplaces for diverse industries."
+    ]
+    
+    document.querySelectorAll(".service-wrap .text-effect").forEach(function(textEffect) {
+        textEffect.addEventListener("mouseenter",function(e){
+            const text = serviceDets[e.target.dataset.index]
+    
+            gsap.to(document.querySelector("#about-service-text"),{
+                text:text,
+                duration: 1,
+                ease: "power3.out",
+                overwrite: "auto"
+            })
+        })
+        textEffect.addEventListener("mouseleave",function(){
+            gsap.to(document.querySelector("#about-service-text"),{
+                text:"",
+                duration: 1,
+                ease: "power3.out",
+                overwrite: "auto"
+            })
+        })
+    })
+}
+serviceListingAnimation()
 
 function serviceAnimation() {
     var isService = false;
@@ -113,12 +157,12 @@ function serviceAnimation() {
             gsap.to("#main", {
                 top: "calc(100% - 40px)",
                 ease: "power3.out",
-                duration: .8
+                duration: 1.2
             })
             gsap.to("#service-page", {
                 top: "-40px",
                 ease: "power3.out",
-                duration: .8
+                duration: 1.2
             })
         } else {
             document.querySelector("#nav-service").classList.remove("active")
@@ -126,12 +170,12 @@ function serviceAnimation() {
             gsap.to("#main", {
                 top: "0%",
                 ease: "power3.out",
-                duration: .8
+                duration: 1.2
             })
             gsap.to("#service-page", {
                 top: "-100%",
                 ease: "power3.out",
-                duration: .8
+                duration: 1.2
             })
         }
     }
@@ -146,7 +190,7 @@ document.querySelectorAll(".banner-poster").forEach(function (poster) {
         duration: .8,
         scrollTrigger: {
             trigger: poster,
-            scroller: "#main",
+            scroller: "body",
             start: "top 90%",
             end: "top 70%",
         }

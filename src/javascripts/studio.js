@@ -661,7 +661,11 @@ function memberAnimation() {
 
 
 }
-memberAnimation()
+
+if(window.innerWidth > 575){
+    memberAnimation()
+}
+
 
 function footerAnimation() {
 

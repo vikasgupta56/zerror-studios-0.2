@@ -641,7 +641,12 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        filterList.style.height = "150px";
+        if(window.innerWidth > 575){
+            filterList.style.height = "150px";
+        }
+        else{
+            filterList.style.height = "500px";
+        }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 
@@ -669,7 +674,12 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        filterList.style.height = "150px";
+        if(window.innerWidth > 575){
+            filterList.style.height = "150px";
+        }
+        else{
+            filterList.style.height = "500px";
+        }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 
@@ -698,7 +708,12 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        filterList.style.height = "150px";
+        if(window.innerWidth > 575){
+            filterList.style.height = "150px";
+        }
+        else{
+            filterList.style.height = "500px";
+        }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 

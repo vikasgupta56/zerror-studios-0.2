@@ -183,8 +183,6 @@ function serviceAnimation() {
 serviceAnimation()
 
 document.querySelectorAll(".banner-poster").forEach(function (poster) {
-    console.log(poster);
-
     gsap.to(poster, {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: .8,

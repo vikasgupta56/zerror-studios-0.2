@@ -18,14 +18,14 @@
   font-family: paraBold;
   src: url(/fonts/66601c7c6b0d48cf88bbe09a_PPNeueMontreal-SemiBold.woff2);
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none !important;
 }
-.c-scrollbar_thumb{
+.c-scrollbar_thumb {
   display: none !important;
 }
-::selection{
-  background-color: #F5E31A;
+::selection {
+  background-color: #f5e31a;
 }
 * {
   margin: 0;
@@ -50,7 +50,7 @@ body {
   z-index: 9;
   padding-top: 40px;
 }
-#about-service-text{
+#about-service-text {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -86,7 +86,7 @@ body {
   align-items: start;
   gap: 150px;
 }
-.service-wrap{
+.service-wrap {
   width: 80%;
   display: flex;
   align-self: start;
@@ -113,14 +113,13 @@ body {
   font-family: paraBold !important;
 }
 
-#our-service .services .text-effect{
+#our-service .services .text-effect {
   margin-bottom: 12px;
   height: 16px;
 }
-#our-service .services .text-effect .effect{
+#our-service .services .text-effect .effect {
   font-size: 14px;
 }
-
 
 nav {
   position: absolute;
@@ -174,15 +173,16 @@ nav img {
 
 /* SERVICE CSS  END */
 
-#main{
+#main {
   position: relative;
   width: 100%;
   background-color: #fff;
+  overflow: hidden;
 }
 
 /* PAGE1 CSS START */
 
-#page1{
+#page1 {
   position: relative;
   width: 100%;
   height: 55vh;
@@ -190,30 +190,30 @@ nav img {
   align-items: center;
   justify-content: center;
 }
-.header-text{
+.header-text {
   position: absolute;
   bottom: 45%;
 }
 
-.header-text h2{
-  font-size:3vw;
+.header-text h2 {
+  font-size: 3vw;
   text-align: center;
   font-family: paraItalic;
-  line-height: .9;
+  line-height: 0.9;
 }
-.header-text h2 span{
+.header-text h2 span {
   display: inline-block;
-  margin-right:10px;
+  margin-right: 10px;
 }
-.header-text h2 .lower{
+.header-text h2 .lower {
   font-family: paraItalic;
   font-weight: 500;
 }
-.header-text h2 .upper{
+.header-text h2 .upper {
   font-family: para;
   font-weight: 500;
 }
-#filter-container{
+#filter-container {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -223,7 +223,7 @@ nav img {
   align-items: center;
   gap: 5px;
 }
-#filter-container p{
+#filter-container p {
   color: rgba(0, 0, 0, 0.589);
   font-family: headingb;
   font-size: 14px;
@@ -231,28 +231,28 @@ nav img {
   padding: 4px 13px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all ease .1s;
+  transition: all ease 0.1s;
 }
-#filter-container .active{
-  background-color: #F5F5F5;
+#filter-container .active {
+  background-color: #f5f5f5;
   color: #000;
 }
-#filter-container p:hover{
-  background-color: #F5F5F5;
+#filter-container p:hover {
+  background-color: #f5f5f5;
 }
 
 /* PAGE1 CSS END */
 
 /* PAGE2 CSS START */
 
-#page2{
+#page2 {
   width: 100%;
   min-height: 50vh;
   padding: 0 13px;
   margin-bottom: calc(10vw - 40px);
 }
 
-#flip-filter-container{
+#flip-filter-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -263,34 +263,34 @@ nav img {
   padding: 0;
   opacity: 0;
   border-top: 1px solid rgba(128, 128, 128, 0.336);
-  transition: all ease .6s;
+  transition: all ease 0.6s;
 }
-.options-fl-main{
-  width: calc(100%/4);
+.options-fl-main {
+  width: calc(100% / 4);
 }
-.options-fl{
+.options-fl {
   width: fit-content;
   display: flex;
   align-items: start;
 }
-#flip-filter-container p{
+#flip-filter-container p {
   font-family: para;
   text-transform: capitalize;
   font-size: 25px;
-  line-height: .8;
+  line-height: 0.8;
   margin-bottom: 10px;
   font-weight: 500;
   cursor: pointer;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
-#flip-filter-container .options-fl:hover p{ 
+#flip-filter-container .options-fl:hover p {
   font-family: paraItalic;
 }
-#page2 .project{
+#page2 .project {
   text-decoration: none;
   color: black;
 }
-.projects-container{
+.projects-container {
   width: 100%;
   display: flex;
   align-items: start;
@@ -298,22 +298,23 @@ nav img {
   flex-wrap: wrap;
 }
 
-#all-project,#filter-project{
+#all-project,
+#filter-project {
   display: none;
   opacity: 0;
 }
 
-.empty-space{
+.empty-space {
   opacity: 0;
 }
-.project-small .showcase{
+.project-small .showcase {
   width: 100%;
   height: 415px;
   background-color: rgba(128, 128, 128, 0.112);
   margin-bottom: 8px;
   position: relative;
 }
-.showcase-over{
+.showcase-over {
   position: absolute;
   top: 0;
   left: 0;
@@ -321,50 +322,51 @@ nav img {
   width: 100%;
 }
 
-.showcase-over video,.showcase-over img{
+.showcase-over video,
+.showcase-over img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: all ease .4s;
+  transition: all ease 0.4s;
 }
-.project.active .showcase-over video{
+.project.active .showcase-over video {
   opacity: 1;
 }
-.project.active .showcase-over img{
+.project.active .showcase-over img {
   opacity: 1;
 }
 
-.showcase img{
+.showcase img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-small{
+.project-small {
   flex-shrink: 0;
   width: 24.5%;
   margin-bottom: 40px;
 }
-.project-small h3{
+.project-small h3 {
   font-size: 28px;
   font-weight: 500;
-  line-height: .8;
+  line-height: 0.8;
   font-family: para;
   text-transform: uppercase;
 }
-.project-small h4{
+.project-small h4 {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
   font-family: paraItalic;
   text-transform: capitalize;
 }
-.project-large{
+.project-large {
   width: 49.5%;
   flex-shrink: 0;
   margin-bottom: 40px;
 }
-.project-large .showcase{
+.project-large .showcase {
   width: 100%;
   height: 120vh;
   background-color: rgba(128, 128, 128, 0.112);
@@ -372,17 +374,17 @@ nav img {
   position: relative;
 }
 
-.project-large h3{
+.project-large h3 {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
   font-family: para;
   text-transform: uppercase;
 }
-.project-large h4{
+.project-large h4 {
   font-size: 28px;
   font-weight: 500;
-  line-height: .8;
+  line-height: 0.8;
   font-family: paraItalic;
   text-transform: capitalize;
 }
@@ -391,8 +393,8 @@ nav img {
 
 /* PAGE3 CSS START */
 
-#page3{
-  height:100vh;
+#page3 {
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -401,30 +403,26 @@ nav img {
   position: relative;
 }
 
-
-#page3 h2{
-  font-size:3.5vw;
+#page3 h2 {
+  font-size: 3.5vw;
   text-align: center;
   font-family: paraItalic;
-  line-height: .7;
+  line-height: 0.7;
 }
-#page3 h2 span{
+#page3 h2 span {
   display: inline-block;
-  margin-right:10px;
+  margin-right: 10px;
 }
-#page3 h2 .lower{
+#page3 h2 .lower {
   font-family: paraItalic;
   font-weight: 500;
 }
-#page3 h2 .upper{
+#page3 h2 .upper {
   font-family: para;
   font-weight: 500;
 }
 
-
 /* PAGE3 CSS END */
-
-
 
 /* FOOTER CSS START */
 
@@ -434,18 +432,19 @@ footer {
   font-family: headingb;
   font-size: 14px;
 }
-#footer-pt1{
+#footer-pt1 {
   width: 18.5%;
   display: flex;
   flex-direction: column;
   margin-bottom: 35px;
+  gap: 20px;
 }
-.ft-title{
+.ft-title {
   margin-bottom: 5px;
   font-family: paraBold;
   text-transform: uppercase;
 }
-#footer-pt2{
+#footer-pt2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -455,7 +454,7 @@ footer {
   width: fit-content;
   height: 100%;
 }
-#ft-lf p{
+#ft-lf p {
   text-transform: uppercase;
   font-family: paraBold;
 }
@@ -467,82 +466,82 @@ footer {
   display: flex;
   align-items: end;
   justify-content: space-between;
-
 }
 .rt-top a {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top p{
+.rt-top p {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top #mail{
+.rt-top #mail {
   text-transform: lowercase !important;
 }
-.footer-mail{
+.footer-mail {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 5px;
 }
-.icon-ft{
+.icon-ft {
   width: 15px;
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
 }
-.icon-ft:hover img{
+.icon-ft:hover img {
   transform: translateY(-105%);
 }
-.footer-mail:hover i{
+.footer-mail:hover i {
   transform: translateY(-105%);
 }
 
-
-.icon-ft img{
+.icon-ft img {
   width: 100%;
   height: 100%;
   filter: invert(1);
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
-.mail-icon{
+.mail-icon {
   margin: 0;
 }
-.mail-icon i{
+.mail-icon i {
   width: 100%;
   height: 100%;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
   display: inline-block;
 }
-.text-effect{
+.text-effect {
   height: 14px;
   overflow: hidden;
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
 }
-.text-effect span{
+.text-effect span {
   display: inline-block;
 }
-.text-effect a{
+.text-effect a {
   display: block;
+}
+
+footer >p{
+  display: none;
 }
 
 /* FOOTER CSS END */
 
-
-
 /* STRIP ANIMATION */
 
-.black-strip{
+.black-strip {
   position: relative;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
   z-index: 2;
   cursor: pointer;
   width: fit-content;
   margin-bottom: 2px;
 }
-.black-strip::before{
+.black-strip::before {
   content: "";
   position: absolute;
   top: 0;
@@ -551,17 +550,145 @@ footer {
   height: 100%;
   background-color: black;
   z-index: -1;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
-.black-strip:hover::before{
+.black-strip:hover::before {
   width: 100%;
 }
-.black-strip:hover{
+.black-strip:hover {
   color: white !important;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 575px) {
+  #service-page {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: #f5e31a;
+    height: 100svh;
+    width: 100%;
+    z-index: 9;
+    padding-top: 40px;
+  }
+  .header-text {
+    bottom: 32%;
+  }
+  #filter-container {
+    padding: 13px;
+    gap: 5px;
+    overflow-x: auto;
+  }
+  #filter-container p {
+    font-size: 16px;
+    padding: 8px 13px;
+    display: flex;
+    align-items: center;
+  }
+  .name-tag {
+    display: flex;
+    align-items: center;
+  }
+  .name-space {
+    height: fit-content;
+    display: flex;
+    white-space: nowrap;
+  }
+  .options-fl-main {
+    width: 100%;
+  }
+  .projects-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .project-small {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .project-large {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 415px;
+    margin-bottom: 8px;
+  }
+  .empty-space {
+    display: none;
+  }
+  .header-text h2 {
+    font-size: 8vw;
+    line-height: 1.1;
+  }
+  #page2 {
+    padding-bottom: 60px;
+  }
+
+  #footer-pt1 {
+    width: 95%;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  #ft-lf {
+    display: none;
+  }
+  #ft-rt {
+    width: 100%;
+  }
+  .rt-top {
+    justify-content: start;
+    gap: 45px;
+  }
+  .text-effect {
+    height: 17px;
+    margin-bottom: 6px;
+  }
+  .icon-ft {
+    width: 16px;
+    height: 16px;
+  }
+  footer {
+    font-size: 16px;
+  }
+  footer >p{
+    font-size: 14px;
+    display: block;
+  }
+  #mail {
+    display: none;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Styles for tablets */
+}
+
+/* Medium Devices (Small Laptops) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for small laptops */
+}
+
+/* Large Devices (Laptops and Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Styles for laptops */
+}
+
+/* Extra Large Devices (Wide Desktops) */
+@media (min-width: 1200px) {
+  /* Styles for wide desktops */
 }

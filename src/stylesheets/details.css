@@ -50,7 +50,7 @@ body {
   z-index: 9;
   padding-top: 40px;
 }
-#about-service-text{
+#about-service-text {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -86,7 +86,7 @@ body {
   align-items: start;
   gap: 150px;
 }
-.service-wrap{
+.service-wrap {
   width: 80%;
   display: flex;
   align-self: start;
@@ -113,14 +113,13 @@ body {
   font-family: paraBold !important;
 }
 
-#our-service .services .text-effect{
+#our-service .services .text-effect {
   margin-bottom: 12px;
   height: 16px;
 }
-#our-service .services .text-effect .effect{
+#our-service .services .text-effect .effect {
   font-size: 14px;
 }
-
 
 nav {
   position: absolute;
@@ -379,7 +378,6 @@ nav img {
 
 /* PAGE4 CSS END */
 
-
 /* FOOTER CSS START */
 
 footer {
@@ -388,18 +386,20 @@ footer {
   font-family: headingb;
   font-size: 14px;
 }
-#footer-pt1{
+#footer-pt1 {
   width: 18.5%;
   display: flex;
   flex-direction: column;
   margin-bottom: 35px;
+  gap: 20px;
+
 }
-.ft-title{
+.ft-title {
   margin-bottom: 5px;
   font-family: paraBold;
   text-transform: uppercase;
 }
-#footer-pt2{
+#footer-pt2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -409,7 +409,7 @@ footer {
   width: fit-content;
   height: 100%;
 }
-#ft-lf p{
+#ft-lf p {
   text-transform: uppercase;
   font-family: paraBold;
 }
@@ -421,69 +421,70 @@ footer {
   display: flex;
   align-items: end;
   justify-content: space-between;
-
 }
 .rt-top a {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top p{
+.rt-top p {
   font-family: paraBold;
   text-transform: uppercase;
 }
-.rt-top #mail{
+.rt-top #mail {
   text-transform: lowercase !important;
 }
-.footer-mail{
+.footer-mail {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 5px;
 }
-.icon-ft{
+.icon-ft {
   width: 15px;
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
 }
-.icon-ft:hover img{
+.icon-ft:hover img {
   transform: translateY(-105%);
 }
-.footer-mail:hover i{
+.footer-mail:hover i {
   transform: translateY(-105%);
 }
 
-
-.icon-ft img{
+.icon-ft img {
   width: 100%;
   height: 100%;
   filter: invert(1);
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
-.mail-icon{
+.mail-icon {
   margin: 0;
 }
-.mail-icon i{
+.mail-icon i {
   width: 100%;
   height: 100%;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
   display: inline-block;
 }
-.text-effect{
+.text-effect {
   height: 14px;
   overflow: hidden;
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
 }
-.text-effect span{
+.text-effect span {
   display: inline-block;
 }
-.text-effect a{
+.text-effect a {
   display: block;
 }
 
-/* FOOTER CSS END */
+footer > p{
+  display: none;
+}
 
+/* FOOTER CSS END */
 
 /* STRIP ANIMATION */
 
@@ -517,4 +518,142 @@ footer {
 a {
   text-decoration: none;
   color: black;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 575px) {
+  #service-page {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: #f5e31a;
+    height: 100svh;
+    width: 100%;
+    z-index: 9;
+    padding-top: 40px;
+  }
+  #page1 {
+    height: 60vh;
+    padding: 13px;
+    padding-bottom: 20px;
+  }
+  #page1 h2 {
+    font-size: 15vw;
+  }
+  #page1 .title-1 {
+    height: 15.5vw;
+  }
+  #page1 .title-2 {
+    height: 15vw;
+    margin-bottom: 6.5vw;
+  }
+  #page1 h3 {
+    font-size: 15.5vw;
+  }
+  .details-project {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .details-project .left {
+    width: 100%;
+  }
+  .details-project .left p {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: headingm;
+    width: 80%;
+  }
+  .details-project .right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .details-project .right p {
+    font-size: 14px;
+    width: 50%;
+  }
+  #page3 .banner {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #projects-related {
+    width: 100%;
+    padding-top: 20px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    gap: 13px;
+  }
+  #projects-related .project-small {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+  #related-project h2 {
+    font-size: 7.5vw;
+  }
+  #related-project h3 {
+    font-size: 4.5vw;
+  }
+  
+  #footer-pt1 {
+    width: 95%;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  #ft-lf {
+    display: none;
+  }
+  #ft-rt {
+    width: 100%;
+  }
+  .rt-top {
+    justify-content: start;
+    gap: 45px;
+  }
+  .text-effect {
+    height: 17px;
+    margin-bottom: 6px;
+  }
+  .icon-ft {
+    width: 16px;
+    height: 16px;
+  }
+  footer {
+    font-size: 16px;
+  }
+  footer >p{
+    font-size: 14px;
+    display: block;
+  }
+  #mail {
+    display: none;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Styles for tablets */
+}
+
+/* Medium Devices (Small Laptops) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles for small laptops */
+}
+
+/* Large Devices (Laptops and Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Styles for laptops */
+}
+
+/* Extra Large Devices (Wide Desktops) */
+@media (min-width: 1200px) {
+  /* Styles for wide desktops */
 }

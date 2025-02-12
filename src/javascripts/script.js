@@ -347,7 +347,10 @@ function serviceAnimation() {
             gsap.to("#service-page", {
                 top: "-40px",
                 ease: "power3.out",
-                duration: 1.2
+                duration: 1.2,
+                onComplete:()=>{
+                    gsap.set("body",{overflow: "hidden"})
+                }
             })
         } else {
             document.querySelector("#nav-service").classList.remove("active")
@@ -360,7 +363,10 @@ function serviceAnimation() {
             gsap.to("#service-page", {
                 top: "-100%",
                 ease: "power3.out",
-                duration: 1.2
+                duration: 1.2,
+                onComplete:()=>{
+                    gsap.set("body",{overflow: "auto"})
+                }
             })
         }
     }
@@ -641,11 +647,16 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        if(window.innerWidth > 575){
-            filterList.style.height = "150px";
-        }
-        else{
+        if (window.innerWidth < 575) {
             filterList.style.height = "500px";
+        } else if (window.innerHeight < 1199) {
+            filterList.style.height = "170px";
+        } else if (window.innerHeight < 991) {
+            filterList.style.height = "180px";
+        } else if (window.innerHeight < 767) {
+            filterList.style.height = "220px";
+        } else {
+            filterList.style.height = "150px";
         }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
@@ -674,11 +685,16 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        if(window.innerWidth > 575){
-            filterList.style.height = "150px";
-        }
-        else{
+        if (window.innerWidth < 575) {
             filterList.style.height = "500px";
+        } else if (window.innerHeight < 1199) {
+            filterList.style.height = "170px";
+        } else if (window.innerHeight < 991) {
+            filterList.style.height = "180px";
+        } else if (window.innerHeight < 767) {
+            filterList.style.height = "220px";
+        } else {
+            filterList.style.height = "150px";
         }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
@@ -708,11 +724,16 @@ function filterListing() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        if(window.innerWidth > 575){
-            filterList.style.height = "150px";
-        }
-        else{
+        if (window.innerWidth < 575) {
             filterList.style.height = "500px";
+        } else if (window.innerHeight < 1199) {
+            filterList.style.height = "170px";
+        } else if (window.innerHeight < 991) {
+            filterList.style.height = "180px";
+        } else if (window.innerHeight < 767) {
+            filterList.style.height = "220px";
+        } else {
+            filterList.style.height = "150px";
         }
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";

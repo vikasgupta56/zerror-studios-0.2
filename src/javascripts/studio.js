@@ -292,7 +292,7 @@ function serviceAnimation() {
 
     document.querySelector("#nav-service").addEventListener("click", function (e) {
         this.classList.add("active");
-        document.querySelector("#studio-btn").classList.remove("active");
+        // document.querySelector("#studio-btn").classList.remove("active");
         isService = !isService;
         openService()
     })
@@ -300,7 +300,7 @@ function serviceAnimation() {
         isService = !isService;
         openService()
         this.classList.remove("active");
-        document.querySelector("#studio-btn").classList.add("active");
+        // document.querySelector("#studio-btn").classList.add("active");
     })
 
     function openService() {
@@ -314,7 +314,10 @@ function serviceAnimation() {
             gsap.to("#service-page", {
                 top: "-40px",
                 ease: "power3.out",
-                duration: 1.2
+                duration: 1.2,
+                onComplete:()=>{
+                    gsap.set("body",{overflow: "hidden"})
+                }
             })
         } else {
             document.querySelector("#nav-service").classList.remove("active")
@@ -327,7 +330,10 @@ function serviceAnimation() {
             gsap.to("#service-page", {
                 top: "-100%",
                 ease: "power3.out",
-                duration: 1.2
+                duration: 1.2,
+                onComplete:()=>{
+                    gsap.set("body",{overflow: "auto"})
+                }
             })
         }
     }

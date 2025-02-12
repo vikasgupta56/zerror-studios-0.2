@@ -65,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
+  height: 40px;
 }
 #service-top p {
   font-family: paraBold;
@@ -75,10 +76,11 @@ body {
 
 #service-offer {
   width: 100%;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   padding: 13px;
+  overflow-y: auto;
 }
 #our-service {
   width: 100%;
@@ -86,6 +88,7 @@ body {
   align-items: start;
   gap: 150px;
 }
+
 .service-wrap {
   width: 80%;
   display: flex;
@@ -95,6 +98,9 @@ body {
 }
 #our-service .services {
   height: 100%;
+}
+#about-service-text {
+  display: none;
 }
 
 #our-service .services p {
@@ -111,6 +117,7 @@ body {
 .service-title-main {
   font-size: 14px !important;
   font-family: paraBold !important;
+  text-transform: uppercase;
 }
 
 #our-service .services .text-effect {
@@ -525,7 +532,7 @@ footer {
   display: block;
 }
 
-footer >p{
+footer > p {
   display: none;
 }
 
@@ -577,6 +584,24 @@ a {
     z-index: 9;
     padding-top: 40px;
   }
+  #service-offer {
+    width: 100%;
+    height: calc(100svh - 80px);
+    align-items: start;
+    padding: 13px;
+    overflow-y: auto;
+  }
+  .service-wrap {
+    align-self: start;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  #our-service {
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
   .header-text {
     bottom: 32%;
   }
@@ -624,7 +649,7 @@ a {
     display: none;
   }
   .header-text h2 {
-    font-size: 8vw;
+    font-size: 30px;
     line-height: 1.1;
   }
   #page2 {
@@ -664,7 +689,7 @@ a {
   footer {
     font-size: 16px;
   }
-  footer >p{
+  footer > p {
     font-size: 14px;
     display: block;
   }
@@ -673,22 +698,214 @@ a {
   }
 }
 
+@media (min-width: 460px) and (max-width: 574px){
+  .projects-container {
+    width: 100%;
+    flex-direction: row;
+}
+  .project-small {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-large {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-small .showcase {
+    height: 300px !important;
+    margin-bottom: 8px !important;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 300px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 650px){
+  .projects-container {
+    width: 100%;
+    flex-direction: row;
+}
+  .project-small {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-large {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-small .showcase {
+    height: 360px !important;
+    margin-bottom: 8px !important;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 360px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
 /* Small Devices (Tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
-  /* Styles for tablets */
+  .header-text h2 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+  .options-fl-main {
+    width: calc(100% / 2);
+  }
+  .project-small {
+    width: 49.5%;
+    margin-bottom: 20px;
+  }
+  .project-large {
+    margin-bottom: 20px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 415px;
+    margin-bottom: 8px;
+  }
+  .empty-space {
+    display: none;
+  }
+
+  #footer-pt1 {
+    width: 50%;
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  footer > p {
+    display: block;
+  }
+  #mail-d{
+    display: none;
+  }
+  #ft-rt {
+    width: 28%;
+  }
 }
 
 /* Medium Devices (Small Laptops) */
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Styles for small laptops */
+  .header-text h2 {
+    font-size: 3.2vw;
+    line-height: 1.1;
+  }
+  .options-fl-main {
+    width: calc(100% / 3);
+  }
+  .project-small {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-large {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-small .showcase {
+    height: 330px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 330px;
+    margin-bottom: 8px;
+  }
+  .empty-space {
+    display: none;
+  }
+
+  
+  #footer-pt1 {
+    width: 40.5%;
+    margin-bottom: 35px;
+    gap: 30px;
+  }
+
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  footer > p {
+    display: block;
+  }
+#mail-d{
+  display: none;
 }
 
+  #ft-rt {
+    width: 28%;
+  }
+}
+
+@media (min-width: 855px) and (max-width: 991px) {
+  .project-small .showcase {
+    height: 365px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 365px;
+    margin-bottom: 8px;
+  }
+}
 /* Large Devices (Laptops and Desktops) */
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* Styles for laptops */
+  .header-text h2 {
+    font-size: 3.2vw;
+    line-height: 1.1;
+  }
+  .options-fl-main {
+    width: calc(100% / 3);
+  }
+  .project-small {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-large {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-small .showcase {
+    height: 410px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 410px;
+    margin-bottom: 8px;
+  }
+  .empty-space {
+    display: none;
+  }
+  #footer-pt1 {
+    width: 28%;
+    margin-bottom: 35px;
+    gap: 20px;
+  }
 }
 
-/* Extra Large Devices (Wide Desktops) */
-@media (min-width: 1200px) {
-  /* Styles for wide desktops */
+@media (min-width: 1200px) and (max-width: 1286px) {
+  .project-small .showcase {
+    height: 380px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 8px;
+  }
 }

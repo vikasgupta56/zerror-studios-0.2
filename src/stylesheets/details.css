@@ -65,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
+  height: 40px;
 }
 #service-top p {
   font-family: paraBold;
@@ -75,7 +76,7 @@ body {
 
 #service-offer {
   width: 100%;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 40px);
   display: flex;
   align-items: center;
   padding: 13px;
@@ -111,6 +112,7 @@ body {
 .service-title-main {
   font-size: 14px !important;
   font-family: paraBold !important;
+  text-transform: uppercase !important;
 }
 
 #our-service .services .text-effect {
@@ -392,7 +394,6 @@ footer {
   flex-direction: column;
   margin-bottom: 35px;
   gap: 20px;
-
 }
 .ft-title {
   margin-bottom: 5px;
@@ -480,7 +481,7 @@ footer {
   display: block;
 }
 
-footer > p{
+footer > p {
   display: none;
 }
 
@@ -531,6 +532,24 @@ a {
     width: 100%;
     z-index: 9;
     padding-top: 40px;
+  }
+  #service-offer {
+    width: 100%;
+    height: calc(100svh - 80px);
+    align-items: start;
+    padding: 13px;
+    overflow-y: auto;
+  }
+  .service-wrap {
+    align-self: start;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  #our-service {
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
   }
   #page1 {
     height: 60vh;
@@ -595,7 +614,7 @@ a {
   #related-project h3 {
     font-size: 4.5vw;
   }
-  
+
   #footer-pt1 {
     width: 95%;
     gap: 30px;
@@ -629,7 +648,7 @@ a {
   footer {
     font-size: 16px;
   }
-  footer >p{
+  footer > p {
     font-size: 14px;
     display: block;
   }
@@ -638,22 +657,274 @@ a {
   }
 }
 
+@media (min-width: 460px) and (max-width: 574px){
+
+  .project-small {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-large {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-small .showcase {
+    height: 300px !important;
+    margin-bottom: 8px !important;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 300px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 650px){
+  .project-small {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-large {
+    width: 49% !important;
+    margin-bottom: 20px;
+  }
+  .project-small .showcase {
+    height: 360px !important;
+    margin-bottom: 8px !important;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 360px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
 /* Small Devices (Tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
-  /* Styles for tablets */
+  #page1 {
+    height: 60vh;
+    padding: 13px;
+    padding-bottom: 20px;
+  }
+  #page1 h2 {
+    font-size: 15vw;
+  }
+  #page1 .title-1 {
+    height: 15.5vw;
+  }
+  #page1 .title-2 {
+    height: 15vw;
+    margin-bottom: 6.5vw;
+  }
+  #page1 h3 {
+    font-size: 15.5vw;
+  }
+  .details-project {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .details-project .left {
+    width: 100%;
+  }
+  .details-project .left p {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: headingm;
+    width: 80%;
+  }
+  .details-project .right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .details-project .right p {
+    font-size: 14px;
+    width: 50%;
+  }
+  #page3 .banner {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #projects-related {
+    width: 100%;
+    padding-top: 20px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    gap: 13px;
+  }
+  #projects-related .project-small {
+    width: 41%;
+    margin-bottom: 40px;
+  }
+  #related-project h2 {
+    font-size: 5vw;
+  }
+  #related-project h3 {
+    font-size: 2.5vw;
+  }
+  .project-small .showcase {
+    height: 350px;
+    margin-bottom: 8px;
+  }
+
+  #footer-pt1 {
+    width: 50%;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  #ft-lf {
+    display: none;
+  }
+  #ft-rt {
+    width: 100%;
+  }
+  .rt-top {
+    justify-content: start;
+    gap: 45px;
+  }
+  .text-effect {
+    height: 17px;
+    margin-bottom: 6px;
+  }
+  .icon-ft {
+    width: 16px;
+    height: 16px;
+  }
+  footer {
+    font-size: 14px;
+  }
+  footer > p {
+    font-size: 14px;
+    display: block;
+  }
+  #mail {
+    display: none;
+  }
 }
 
 /* Medium Devices (Small Laptops) */
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Styles for small laptops */
+  #page1{
+    height: 55vh;
+  }
+  .details-project p {
+    width: 70%;
+}  
+  #projects-related {
+    width: 100%;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6.5px;
+    padding-top: 20px;
+}
+  .project-small {
+    width: 32.8%;
+  }
+  .project-large {
+    width: 32.8%;
+  }
+  .project-small .showcase {
+    height: 330px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 330px;
+    margin-bottom: 8px;
+  }
+  
+  #footer-pt1 {
+    width: 40.5%;
+    margin-bottom: 35px;
+    gap: 30px;
+  }
+
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  footer > p {
+    display: block;
+  }
+#mail-d{
+  display: none;
+}
+
+  #ft-rt {
+    width: 28%;
+  }
 }
 
 /* Large Devices (Laptops and Desktops) */
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* Styles for laptops */
+  #page1{
+    height: 67vh;
+  }
+  .details-project p {
+    width: 70%;
+} 
+  #projects-related {
+    width: 100%;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 13px;
+    padding-top: 20px;
+}
+
+  .project-small {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-large {
+    width: 32.8%;
+    margin-bottom: 50px;
+  }
+  .project-small .showcase {
+    height: 410px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 410px;
+    margin-bottom: 8px;
+  }
+  #footer-pt1 {
+    width: 28%;
+    margin-bottom: 35px;
+    gap: 20px;
+  }
 }
 
 /* Extra Large Devices (Wide Desktops) */
-@media (min-width: 1200px) {
-  /* Styles for wide desktops */
+@media (min-width: 1200px) and (max-width: 1286px) {
+  #page1{
+    height: 72vh;
+  }
+  .details-project p {
+    width: 60%;
+} 
+  .project-small .showcase {
+    height: 380px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 8px;
+  }
 }

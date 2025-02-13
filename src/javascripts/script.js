@@ -267,7 +267,7 @@ function homeLoader() {
 }
 homeLoader()
 
-function serviceListingAnimation(){
+function serviceListingAnimation() {
     const serviceDets = [
         "Conducting workshops to define your target audience, services, and brand differentiators",
         "Defining your brand’s mission, vision, and market positioning.",
@@ -295,21 +295,21 @@ function serviceListingAnimation(){
         "Building engaging platforms to share your brand’s message with the world.",
         "Creating unique digital marketplaces for diverse industries."
     ]
-    
-    document.querySelectorAll(".service-wrap .text-effect").forEach(function(textEffect) {
-        textEffect.addEventListener("mouseenter",function(e){
+
+    document.querySelectorAll(".service-wrap .text-effect").forEach(function (textEffect) {
+        textEffect.addEventListener("mouseenter", function (e) {
             const text = serviceDets[e.target.dataset.index]
-    
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:text,
+
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: text,
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
             })
         })
-        textEffect.addEventListener("mouseleave",function(){
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:"",
+        textEffect.addEventListener("mouseleave", function () {
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: "",
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
@@ -348,8 +348,8 @@ function serviceAnimation() {
                 top: "-40px",
                 ease: "power3.out",
                 duration: 1.2,
-                onComplete:()=>{
-                    gsap.set("body",{overflow: "hidden"})
+                onComplete: () => {
+                    gsap.set("body", { overflow: "hidden" })
                 }
             })
         } else {
@@ -364,8 +364,8 @@ function serviceAnimation() {
                 top: "-100%",
                 ease: "power3.out",
                 duration: 1.2,
-                onComplete:()=>{
-                    gsap.set("body",{overflow: "auto"})
+                onComplete: () => {
+                    gsap.set("body", { overflow: "auto" })
                 }
             })
         }
@@ -636,10 +636,91 @@ function filterAnimation() {
 }
 filterAnimation()
 
-function filterListing() {
+// function filterListing() {
+//     var currentFilter = null; // Keep track of currently open filter
 
+//     function toggleFilter(button, dataKey, dataProp, nameKey) {
+//         if (currentFilter === button) {
+//             // Close the current filter if the same button is clicked again
+//             filterList.style.opacity = "0";
+//             filterList.style.height = "0";
+//             filterList.style.padding = "0";
+//             currentFilter = null; // Reset
+//             return;
+//         }
+
+//         // Open new filter
+//         if (window.innerWidth < 575) {
+//             filterList.style.height = "500px";
+//         } else if (window.innerHeight < 1199) {
+//             filterList.style.height = "170px";
+//         } else if (window.innerHeight < 991) {
+//             filterList.style.height = "180px";
+//         } else if (window.innerHeight < 767) {
+//             filterList.style.height = "220px";
+//         } else {
+//             filterList.style.height = "150px";
+//         }
+
+//         filterList.style.padding = "13px 13px 50px 13px";
+//         filterList.style.opacity = "1";
+//         filterList.innerHTML = ""; // Clear previous content
+
+//         porjectData[dataKey][dataProp].forEach(function (item) {
+//             var divw = document.createElement("div");
+//             var div = document.createElement("div");
+//             var span = document.createElement("span");
+//             var p = document.createElement("p");
+
+//             p.textContent = item[nameKey]; // Correctly get name for sector, client, or service
+//             span.textContent = `(${item.projects.length})`; // Display project count
+
+//             divw.classList.add("options-fl-main");
+//             div.classList.add("options-fl");
+//             div.appendChild(p);
+//             div.appendChild(span);
+//             divw.appendChild(div);
+//             filterList.appendChild(divw);
+//         });
+
+//         currentFilter = button; // Update currently open filter
+//     }
+
+//     sectorBtn.addEventListener("click", function () {
+//         toggleFilter(sectorBtn, 0, "sectors", "name"); // "name" key for sectors
+//     });
+
+//     clientBtn.addEventListener("click", function () {
+//         toggleFilter(clientBtn, 1, "clients", "client"); // "client" key for clients
+//     });
+
+//     serviceBtn.addEventListener("click", function () {
+//         toggleFilter(serviceBtn, 2, "services", "service"); // "service" key for services
+//     });
+// }
+
+// filterListing();
+
+
+
+function filterListing() {
+    var isOpen = null;
 
     sectorBtn.addEventListener("click", function () {
+
+        if (isOpen === "sector") {
+            document.querySelectorAll(".listing-filter").forEach(function (p) {
+                p.querySelector(".name-space").textContent = ``
+                p.querySelector(".name-project-count").textContent = ``
+                p.querySelector(".filter-close").innerHTML = ``
+            })
+
+            filterList.style.opacity = "0";
+            filterList.style.height = "0";
+            filterList.style.padding = "0"
+            isOpen = null;
+            return;
+        }
 
         document.querySelectorAll(".listing-filter").forEach(function (p) {
             p.querySelector(".name-space").textContent = ``
@@ -658,6 +739,7 @@ function filterListing() {
         } else {
             filterList.style.height = "150px";
         }
+        isOpen = "sector";
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 
@@ -679,6 +761,20 @@ function filterListing() {
     })
 
     clientBtn.addEventListener("click", function () {
+        if (isOpen  === "client") {
+            document.querySelectorAll(".listing-filter").forEach(function (p) {
+                p.querySelector(".name-space").textContent = ``
+                p.querySelector(".name-project-count").textContent = ``
+                p.querySelector(".filter-close").innerHTML = ``
+            })
+
+            filterList.style.opacity = "0";
+            filterList.style.height = "0";
+            filterList.style.padding = "0"
+            isOpen = null;
+            return;
+        }
+
         document.querySelectorAll(".listing-filter").forEach(function (p) {
             p.querySelector(".name-space").textContent = ``
             p.querySelector(".name-project-count").textContent = ``
@@ -696,6 +792,7 @@ function filterListing() {
         } else {
             filterList.style.height = "150px";
         }
+        isOpen = "client";
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 
@@ -718,6 +815,20 @@ function filterListing() {
 
     serviceBtn.addEventListener("click", function () {
 
+        if (isOpen === "service") {
+            document.querySelectorAll(".listing-filter").forEach(function (p) {
+                p.querySelector(".name-space").textContent = ``
+                p.querySelector(".name-project-count").textContent = ``
+                p.querySelector(".filter-close").innerHTML = ``
+            })
+
+            filterList.style.opacity = "0";
+            filterList.style.height = "0";
+            filterList.style.padding = "0"
+            isOpen = null;
+            return;
+        }
+
         document.querySelectorAll(".listing-filter").forEach(function (p) {
             p.querySelector(".name-space").textContent = ``
             p.querySelector(".name-project-count").textContent = ``
@@ -735,6 +846,7 @@ function filterListing() {
         } else {
             filterList.style.height = "150px";
         }
+        isOpen = "service";
         filterList.style.padding = "13px 13px 50px 13px"
         filterList.style.opacity = "1";
 
@@ -794,6 +906,7 @@ function footerAnimation() {
     };
     updateTime();
     setInterval(updateTime, 60000);
+
 
 }
 footerAnimation()

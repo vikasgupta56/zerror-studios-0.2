@@ -652,6 +652,17 @@ function memberAnimation() {
         }
     });
 
+    gsap.to("#studio-contact", {
+        opacity:1,
+        duration:1,
+        scrollTrigger: {
+            trigger: "#studio-contact",
+            scroller: "body",
+            start: "top 30%",
+            end: "top 5%",
+            scrub: true,
+        }
+    });
 
     gsap.to("#studio-contact", {
         scrollTrigger: {
@@ -663,6 +674,7 @@ function memberAnimation() {
             pin: "#studio-contact",
         }
     });
+   
    
 
 
@@ -692,6 +704,26 @@ function footerAnimation() {
     };
     updateTime();
     setInterval(updateTime, 60000);
+    
+    var ft = gsap.timeline({
+        scrollTrigger: {
+            trigger: "footer",
+            scroller: "body",
+            start: "top 0%",
+            end: "top -80%",
+            scrub: 1,
+            pin:true
+        }
+    })
+
+    ft
+    .to(".footer-layer",{
+        opacity:.6
+    },"a")
+    .to("#footer-content",{
+        transform:"translateY(0%)",
+        delay:.5
+    },"a")
 
 }
 footerAnimation()

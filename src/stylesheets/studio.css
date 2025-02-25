@@ -195,9 +195,6 @@ nav {
   display: inline-block;
   margin-top: 10px;
 }
-.off-menu-btn{
-  display: none;
-}
 
 /* menu container end*/
 
@@ -304,7 +301,7 @@ nav img {
   left: 0;
   width: 100%;
   height: 100%;
-  clip-path: polygon(43% 35%, 57% 35%, 57% 80%, 43% 80%);
+  clip-path: polygon(43% 40%, 57% 40%, 57% 80%, 43% 80%);
 }
 .banner-studio img {
   width: 100%;
@@ -728,9 +725,19 @@ a {
   color: black;
   display: inline-block;
 }
+#menu-button{
+  display: none;
+}
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  .off-menu-btn{
+    display: none;
+  }
+  #menu-button{
+    display: block;
+  }
+  
   #service-page {
     position: fixed;
     top: -100%;

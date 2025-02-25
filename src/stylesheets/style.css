@@ -197,7 +197,7 @@ nav {
   margin-top: 10px;
 }
 .off-menu-btn{
-  display: none;
+  display: block;
 }
 
 /* menu container end*/
@@ -680,8 +680,19 @@ a {
   color: black;
 }
 
+#menu-button{
+  display: none;
+}
+
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
+  .off-menu-btn{
+    display: none;
+  }
+  #menu-button{
+    display: block;
+  }
+  
   #service-page {
     position: fixed;
     top: -100%;

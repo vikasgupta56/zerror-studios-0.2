@@ -889,6 +889,7 @@ function projectAnimation() {
 projectAnimation()
 
 function footerAnimation() {
+
     const updateTime = () => {
         const date = new Date();
         let hours = date.getHours();
@@ -906,6 +907,29 @@ function footerAnimation() {
     };
     updateTime();
     setInterval(updateTime, 60000);
+
+    if (window.innerWidth > 991) {
+        var ft = gsap.timeline({
+            scrollTrigger: {
+                trigger: "footer",
+                scroller: "body",
+                start: "top 0%",
+                end: "top -80%",
+                scrub: 1,
+                pin: true
+            }
+        })
+
+        ft
+            .to(".footer-layer", {
+                opacity: .9,
+            }, "a")
+            .to("#footer-content", {
+                transform: "translateY(0%)",
+                delay: .5
+            }, "a")
+    }
+
 
 
 }

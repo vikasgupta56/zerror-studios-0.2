@@ -696,7 +696,7 @@ a {
   #toph {
     top: 28%;
     left: 50%;
-    font-size: 25px;
+    font-size: 20px !important;
     text-align: center;
     width: 100%;
     line-height: 1.1 !important;
@@ -704,7 +704,7 @@ a {
   #btmh {
     font-family: paraItalic;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px !important;
     text-align: center;
     line-height: 1.1 !important;
   }
@@ -712,7 +712,7 @@ a {
     padding-bottom: 40px !important;
   }
   .banner-studio {
-    clip-path: polygon(30% 50%, 70% 50%, 70% 80%, 30% 80%);
+    clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
   }
   #section2-about-studio p {
     font-size: 16px;
@@ -722,12 +722,12 @@ a {
     text-align: center;
   }
   #section2-about-studio h3 {
-    font-size: 8vw;
+    font-size: 20px !important;
     line-height: 1.1;
     letter-spacing: 2px;
   }
   #section2-about-studio h5 {
-    font-size: 6vw;
+    font-size: 20px !important;
     letter-spacing: 2px;
     line-height: 1.1;
     width: 75%;
@@ -759,10 +759,10 @@ a {
     gap: 35px;
   }
   #studio-team p {
-    font-size: 16px;
+    font-size: 14px !important;
   }
   #studio-contact p {
-    font-size: 16px;
+    font-size: 14px !important;
   }
   .para-contact br {
     display: none !important;
@@ -777,7 +777,7 @@ a {
     padding-left: 0%;
   }
   #brand-listing h4 {
-    font-size: 16px;
+    font-size: 14px !important;
     padding-left: 0%;
   }
   #brand-listing h4::after {
@@ -791,7 +791,8 @@ a {
     padding-bottom: 0px;
   }
   footer {
-    height: 140vh;
+    height: 100vh;
+    font-size: 14px !important;
   }
   #footer-text-center {
     top: 25%;
@@ -799,7 +800,7 @@ a {
     gap: 1vw;
   }
   #footer-text-center h4 {
-    font-size: 25px;
+    font-size: 20px !important;
     font-weight: 500;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -807,7 +808,7 @@ a {
   #footer-pt1 {
     width: 95%;
     gap: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 20px !important;
   }
   #footer-pt2 {
     margin-bottom: 20px;
@@ -823,7 +824,7 @@ a {
     display: none;
   }
   #ft-rt {
-    width: 100%;
+    display: none !important; 
   }
   .rt-top {
     justify-content: start;
@@ -861,7 +862,7 @@ a {
     font-size: 25px;
   }
   .banner-studio {
-    clip-path: polygon(30% 55%, 70% 55%, 70% 85%, 30% 85%);
+    clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
   }
   #section2-about-studio h3 {
     font-size: 30px;

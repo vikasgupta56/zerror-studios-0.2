@@ -696,7 +696,7 @@ a {
   #toph {
     top: 28%;
     left: 50%;
-    font-size: 7vw;
+    font-size: 25px;
     text-align: center;
     width: 100%;
     line-height: 1.1 !important;
@@ -704,12 +704,12 @@ a {
   #btmh {
     font-family: paraItalic;
     font-weight: 500;
-    font-size: 7.5vw;
+    font-size: 20px;
     text-align: center;
     line-height: 1.1 !important;
   }
   #section1-studio {
-    padding-bottom: 60px !important;
+    padding-bottom: 40px !important;
   }
   .banner-studio {
     clip-path: polygon(30% 50%, 70% 50%, 70% 80%, 30% 80%);
@@ -799,7 +799,7 @@ a {
     gap: 1vw;
   }
   #footer-text-center h4 {
-    font-size: 8vw;
+    font-size: 25px;
     font-weight: 500;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -855,26 +855,26 @@ a {
 @media (min-width: 360px) and (max-width: 575px) {
   #toph {
     top: 28%;
-    font-size: 5.5vw;
+    font-size: 30px;
   }
   #btmh {
-    font-size: 4.5vw;
+    font-size: 25px;
   }
   .banner-studio {
-    clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
+    clip-path: polygon(30% 55%, 70% 55%, 70% 85%, 30% 85%);
   }
   #section2-about-studio h3 {
-    font-size: 6vw;
+    font-size: 30px;
     line-height: 1.1;
     letter-spacing: 2px;
   }
   #section2-about-studio h5 {
-    font-size: 5.5vw;
-    width: 75%;
+    font-size:30px;
+    width: 80%;
     margin-top: 40px;
   }
   #footer-text-center h4 {
-    font-size: 5vw;
+    font-size: 25px;
   }
 }
 

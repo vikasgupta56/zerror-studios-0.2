@@ -252,7 +252,7 @@ nav img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 0;
+  padding: 150px 13px;
 }
 
 .about-header-text {
@@ -696,7 +696,7 @@ a {
   #toph {
     top: 28%;
     left: 50%;
-    font-size: 8vw;
+    font-size: 7vw;
     text-align: center;
     width: 100%;
     line-height: 1.1 !important;
@@ -864,12 +864,12 @@ a {
     clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
   }
   #section2-about-studio h3 {
-    font-size: 5.5vw;
+    font-size: 6vw;
     line-height: 1.1;
     letter-spacing: 2px;
   }
   #section2-about-studio h5 {
-    font-size: 4vw;
+    font-size: 5.5vw;
     width: 75%;
     margin-top: 40px;
   }
@@ -904,7 +904,7 @@ a {
   }
   #our-service .services {
     height: 100%;
-    width: 50%;
+    width: 41%;
     flex-shrink: 0;
     margin-bottom: 20px;
   }

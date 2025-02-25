@@ -119,7 +119,7 @@ body {
 
 #our-service .services .text-effect {
   margin-bottom: 12px;
-  height: 16px;
+  height: 18px;
 }
 #our-service .services .text-effect .effect {
   font-size: 14px;
@@ -202,12 +202,12 @@ nav img {
 }
 #toph {
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3vw;
   text-align: center;
-  width: 100%;
+  width: 95%;
 }
 #toph span {
   display: inline-block;
@@ -219,6 +219,7 @@ nav img {
 #toph .upper {
   font-family: para;
   font-weight: 500;
+  text-transform: uppercase;
 }
 #btmh {
   font-family: paraItalic;
@@ -261,11 +262,11 @@ nav img {
   font-size: 3vw;
   text-align: center;
   font-family: para;
-  line-height: .9;
+  line-height: 0.9;
   /* letter-spacing: 2px; */
   font-weight: 500;
 }
-#section2-about-studio h3 .upper{
+#section2-about-studio h3 .upper {
   font-family: paraItalic;
 }
 
@@ -280,15 +281,15 @@ nav img {
 #section2-about-studio h5 {
   font-size: 3vw;
   text-align: center;
-  line-height: .9;
+  line-height: 0.9;
   width: 60%;
   font-weight: 500;
   margin-top: 40px;
   font-family: para;
 }
-#section2-about-studio h5 .upper{
+#section2-about-studio h5 .upper {
   text-transform: capitalize !important;
-  font-family: paraItalic !important; 
+  font-family: paraItalic !important;
 }
 
 /* SECTION2 CSS END */
@@ -459,6 +460,7 @@ footer {
   overflow: hidden;
   display: flex;
   align-items: end;
+  padding-bottom: 20px;
 }
 #footer-text-center {
   position: absolute;
@@ -571,6 +573,8 @@ footer {
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .icon-ft:hover img {
   transform: translateY(-105%);
@@ -680,14 +684,17 @@ a {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-}
+  }
+  #about-service-text {
+    display: none;
+  }
   #our-service {
     align-items: start;
     gap: 20px;
     flex-direction: column;
   }
   #toph {
-    top: 20%;
+    top: 28%;
     left: 50%;
     font-size: 8vw;
     text-align: center;
@@ -705,7 +712,7 @@ a {
     padding-bottom: 60px !important;
   }
   .banner-studio {
-    clip-path: polygon(30% 35%, 70% 35%, 70% 80%, 30% 80%);
+    clip-path: polygon(30% 50%, 70% 50%, 70% 80%, 30% 80%);
   }
   #section2-about-studio p {
     font-size: 16px;
@@ -833,6 +840,9 @@ a {
   footer {
     font-size: 16px;
   }
+  #footer-content {
+    transform: translateY(0%);
+  }
   #footer-content > p {
     font-size: 14px;
     display: block;
@@ -842,19 +852,426 @@ a {
   }
 }
 
+@media (min-width: 360px) and (max-width: 575px) {
+  #toph {
+    top: 28%;
+    font-size: 5.5vw;
+  }
+  #btmh {
+    font-size: 4.5vw;
+  }
+  .banner-studio {
+    clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
+  }
+  #section2-about-studio h3 {
+    font-size: 5.5vw;
+    line-height: 1.1;
+    letter-spacing: 2px;
+  }
+  #section2-about-studio h5 {
+    font-size: 4vw;
+    width: 75%;
+    margin-top: 40px;
+  }
+  #footer-text-center h4 {
+    font-size: 5vw;
+  }
+}
+
+
+@media (min-width: 460px) and (max-width: 576px) {
+  .member {
+    width: calc(50% - 6.5px);
+  }
+  #team-members {
+    gap: 13px;
+  }
+}
+@media (min-width: 576px) and (max-width: 875px) {
+  #our-service {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .service-wrap {
+    width: 100%;
+    display: flex;
+    align-self: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #our-service .services {
+    height: 100%;
+    width: 50%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  #about-service-text {
+    display: none;
+  }
+}
+@media (min-width: 875px) and (max-width: 1130px) {
+  #our-service {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .service-wrap {
+    width: 100%;
+    display: flex;
+    align-self: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #our-service .services {
+    height: 100%;
+    width: 30%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  #about-service-text {
+    position: absolute;
+    bottom: 10%;
+    left:none;
+    transform:none;
+    right: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: headingm;
+    width: 50%;
+    height: 50px;
+}
+}
+
+
 /* Small Devices (Tablets) */
-@media (min-width: 576px) and (max-width: 767px) {
-  /* Styles for tablets */
+@media (min-width: 575px) and (max-width: 767px) {
+  #toph {
+    top: 25%;
+    left: 50%;
+    font-size: 4vw;
+    text-align: center;
+    width: 100%;
+    line-height: 1.1 !important;
+  }
+  #btmh {
+    font-family: paraItalic;
+    font-weight: 500;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 1.1 !important;
+  }
+  #section1-studio {
+    padding-bottom: 60px !important;
+  }
+  .banner-studio {
+    clip-path: polygon(30% 40%, 70% 40%, 70% 80%, 30% 80%);
+  }
+  #section2-about-studio p {
+    font-size: 16px;
+    line-height: 1.3;
+    width: 72%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #section2-about-studio h3 {
+    font-size: 5vw;
+    line-height: 1.1;
+    letter-spacing: 2px;
+  }
+  #section2-about-studio h5 {
+    font-size: 4vw;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    width: 75%;
+    margin-top: 40px;
+  }
+  #section2-about-studio {
+    padding: 65px 0;
+  }
+
+  #studio-2 {
+    width: 100%;
+    flex-direction: column-reverse;
+    padding: 13px;
+    padding-top: 54px;
+    padding-bottom: 37px;
+  }
+  #studio-team {
+    width: 100%;
+  }
+  .member {
+    width: calc(50% - 6.5px);
+  }
+  #studio-contact {
+    width: 100%;
+    margin-bottom: 0px;
+    opacity: 1;
+  }
+  #team-members {
+    gap: 13px;
+  }
+  #studio-team p {
+    font-size: 14px;
+  }
+  #studio-contact p {
+    font-size: 14px;
+  }
+  .para-contact br {
+    display: none !important;
+  }
+  .para-st2 {
+    margin-bottom: 6vw;
+  }
+  #brand-showcase {
+    display: none;
+  }
+  #brand-listing .client {
+    padding-left: 0%;
+  }
+  #brand-listing h4 {
+    font-size: 14px;
+    padding-left: 0%;
+  }
+  #brand-listing h4::after {
+    width: 100%;
+  }
+  #brand-logo {
+    display: none;
+  }
+  #brand-listing {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  footer {
+    height: 130vh;
+    font-size: 14px;
+  }
+  #footer-text-center {
+    top: 25%;
+    width: 80%;
+    gap: 1vw;
+  }
+  #footer-text-center h4 {
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  #footer-pt1 {
+    width: 40.5%;
+    margin-bottom: 35px;
+    gap: 30px;
+  }
+
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  footer > p {
+    display: block;
+  }
+  #mail-d {
+    display: none;
+  }
+
+  #ft-rt {
+    width: 28%;
+  }
+
+  .text-effect {
+    height: 17px;
+    margin-bottom: 6px;
+  }
+  .icon-ft {
+    width: 16px;
+    height: 16px;
+  }
+  #footer-content {
+    transform: translateY(0%);
+  }
+  #footer-content > p {
+    font-size: 14px;
+    display: block;
+  }
+  #mail {
+    display: none;
+  }
 }
 
 /* Medium Devices (Small Laptops) */
-@media (min-width: 768px) and (max-width: 991px) {
-  /* Styles for small laptops */
+@media (min-width: 767px) and (max-width: 991px) {
+  #toph {
+    top: 25%;
+    left: 50%;
+    font-size: 3vw;
+    text-align: center;
+    width: 100%;
+    line-height: 1.1 !important;
+  }
+  #btmh {
+    font-family: paraItalic;
+    font-weight: 500;
+    font-size: 2.5vw;
+    text-align: center;
+    line-height: 1.1 !important;
+  }
+  #section1-studio {
+    padding-bottom: 60px !important;
+  }
+  .banner-studio {
+    clip-path: polygon(30% 40%, 70% 40%, 70% 80%, 30% 80%);
+  }
+  #section2-about-studio p {
+    font-size: 16px;
+    line-height: 1.3;
+    width: 72%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #section2-about-studio h3 {
+    font-size: 4vw;
+    line-height: 1.1;
+    letter-spacing: 2px;
+  }
+  #section2-about-studio h5 {
+    font-size: 3vw;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    width: 75%;
+    margin-top: 40px;
+  }
+  #section2-about-studio {
+    padding: 65px 0;
+  }
+
+  #studio-2 {
+    width: 100%;
+    flex-direction: column-reverse;
+    padding: 13px;
+    padding-top: 54px;
+    padding-bottom: 37px;
+  }
+  #studio-team {
+    width: 100%;
+  }
+  .member {
+    width: calc(50% - 6.5px);
+  }
+  #studio-contact {
+    width: 100%;
+    margin-bottom: 0px;
+    opacity: 1;
+  }
+  #team-members {
+    gap: 13px;
+  }
+  #studio-team p {
+    font-size: 14px;
+  }
+  #studio-contact p {
+    font-size: 14px;
+  }
+  .para-contact br {
+    display: none !important;
+  }
+  .para-st2 {
+    margin-bottom: 6vw;
+  }
+  #brand-showcase {
+    display: none;
+  }
+  #brand-listing .client {
+    padding-left: 0%;
+  }
+  #brand-listing h4 {
+    font-size: 14px;
+    padding-left: 0%;
+  }
+  #brand-listing h4::after {
+    width: 100%;
+  }
+  #brand-logo {
+    display: none;
+  }
+  #brand-listing {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  footer {
+    height: 130vh;
+    font-size: 14px;
+  }
+  #footer-text-center {
+    top: 25%;
+    width: 80%;
+    gap: 1vw;
+  }
+  #footer-text-center h4 {
+    font-size: 3.5vw;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  #footer-pt1 {
+    width: 40.5%;
+    margin-bottom: 35px;
+    gap: 30px;
+  }
+
+  #footer-pt2 {
+    margin-bottom: 20px;
+  }
+
+  #footer-pt2 > p {
+    display: none;
+  }
+  footer > p {
+    display: block;
+  }
+  #mail-d {
+    display: none;
+  }
+
+  #ft-rt {
+    width: 28%;
+  }
+  .text-effect {
+    height: 17px;
+    margin-bottom: 6px;
+  }
+  .icon-ft {
+    width: 16px;
+    height: 16px;
+  }
+  #footer-content {
+    transform: translateY(0%);
+  }
+  #footer-content > p {
+    font-size: 14px;
+    display: block;
+  }
+  #mail {
+    display: none;
+  }
 }
 
 /* Large Devices (Laptops and Desktops) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* Styles for laptops */
+@media (min-width: 991px) and (max-width: 1199px) {
+  #btmh {
+    font-size: 2.6vw;
+  }
+  #footer-text-center h4 {
+    font-size: 2.54vw;
+}
 }
 
 /* Extra Large Devices (Wide Desktops) */

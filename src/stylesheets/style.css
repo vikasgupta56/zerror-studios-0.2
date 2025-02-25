@@ -99,9 +99,6 @@ body {
 #our-service .services {
   height: 100%;
 }
-#about-service-text {
-  display: none;
-}
 
 #our-service .services p {
   font-family: headingb;
@@ -122,7 +119,7 @@ body {
 
 #our-service .services .text-effect {
   margin-bottom: 12px;
-  height: 16px;
+  height: 18px;
 }
 #our-service .services .text-effect .effect {
   font-size: 14px;
@@ -438,6 +435,7 @@ footer {
   padding: 8px 13px;
   font-family: headingb;
   font-size: 14px;
+  padding-bottom: 20px;
 }
 #footer-pt1 {
   width: 18.5%;
@@ -495,6 +493,8 @@ footer {
   height: 15px;
   margin: 15px 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .icon-ft:hover img {
   transform: translateY(-105%);
@@ -519,7 +519,7 @@ footer {
   display: inline-block;
 }
 .text-effect {
-  height: 14px;
+  height: 16px;
   overflow: hidden;
   margin-bottom: 3px;
   width: fit-content;
@@ -538,42 +538,13 @@ footer > p {
 
 /* FOOTER CSS END */
 
-/* STRIP ANIMATION */
-
-.black-strip {
-  position: relative;
-  transition: all ease 0.2s;
-  z-index: 2;
-  cursor: pointer;
-  width: fit-content;
-  margin-bottom: 2px;
-}
-.black-strip::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: black;
-  z-index: -1;
-  transition: all ease 0.2s;
-}
-
-.black-strip:hover::before {
-  width: 100%;
-}
-.black-strip:hover {
-  color: white !important;
-}
-
 a {
   text-decoration: none;
   color: black;
 }
 
 /* Extra Small Devices (Phones) */
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   #service-page {
     position: fixed;
     top: -100%;
@@ -596,6 +567,9 @@ a {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+  }
+  #about-service-text {
+    display: none;
   }
   #our-service {
     align-items: start;
@@ -698,11 +672,11 @@ a {
   }
 }
 
-@media (min-width: 460px) and (max-width: 574px){
+@media (min-width: 460px) and (max-width: 576px) {
   .projects-container {
     width: 100%;
     flex-direction: row;
-}
+  }
   .project-small {
     width: 49% !important;
     margin-bottom: 20px;
@@ -722,11 +696,11 @@ a {
   }
 }
 
-@media (min-width: 575px) and (max-width: 650px){
+@media (min-width: 576px) and (max-width: 650px) {
   .projects-container {
     width: 100%;
     flex-direction: row;
-}
+  }
   .project-small {
     width: 49% !important;
     margin-bottom: 20px;
@@ -744,6 +718,66 @@ a {
     height: 360px !important;
     margin-bottom: 8px !important;
   }
+}
+
+@media (min-width: 576px) and (max-width: 875px) {
+  #our-service {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .service-wrap {
+    width: 100%;
+    display: flex;
+    align-self: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #our-service .services {
+    height: 100%;
+    width: 50%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  #about-service-text {
+    display: none;
+  }
+}
+@media (min-width: 875px) and (max-width: 1130px) {
+  #our-service {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .service-wrap {
+    width: 100%;
+    display: flex;
+    align-self: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #our-service .services {
+    height: 100%;
+    width: 30%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  #about-service-text {
+    position: absolute;
+    bottom: 10%;
+    left:none;
+    transform:none;
+    right: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: headingm;
+    width: 50%;
+    height: 50px;
+}
 }
 
 /* Small Devices (Tablets) */
@@ -787,7 +821,7 @@ a {
   footer > p {
     display: block;
   }
-  #mail-d{
+  #mail-d {
     display: none;
   }
   #ft-rt {
@@ -825,7 +859,6 @@ a {
     display: none;
   }
 
-  
   #footer-pt1 {
     width: 40.5%;
     margin-bottom: 35px;
@@ -842,9 +875,9 @@ a {
   footer > p {
     display: block;
   }
-#mail-d{
-  display: none;
-}
+  #mail-d {
+    display: none;
+  }
 
   #ft-rt {
     width: 28%;

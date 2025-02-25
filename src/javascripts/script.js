@@ -212,7 +212,7 @@ function homeLoader() {
         .from(".upper", {
             opacity: 0,
             duration: .8,
-            timingFunction: "ease-in-out",
+            ease: "ease-in-out",
             delay: 1.5,
             stagger: {
                 from: "center",
@@ -223,7 +223,7 @@ function homeLoader() {
         .from(".lower", {
             opacity: 0,
             duration: .8,
-            timingFunction: "ease-in-out",
+            ease: "ease-in-out",
             stagger: {
                 amount: .2
             },
@@ -233,7 +233,7 @@ function homeLoader() {
         .from("#main", {
             backgroundColor: "#F5E31A",
             duration: .8,
-            timingFunction: "ease-in-out",
+            ease: "ease-in-out",
         }, "b")
 
         .from(".header-text", {
@@ -269,31 +269,29 @@ homeLoader()
 
 function serviceListingAnimation() {
     const serviceDets = [
-        "Conducting workshops to define your target audience, services, and brand differentiators",
-        "Defining your brand’s mission, vision, and market positioning.",
-        "Creating brand voice, style guides, and communication strategies",
-        "Designing logos, color schemes, typography, icons, and grids to represent your brand.",
-        "Developing impactful designs for both print and digital media.",
-        "Defining your messaging to effectively connect with users.",
-        "Crafting user-centric designs for seamless navigation and interaction.",
-        "Designing visually appealing and functional websites.",
-        "Writing compelling content that aligns with your brand voice.",
-        "Integrating visuals that tell your brand’s story and enhance user experience.",
-        "Building responsive, fast, and beautiful websites.",
-        "Adding dynamic and smooth animations for a modern web experience.",
-        "Customizing content management systems for easy updates and control.",
-        "Ensuring robust, scalable functionality to support your website’s performance.",
-        "Designing intuitive user experiences based on market research and analytics.",
-        "Building visually engaging, user-friendly interfaces for seamless shopping.",
-        "Ensuring a smooth, fast, and responsive shopping experience.",
-        "Customizing Shopify to meet your unique eCommerce needs.",
-        "Scalable and reliable hosting to support your growing business.",
-        "Implementing best-in-class security protocols to protect your data and customers.",
-        "Providing ongoing maintenance and technical support to ensure your store remains efficient.",
-        "Developing content management systems tailored to your specific requirements.",
-        "Tailored solutions for digital content creation and publishing.",
-        "Building engaging platforms to share your brand’s message with the world.",
-        "Creating unique digital marketplaces for diverse industries."
+        "Digging deep to define your audience, vision, and what sets you apart.",
+        "Positioning your brand with a clear mission and a bold identity.",
+        "Crafting a voice and visual language that actually speaks to people.",
+        "Designing logos, color palettes, and typography that make you instantly recognizable.",
+        "Creating high-impact visuals that bring your brand to life.",
+        "Writing words that don’t just fill space but make people feel something.",
+        "Designing everything from business cards to billboards—cohesive, striking, and unforgettable.",
+        "Designing experiences that feel intuitive, effortless, and built for engagement.",
+        "Crafting sleek, high-end visuals that make your brand look like a million bucks.",
+        "Fast, fluid, and pixel-perfect—our websites don’t just work; they impress.",
+        "This is our playground. We craft mind-blowing GSAP animations that make websites feel alive.",
+        "Powering your site with solid, scalable, and headache-free architecture.",
+        "From technical SEO to on-page magic, we help you rank higher and get seen by the right people.",
+        "Rock-solid hosting that keeps your website lightning-fast and always online.",
+        "No compromises—enterprise-grade security to keep your data locked down.",
+        "Because the internet never sleeps, and neither do we when it comes to keeping your site running.",
+        "Elevating Shopify stores with custom design, smooth UX, and seamless performance.",
+        "No templates, no shortcuts—just high-performance online stores built for scale.",
+        "Empowering brands with custom-built platforms for vendors, customers, and everything in between.",
+        "Designing and developing sleek, high-performance apps that people actually love using.",
+        "We don’t do cookie-cutter solutions—we build CMS platforms tailored to your needs.",
+        "High-traffic, high-functionality platforms designed for brands that want to be heard.",
+        "Whether it's niche or mass-market, we build digital marketplaces that stand out and scale up."
     ]
 
     document.querySelectorAll(".service-wrap .text-effect").forEach(function (textEffect) {
@@ -323,11 +321,13 @@ function serviceAnimation() {
     var isService = false;
     var previousLink = ""
 
-    document.querySelector("#nav-service").addEventListener("click", function (e) {
-        this.classList.add("active");
-        // document.querySelector("#studio-btn").classList.remove("active");
-        isService = !isService;
-        openService()
+    document.querySelectorAll(".service-open-btn").forEach(function(btn){
+        btn.addEventListener("click", function (e) {
+            document.querySelector("#nav-service").classList.add("active");
+            // document.querySelector("#studio-btn").classList.remove("active");
+            isService = !isService;
+            openService()
+        })
     })
     document.querySelector("#closeService").addEventListener("click", function () {
         isService = !isService;

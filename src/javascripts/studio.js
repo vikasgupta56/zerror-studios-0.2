@@ -152,7 +152,7 @@ function homeLoader() {
         .from(".upper", {
             opacity: 0,
             duration: .8,
-            timingFunction: "ease-in-out",
+            ease: "ease-in-out",
             delay: 1.5,
             stagger: {
                 from: "center",
@@ -163,7 +163,7 @@ function homeLoader() {
         .from(".lower", {
             opacity: 0,
             duration: .8,
-            timingFunction: "ease-in-out",
+            ease: "ease-in-out",
             stagger: {
                 amount: .2
             },
@@ -235,49 +235,47 @@ function textEffectAnimation() {
 }
 textEffectAnimation()
 
-function serviceListingAnimation(){
+function serviceListingAnimation() {
     const serviceDets = [
-        "Conducting workshops to define your target audience, services, and brand differentiators",
-        "Defining your brand’s mission, vision, and market positioning.",
-        "Creating brand voice, style guides, and communication strategies",
-        "Designing logos, color schemes, typography, icons, and grids to represent your brand.",
-        "Developing impactful designs for both print and digital media.",
-        "Defining your messaging to effectively connect with users.",
-        "Crafting user-centric designs for seamless navigation and interaction.",
-        "Designing visually appealing and functional websites.",
-        "Writing compelling content that aligns with your brand voice.",
-        "Integrating visuals that tell your brand’s story and enhance user experience.",
-        "Building responsive, fast, and beautiful websites.",
-        "Adding dynamic and smooth animations for a modern web experience.",
-        "Customizing content management systems for easy updates and control.",
-        "Ensuring robust, scalable functionality to support your website’s performance.",
-        "Designing intuitive user experiences based on market research and analytics.",
-        "Building visually engaging, user-friendly interfaces for seamless shopping.",
-        "Ensuring a smooth, fast, and responsive shopping experience.",
-        "Customizing Shopify to meet your unique eCommerce needs.",
-        "Scalable and reliable hosting to support your growing business.",
-        "Implementing best-in-class security protocols to protect your data and customers.",
-        "Providing ongoing maintenance and technical support to ensure your store remains efficient.",
-        "Developing content management systems tailored to your specific requirements.",
-        "Tailored solutions for digital content creation and publishing.",
-        "Building engaging platforms to share your brand’s message with the world.",
-        "Creating unique digital marketplaces for diverse industries."
+        "Digging deep to define your audience, vision, and what sets you apart.",
+        "Positioning your brand with a clear mission and a bold identity.",
+        "Crafting a voice and visual language that actually speaks to people.",
+        "Designing logos, color palettes, and typography that make you instantly recognizable.",
+        "Creating high-impact visuals that bring your brand to life.",
+        "Writing words that don’t just fill space but make people feel something.",
+        "Designing everything from business cards to billboards—cohesive, striking, and unforgettable.",
+        "Designing experiences that feel intuitive, effortless, and built for engagement.",
+        "Crafting sleek, high-end visuals that make your brand look like a million bucks.",
+        "Fast, fluid, and pixel-perfect—our websites don’t just work; they impress.",
+        "This is our playground. We craft mind-blowing GSAP animations that make websites feel alive.",
+        "Powering your site with solid, scalable, and headache-free architecture.",
+        "From technical SEO to on-page magic, we help you rank higher and get seen by the right people.",
+        "Rock-solid hosting that keeps your website lightning-fast and always online.",
+        "No compromises—enterprise-grade security to keep your data locked down.",
+        "Because the internet never sleeps, and neither do we when it comes to keeping your site running.",
+        "Elevating Shopify stores with custom design, smooth UX, and seamless performance.",
+        "No templates, no shortcuts—just high-performance online stores built for scale.",
+        "Empowering brands with custom-built platforms for vendors, customers, and everything in between.",
+        "Designing and developing sleek, high-performance apps that people actually love using.",
+        "We don’t do cookie-cutter solutions—we build CMS platforms tailored to your needs.",
+        "High-traffic, high-functionality platforms designed for brands that want to be heard.",
+        "Whether it's niche or mass-market, we build digital marketplaces that stand out and scale up."
     ]
-    
-    document.querySelectorAll(".service-wrap .text-effect").forEach(function(textEffect) {
-        textEffect.addEventListener("mouseenter",function(e){
+
+    document.querySelectorAll(".service-wrap .text-effect").forEach(function (textEffect) {
+        textEffect.addEventListener("mouseenter", function (e) {
             const text = serviceDets[e.target.dataset.index]
-    
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:text,
+
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: text,
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
             })
         })
-        textEffect.addEventListener("mouseleave",function(){
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:"",
+        textEffect.addEventListener("mouseleave", function () {
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: "",
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
@@ -290,17 +288,19 @@ function serviceAnimation() {
     var isService = false;
     var previousLink = ""
 
-    document.querySelector("#nav-service").addEventListener("click", function (e) {
-        this.classList.add("active");
-        // document.querySelector("#studio-btn").classList.remove("active");
-        isService = !isService;
-        openService()
+    document.querySelectorAll(".service-open-btn").forEach(function(btn){
+        btn.addEventListener("click", function (e) {
+            document.querySelector("#nav-service").classList.add("active");
+            document.querySelector("#studio-btn").classList.remove("active");
+            isService = !isService;
+            openService()
+        })
     })
     document.querySelector("#closeService").addEventListener("click", function () {
         isService = !isService;
         openService()
         this.classList.remove("active");
-        // document.querySelector("#studio-btn").classList.add("active");
+        document.querySelector("#studio-btn").classList.add("active");
     })
 
     function openService() {
@@ -315,8 +315,8 @@ function serviceAnimation() {
                 top: "-40px",
                 ease: "power3.out",
                 duration: 1.2,
-                onComplete:()=>{
-                    gsap.set("body",{overflow: "hidden"})
+                onComplete: () => {
+                    gsap.set("body", { overflow: "hidden" })
                 }
             })
         } else {
@@ -331,8 +331,8 @@ function serviceAnimation() {
                 top: "-100%",
                 ease: "power3.out",
                 duration: 1.2,
-                onComplete:()=>{
-                    gsap.set("body",{overflow: "auto"})
+                onComplete: () => {
+                    gsap.set("body", { overflow: "auto" })
                 }
             })
         }
@@ -370,42 +370,6 @@ function studioSection1Animation() {//
         }, "a")
 }
 studioSection1Animation()
-
-function snakeTextAnimation() {
-    const textElement = document.querySelector("#animated-text");
-    const fullText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai. Born in Mumbai but built for the world, we’re a crew of dreamers, doers, and rule-breakers who believe the internet doesn’t need another meh moment—it needs unforgettable experiences. We don’t just build stuff; we craft digital adventures that make people stop, scroll, and say,“Whoa, who made this?"
-    const initialText = "At Zerror Studios, we turn “what ifs” into “hell yes.” Whether it’s animated websites that wow, eCommerce solutions that scale, or custom CMS platforms so slick they power some of the world’s biggest media giants(Yes, not exaggerating.We’re low - key changing the game)—we’re all about creating digital moments that punch through the noise, harder than your morning cutting - chai."
-    const remainingText = fullText.slice(initialText.length);  // Remaining text to append
-
-    // Set the initial text
-    textElement.innerHTML = initialText;
-
-    // Set up ScrollTrigger to animate letters
-    const timeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#studio-1",
-            scroller: "body",  // Ensure the scroll happens inside the container
-            start: "top 0%",   // Start at 50% of the scroll container height
-            end: "top -200%",   // End at the bottom of the container
-            scrub: 1,           // Scrub for smooth animation
-            pin: true
-        }
-    });
-
-    timeline.to({}, {  // Empty tween to control the scroll behavior
-        onUpdate: () => {
-            // Calculate how many letters to remove and append based on scroll progress
-            const progress = timeline.scrollTrigger.progress;  // Corrected way to get progress
-            const letterCount = Math.floor(progress * remainingText.length);
-
-            // Remove letters from the start of initialText and append letters from remainingText
-            const newText = initialText.slice(letterCount) + remainingText.slice(0, letterCount);
-            textElement.textContent = newText;
-        }
-    });
-}
-
-// snakeTextAnimation();
 
 function brandListingAnimtion() {
     var clutter = ""
@@ -653,8 +617,8 @@ function memberAnimation() {
     });
 
     gsap.to("#studio-contact", {
-        opacity:1,
-        duration:1,
+        opacity: 1,
+        duration: 1,
         scrollTrigger: {
             trigger: "#studio-contact",
             scroller: "body",
@@ -674,13 +638,13 @@ function memberAnimation() {
             pin: "#studio-contact",
         }
     });
-   
-   
+
+
 
 
 }
 
-if(window.innerWidth > 575){
+if (window.innerWidth > 991) {
     memberAnimation()
 }
 
@@ -704,26 +668,30 @@ function footerAnimation() {
     };
     updateTime();
     setInterval(updateTime, 60000);
-    
-    var ft = gsap.timeline({
-        scrollTrigger: {
-            trigger: "footer",
-            scroller: "body",
-            start: "top 0%",
-            end: "top -80%",
-            scrub: 1,
-            pin:true
-        }
-    })
 
-    ft
-    .to(".footer-layer",{
-        opacity:.6
-    },"a")
-    .to("#footer-content",{
-        transform:"translateY(0%)",
-        delay:.5
-    },"a")
+    if (window.innerWidth > 991) {
+        var ft = gsap.timeline({
+            scrollTrigger: {
+                trigger: "footer",
+                scroller: "body",
+                start: "top 0%",
+                end: "top -80%",
+                scrub: 1,
+                pin: true
+            }
+        })
+
+        ft
+            .to(".footer-layer", {
+                opacity: .9,
+            }, "a")
+            .to("#footer-content", {
+                transform: "translateY(0%)",
+                delay: .5
+            }, "a")
+    }
+
+
 
 }
 footerAnimation()

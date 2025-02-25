@@ -321,7 +321,7 @@ function serviceAnimation() {
     var isService = false;
     var previousLink = ""
 
-    document.querySelectorAll(".service-open-btn").forEach(function(btn){
+    document.querySelectorAll(".service-open-btn").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
             document.querySelector("#nav-service").classList.add("active");
             // document.querySelector("#studio-btn").classList.remove("active");
@@ -761,7 +761,7 @@ function filterListing() {
     })
 
     clientBtn.addEventListener("click", function () {
-        if (isOpen  === "client") {
+        if (isOpen === "client") {
             document.querySelectorAll(".listing-filter").forEach(function (p) {
                 p.querySelector(".name-space").textContent = ``
                 p.querySelector(".name-project-count").textContent = ``
@@ -934,3 +934,38 @@ function footerAnimation() {
 
 }
 footerAnimation()
+
+
+
+var isMenu = false;
+document.querySelector("#menu-button").addEventListener("click", function () {
+    if (!isMenu) {
+        gsap.set("#menu-container", { display: "flex" })
+        document.querySelector("#menu-button").textContent = "close"
+        var tl = gsap.timeline()
+        tl
+            .to("#menu-container", {
+                opacity: 1,
+                duration: 0.5
+            })
+            .from(".menu-top, .menu-btm", {
+                y: "30",
+                opacity: 0,
+                duration: 0.3,
+                stagger: 0.1
+            })
+        isMenu = true;
+    }
+    else {
+        gsap.to("#menu-container", {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: function () {
+                gsap.set("#menu-container", { display: "none" })
+                document.querySelector("#menu-button").textContent = "menu"
+
+            }
+        })
+        isMenu = false;
+    }
+})

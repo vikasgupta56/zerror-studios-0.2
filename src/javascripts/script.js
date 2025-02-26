@@ -317,8 +317,9 @@ function serviceListingAnimation() {
 }
 serviceListingAnimation()
 
+var isMenuService = false;
+var isService = false;
 function serviceAnimation() {
-    var isService = false;
     var previousLink = ""
 
     document.querySelectorAll(".service-open-btn").forEach(function (btn) {
@@ -332,43 +333,46 @@ function serviceAnimation() {
     document.querySelector("#closeService").addEventListener("click", function () {
         isService = !isService;
         openService()
+        document.querySelector("#menu-button").textContent = "close"
+        isMenuService = false;
         this.classList.remove("active");
         // document.querySelector("#studio-btn").classList.add("active");
     })
 
-    function openService() {
-        if (isService) {
-            gsap.set("nav", { backgroundColor: "#fff" })
-            gsap.to("#main", {
-                top: "calc(100% - 40px)",
-                ease: "power3.out",
-                duration: 1.2
-            })
-            gsap.to("#service-page", {
-                top: "-40px",
-                ease: "power3.out",
-                duration: 1.2,
-                onComplete: () => {
-                    gsap.set("body", { overflow: "hidden" })
-                }
-            })
-        } else {
-            document.querySelector("#nav-service").classList.remove("active")
-            gsap.set("nav", { backgroundColor: "transparent" })
-            gsap.to("#main", {
-                top: "0%",
-                ease: "power3.out",
-                duration: 1.2
-            })
-            gsap.to("#service-page", {
-                top: "-100%",
-                ease: "power3.out",
-                duration: 1.2,
-                onComplete: () => {
-                    gsap.set("body", { overflow: "auto" })
-                }
-            })
-        }
+   
+}
+function openService() {
+    if (isService) {
+        gsap.set("nav", { backgroundColor: "#fff" })
+        gsap.to("#main", {
+            top: "calc(100% - 40px)",
+            ease: "power3.out",
+            duration: 1.2
+        })
+        gsap.to("#service-page", {
+            top: "-40px",
+            ease: "power3.out",
+            duration: 1.2,
+            onComplete: () => {
+                gsap.set("body", { overflow: "hidden" })
+            }
+        })
+    } else {
+        document.querySelector("#nav-service").classList.remove("active")
+        gsap.set("nav", { backgroundColor: "transparent" })
+        gsap.to("#main", {
+            top: "0%",
+            ease: "power3.out",
+            duration: 1.2
+        })
+        gsap.to("#service-page", {
+            top: "-100%",
+            ease: "power3.out",
+            duration: 1.2,
+            onComplete: () => {
+                gsap.set("body", { overflow: "auto" })
+            }
+        })
     }
 }
 serviceAnimation()
@@ -417,7 +421,7 @@ window.onload = function () {
 
 const filterList = document.querySelector("#flip-filter-container")
 const sectorBtn = document.querySelector("#sectors-btn")
-const clientBtn = document.querySelector("#client-btn")
+// const clientBtn = document.querySelector("#client-btn")
 const serviceBtn = document.querySelector("#service-btn")
 
 function filterAnimation() {
@@ -440,13 +444,6 @@ function filterAnimation() {
             this.classList.add("active");
         })
     })
-
-    // document.querySelector("#nav-project").addEventListener("click", function () {
-    //     allFilter.forEach(function (item) {
-    //         item.classList.remove("active");
-    //     });
-    //     allFilter[allFilter.length - 1].classList.add("active");
-    // })
 
     const navLink = document.querySelectorAll("nav p")
     navLink.forEach(function (link) {
@@ -636,72 +633,6 @@ function filterAnimation() {
 }
 filterAnimation()
 
-// function filterListing() {
-//     var currentFilter = null; // Keep track of currently open filter
-
-//     function toggleFilter(button, dataKey, dataProp, nameKey) {
-//         if (currentFilter === button) {
-//             // Close the current filter if the same button is clicked again
-//             filterList.style.opacity = "0";
-//             filterList.style.height = "0";
-//             filterList.style.padding = "0";
-//             currentFilter = null; // Reset
-//             return;
-//         }
-
-//         // Open new filter
-//         if (window.innerWidth < 575) {
-//             filterList.style.height = "500px";
-//         } else if (window.innerHeight < 1199) {
-//             filterList.style.height = "170px";
-//         } else if (window.innerHeight < 991) {
-//             filterList.style.height = "180px";
-//         } else if (window.innerHeight < 767) {
-//             filterList.style.height = "220px";
-//         } else {
-//             filterList.style.height = "150px";
-//         }
-
-//         filterList.style.padding = "13px 13px 50px 13px";
-//         filterList.style.opacity = "1";
-//         filterList.innerHTML = ""; // Clear previous content
-
-//         porjectData[dataKey][dataProp].forEach(function (item) {
-//             var divw = document.createElement("div");
-//             var div = document.createElement("div");
-//             var span = document.createElement("span");
-//             var p = document.createElement("p");
-
-//             p.textContent = item[nameKey]; // Correctly get name for sector, client, or service
-//             span.textContent = `(${item.projects.length})`; // Display project count
-
-//             divw.classList.add("options-fl-main");
-//             div.classList.add("options-fl");
-//             div.appendChild(p);
-//             div.appendChild(span);
-//             divw.appendChild(div);
-//             filterList.appendChild(divw);
-//         });
-
-//         currentFilter = button; // Update currently open filter
-//     }
-
-//     sectorBtn.addEventListener("click", function () {
-//         toggleFilter(sectorBtn, 0, "sectors", "name"); // "name" key for sectors
-//     });
-
-//     clientBtn.addEventListener("click", function () {
-//         toggleFilter(clientBtn, 1, "clients", "client"); // "client" key for clients
-//     });
-
-//     serviceBtn.addEventListener("click", function () {
-//         toggleFilter(serviceBtn, 2, "services", "service"); // "service" key for services
-//     });
-// }
-
-// filterListing();
-
-
 
 function filterListing() {
     var isOpen = null;
@@ -760,58 +691,58 @@ function filterListing() {
         })
     })
 
-    clientBtn.addEventListener("click", function () {
-        if (isOpen === "client") {
-            document.querySelectorAll(".listing-filter").forEach(function (p) {
-                p.querySelector(".name-space").textContent = ``
-                p.querySelector(".name-project-count").textContent = ``
-                p.querySelector(".filter-close").innerHTML = ``
-            })
+    // clientBtn.addEventListener("click", function () {
+    //     if (isOpen === "client") {
+    //         document.querySelectorAll(".listing-filter").forEach(function (p) {
+    //             p.querySelector(".name-space").textContent = ``
+    //             p.querySelector(".name-project-count").textContent = ``
+    //             p.querySelector(".filter-close").innerHTML = ``
+    //         })
 
-            filterList.style.opacity = "0";
-            filterList.style.height = "0";
-            filterList.style.padding = "0"
-            isOpen = null;
-            return;
-        }
+    //         filterList.style.opacity = "0";
+    //         filterList.style.height = "0";
+    //         filterList.style.padding = "0"
+    //         isOpen = null;
+    //         return;
+    //     }
 
-        document.querySelectorAll(".listing-filter").forEach(function (p) {
-            p.querySelector(".name-space").textContent = ``
-            p.querySelector(".name-project-count").textContent = ``
-            p.querySelector(".filter-close").innerHTML = ``
-        })
+    //     document.querySelectorAll(".listing-filter").forEach(function (p) {
+    //         p.querySelector(".name-space").textContent = ``
+    //         p.querySelector(".name-project-count").textContent = ``
+    //         p.querySelector(".filter-close").innerHTML = ``
+    //     })
 
-        if (window.innerWidth < 575) {
-            filterList.style.height = "500px";
-        } else if (window.innerHeight < 1199) {
-            filterList.style.height = "170px";
-        } else if (window.innerHeight < 991) {
-            filterList.style.height = "180px";
-        } else if (window.innerHeight < 767) {
-            filterList.style.height = "220px";
-        } else {
-            filterList.style.height = "150px";
-        }
-        isOpen = "client";
-        filterList.style.padding = "13px 13px 50px 13px"
-        filterList.style.opacity = "1";
+    //     if (window.innerWidth < 575) {
+    //         filterList.style.height = "500px";
+    //     } else if (window.innerHeight < 1199) {
+    //         filterList.style.height = "170px";
+    //     } else if (window.innerHeight < 991) {
+    //         filterList.style.height = "180px";
+    //     } else if (window.innerHeight < 767) {
+    //         filterList.style.height = "220px";
+    //     } else {
+    //         filterList.style.height = "150px";
+    //     }
+    //     isOpen = "client";
+    //     filterList.style.padding = "13px 13px 50px 13px"
+    //     filterList.style.opacity = "1";
 
-        filterList.innerHTML = "";
-        porjectData[1].clients.forEach(function (client) {
-            var divw = document.createElement("div")
-            var div = document.createElement("div");
-            var span = document.createElement("span");
-            var p = document.createElement("p")
-            p.textContent = client.client
-            span.textContent = `(${client.projects.length})`
-            divw.classList.add("options-fl-main")
-            div.classList.add("options-fl")
-            div.appendChild(p)
-            div.appendChild(span)
-            divw.appendChild(div)
-            filterList.appendChild(divw)
-        })
-    })
+    //     filterList.innerHTML = "";
+    //     porjectData[1].clients.forEach(function (client) {
+    //         var divw = document.createElement("div")
+    //         var div = document.createElement("div");
+    //         var span = document.createElement("span");
+    //         var p = document.createElement("p")
+    //         p.textContent = client.client
+    //         span.textContent = `(${client.projects.length})`
+    //         divw.classList.add("options-fl-main")
+    //         div.classList.add("options-fl")
+    //         div.appendChild(p)
+    //         div.appendChild(span)
+    //         divw.appendChild(div)
+    //         filterList.appendChild(divw)
+    //     })
+    // })
 
     serviceBtn.addEventListener("click", function () {
 
@@ -936,9 +867,15 @@ function footerAnimation() {
 footerAnimation()
 
 
-
 var isMenu = false;
 document.querySelector("#menu-button").addEventListener("click", function () {
+    if (isMenuService) {
+        isService = false;
+        openService()
+        document.querySelector("#menu-button").textContent = "close"
+        isMenuService = false;
+        return;
+    }
     if (!isMenu) {
         gsap.set("#menu-container", { display: "flex" })
         document.querySelector("#menu-button").textContent = "close"
@@ -967,5 +904,13 @@ document.querySelector("#menu-button").addEventListener("click", function () {
             }
         })
         isMenu = false;
+    }
+})
+
+
+document.querySelector("#menu-service").addEventListener("click", function () {
+    if (!isMenuService) {
+        document.querySelector("#menu-button").textContent = "menu"
+        isMenuService = true;
     }
 })

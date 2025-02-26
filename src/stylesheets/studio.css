@@ -160,13 +160,13 @@ nav {
   opacity: 0;
 }
 #menu-button {
-  font-family: headingm !important;
+  font-family: headingb !important;
   text-transform: capitalize;
 }
 #menu-container p {
   margin-bottom: 10px;
   text-transform: capitalize !important;
-  font-family: headingm !important;
+  font-family: headingb !important;
 }
 .menu-top {
   display: flex;
@@ -179,7 +179,7 @@ nav {
   margin-bottom: 10px;
   text-decoration: none !important;
   text-transform: capitalize !important;
-  font-family: headingm !important;
+  font-family: headingb !important;
 }
 .menu-btm {
   width: 100%;
@@ -190,7 +190,7 @@ nav {
 .menu-btm > p {
   text-transform: lowercase;
   margin: 0 !important;
-  font-family: headingm !important;
+  font-family: headingb !important;
   border: none !important;
   text-decoration: none !important;;
 }
@@ -204,7 +204,7 @@ nav {
   margin-top: 10px;
   text-decoration: none !important;;
   text-transform: capitalize !important;
-  font-family: headingm !important;
+  font-family: headingb !important;
 }
 
 /* menu container end*/
@@ -302,6 +302,7 @@ nav img {
   font-family: paraItalic;
   font-weight: 500;
   font-size: 1.6vw;
+  display: none !important;
 }
 .btmwrap {
   opacity: 0;
@@ -345,12 +346,14 @@ nav img {
   margin: auto;
 }
 #section2-about-studio h3 .upper {
-  font-family: paraItalic;
+  font-family: para;
   margin-right: 10px !important;
+  text-transform: capitalize !important;
 }
 
 #section2-about-studio h3 .lower {
   margin-right: 10px !important;
+  font-family: paraItalic !important;
 }
 
 
@@ -373,9 +376,10 @@ nav img {
 }
 #section2-about-studio h5 .lower{
   margin-right: 5px !important;
+  font-family: paraItalic !important;
+
 }
 #section2-about-studio h5 .upper {
-  text-transform: capitalize !important;
   font-family: paraItalic !important;
   margin-right: 5px !important;
 }
@@ -843,8 +847,8 @@ a {
     text-align: center;
   }
   #section2-about-studio h3 {
-    font-size: 30px !important;
-    line-height: .8 !important;
+    font-size: 31px !important;
+    line-height: .9 !important;
     letter-spacing: 0 !important;
     width: 90% !important;
     margin:0 auto !important;

@@ -158,7 +158,7 @@ nav {
   display: none;
 }
 #menu-button{
-  font-family: headingm !important;
+  font-family: headingb !important;
   text-transform: capitalize !important;
 }
 
@@ -171,12 +171,12 @@ nav {
   display: inline-block;
   color: #000000;
   margin-bottom: 10px;
-  font-family: headingm !important;
+  font-family: headingb !important;
   text-decoration: none !important;;
   text-transform: capitalize !important;
 }
 .menu-top p{
-  font-family: headingm !important;
+  font-family: headingb !important;
   margin-bottom: 10px;
   text-transform: capitalize !important;
 }
@@ -189,7 +189,7 @@ nav {
 .menu-btm > p {
   text-transform: lowercase;
   margin: 0 !important;
-  font-family: headingm !important;
+  font-family: headingb !important;
   border: none !important;
   text-decoration: none !important;;
 }
@@ -202,7 +202,7 @@ nav {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  font-family: headingm !important;
+  font-family: headingb !important;
   text-transform: capitalize !important;
 }
 .off-menu-btn{

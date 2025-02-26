@@ -284,11 +284,12 @@ function serviceListingAnimation() {
     })
 }
 serviceListingAnimation()
+var isMenuService = false;
+var isService = false;
 function serviceAnimation() {
-    var isService = false;
     var previousLink = ""
 
-    document.querySelectorAll(".service-open-btn").forEach(function(btn){
+    document.querySelectorAll(".service-open-btn").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
             document.querySelector("#nav-service").classList.add("active");
             document.querySelector("#studio-btn").classList.remove("active");
@@ -299,43 +300,46 @@ function serviceAnimation() {
     document.querySelector("#closeService").addEventListener("click", function () {
         isService = !isService;
         openService()
+        document.querySelector("#menu-button").textContent = "close"
+        isMenuService = false;
         this.classList.remove("active");
         document.querySelector("#studio-btn").classList.add("active");
     })
 
-    function openService() {
-        if (isService) {
-            gsap.set("nav", { backgroundColor: "#fff" })
-            gsap.to("#main", {
-                top: "calc(100% - 40px)",
-                ease: "power3.out",
-                duration: 1.2
-            })
-            gsap.to("#service-page", {
-                top: "-40px",
-                ease: "power3.out",
-                duration: 1.2,
-                onComplete: () => {
-                    gsap.set("body", { overflow: "hidden" })
-                }
-            })
-        } else {
-            document.querySelector("#nav-service").classList.remove("active")
-            gsap.set("nav", { backgroundColor: "transparent" })
-            gsap.to("#main", {
-                top: "0%",
-                ease: "power3.out",
-                duration: 1.2
-            })
-            gsap.to("#service-page", {
-                top: "-100%",
-                ease: "power3.out",
-                duration: 1.2,
-                onComplete: () => {
-                    gsap.set("body", { overflow: "auto" })
-                }
-            })
-        }
+    
+}
+function openService() {
+    if (isService) {
+        gsap.set("nav", { backgroundColor: "#fff" })
+        gsap.to("#main", {
+            top: "calc(100% - 40px)",
+            ease: "power3.out",
+            duration: 1.2
+        })
+        gsap.to("#service-page", {
+            top: "-40px",
+            ease: "power3.out",
+            duration: 1.2,
+            onComplete: () => {
+                gsap.set("body", { overflow: "hidden" })
+            }
+        })
+    } else {
+        document.querySelector("#nav-service").classList.remove("active")
+        gsap.set("nav", { backgroundColor: "transparent" })
+        gsap.to("#main", {
+            top: "0%",
+            ease: "power3.out",
+            duration: 1.2
+        })
+        gsap.to("#service-page", {
+            top: "-100%",
+            ease: "power3.out",
+            duration: 1.2,
+            onComplete: () => {
+                gsap.set("body", { overflow: "auto" })
+            }
+        })
     }
 }
 serviceAnimation()
@@ -701,24 +705,30 @@ footerAnimation()
 
 
 
-
 var isMenu = false;
 document.querySelector("#menu-button").addEventListener("click", function () {
+    if (isMenuService) {
+        isService = false;
+        openService()
+        document.querySelector("#menu-button").textContent = "close"
+        isMenuService = false;
+        return;
+    }
     if (!isMenu) {
         gsap.set("#menu-container", { display: "flex" })
         document.querySelector("#menu-button").textContent = "close"
         var tl = gsap.timeline()
         tl
-        .to("#menu-container", {
-            opacity: 1,
-            duration: 0.5
-        })
-        .from(".menu-top, .menu-btm",{
-            y: "30",
-            opacity: 0,
-            duration: 0.3,
-            stagger: 0.1
-        })
+            .to("#menu-container", {
+                opacity: 1,
+                duration: 0.5
+            })
+            .from(".menu-top, .menu-btm", {
+                y: "30",
+                opacity: 0,
+                duration: 0.3,
+                stagger: 0.1
+            })
         isMenu = true;
     }
     else {
@@ -731,5 +741,14 @@ document.querySelector("#menu-button").addEventListener("click", function () {
             }
         })
         isMenu = false;
+    }
+})
+
+
+
+document.querySelector("#menu-service").addEventListener("click", function () {
+    if (!isMenuService) {
+        document.querySelector("#menu-button").textContent = "menu"
+        isMenuService = true;
     }
 })

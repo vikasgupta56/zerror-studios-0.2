@@ -121,43 +121,47 @@ const porjectData = [
     {
         services: [
             {
-                service: "Web Development",
+                service: "UI Design",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "UI/UX Design",
+                service: "UX Design",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Digital Marketing",
+                service: "Frontend Development",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Branding",
+                service: "GSAP Web Development",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "SEO Optimization",
+                service: "Backend Development",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "E-commerce Solutions",
+                service: "SEO Services",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Mobile App Development",
+                service: "Shopify eCom Development",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Software Development",
+                service: "Custom eCom Development",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Content Creation",
+                service: "Multi-Vendor eCom Marketplace",
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Social Media Management",
+                service: "E-Commerce Optimizations",
+                projects: [1, 2, 3, 4]
+            },
+            {
+                service: "Custom CMS",
                 projects: [1, 2, 3, 4]
             }
         ]
@@ -343,7 +347,7 @@ function serviceAnimation() {
         // document.querySelector("#studio-btn").classList.add("active");
     })
 
-   
+
 }
 function openService() {
     if (isService) {
@@ -468,6 +472,9 @@ function filterAnimation() {
                 p.querySelector(".name-project-count").textContent = ``
                 p.querySelector(".filter-close").innerHTML = ``
             })
+            filterList.style.opacity = "0";
+            filterList.style.height = "0";
+            filterList.style.padding = "0"
 
             const page2Height = document.querySelector("#page2").getBoundingClientRect().top
             const currentContainer = document.querySelector(currentCategory)
@@ -523,7 +530,6 @@ function filterAnimation() {
             p.querySelector(".filter-close").innerHTML = ``
         })
 
-        history.pushState(null, '', '/');
         filterList.style.opacity = "0";
         filterList.style.height = "0";
         filterList.style.padding = "0"

@@ -702,6 +702,9 @@ a {
 }
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
+  nav{
+  background-color: white !important;
+  }
   #des-title{
     display: none;;
   }
@@ -873,6 +876,10 @@ a {
   #mail {
     display: none;
   }
+  #mail-mobile{
+    display: none !important;
+  }
+
 }
 
 @media (min-width: 460px) and (max-width: 576px) {

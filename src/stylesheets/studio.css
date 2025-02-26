@@ -760,6 +760,9 @@ a {
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  nav{
+    background-color: white !important;
+    }
   #toph span {
     margin-right: 5px !important;
   }
@@ -979,6 +982,9 @@ a {
   }
   #mail {
     display: none;
+  }
+  #mail-mobile{
+    display: none !important;
   }
 }
 

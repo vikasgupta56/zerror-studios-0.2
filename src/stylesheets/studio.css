@@ -864,7 +864,7 @@ a {
         margin-top: 10px;
     }
     #section2-about-studio {
-    padding: 100px 0;
+    padding: 110px 0;
   }
 
   #studio-2 {
@@ -882,7 +882,7 @@ a {
   }
   #studio-contact {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 0px !important;
     opacity: 1;
   }
   #team-members {
@@ -910,6 +910,8 @@ a {
   #brand-listing h4 {
     font-size: 14px !important;
     padding-left: 0%;
+    font-family: headingb !important;
+    font-weight: 500;
   }
   #brand-listing h4::after {
     width: 100%;

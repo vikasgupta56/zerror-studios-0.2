@@ -204,9 +204,9 @@ textEffectAnimation()
 
 
 function homeLoader() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const mainFilter = urlParams.get('mainFilter');
-    if (mainFilter) return;
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const mainFilter = urlParams.get('mainFilter');
+    // if (mainFilter) return;
     var loader = gsap.timeline()
     loader
         .from(".upper", {
@@ -465,11 +465,6 @@ function filterAnimation() {
                 p.querySelector(".filter-close").innerHTML = ``
             })
 
-            history.pushState(null, '', '/?mainFilter=all');
-            const urlParams = new URLSearchParams(window.location.search);
-            const mainFilter = urlParams.get('mainFilter');
-
-
             const page2Height = document.querySelector("#page2").getBoundingClientRect().top
             const currentContainer = document.querySelector(currentCategory)
             const projectContainer = document.querySelector("#all-project")
@@ -507,6 +502,9 @@ function filterAnimation() {
                     },
                     onComplete: function () {
                         currentCategory = "#all-project"
+                        setTimeout(() => {
+                            ScrollTrigger.refresh();
+                        }, 200);
                     }
                 })
         })
@@ -563,6 +561,9 @@ function filterAnimation() {
                 },
                 onComplete: function () {
                     currentCategory = "#featured-project"
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 200);
                 }
             })
     })
@@ -621,6 +622,9 @@ function filterAnimation() {
                     },
                     onComplete: function () {
                         currentCategory = "#filter-project"
+                        setTimeout(() => {
+                            ScrollTrigger.refresh();
+                        }, 200);
                     }
                 })
 

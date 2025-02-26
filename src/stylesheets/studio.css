@@ -140,18 +140,18 @@ nav {
 
 /* menu container */
 
-#menu-container{
+#menu-container {
   position: absolute;
   width: 100%;
   background-color: #ffffff;
   height: 100vh;
-  top:0;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  padding:30px 13px;
+  padding: 30px 13px;
   padding-top: 60px;
   font-family: paraBold;
   text-transform: uppercase;
@@ -159,45 +159,55 @@ nav {
   display: none;
   opacity: 0;
 }
-#menu-button{
-  font-family: paraBold !important;
-  text-transform: uppercase;
+#menu-button {
+  font-family: headingm !important;
+  text-transform: capitalize;
 }
-#menu-container p{
+#menu-container p {
   margin-bottom: 10px;
+  text-transform: capitalize !important;
+  font-family: headingm !important;
 }
-.menu-top{
+.menu-top {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.menu-top a{
+.menu-top a {
   display: inline-block;
   color: #000000;
   margin-bottom: 10px;
+  text-decoration: none !important;
+  text-transform: capitalize !important;
+  font-family: headingm !important;
 }
-.menu-btm{
+.menu-btm {
   width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
 }
-.menu-btm>p{
+.menu-btm > p {
   text-transform: lowercase;
   margin: 0 !important;
+  font-family: headingm !important;
+  border: none !important;
+  text-decoration: none !important;;
 }
-.menu-social{
+.menu-social {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.menu-social a{
+.menu-social a {
   display: inline-block;
   margin-top: 10px;
+  text-decoration: none !important;;
+  text-transform: capitalize !important;
+  font-family: headingm !important;
 }
 
 /* menu container end*/
-
 
 #nav-right #studio-btn .effect {
   opacity: 0.5;
@@ -271,12 +281,13 @@ nav img {
   top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3vw;
+  font-size: 3.5vw;
   text-align: center;
   width: 95%;
 }
 #toph span {
   display: inline-block;
+  margin-right: 10px;
 }
 #toph .lower {
   font-family: paraItalic;
@@ -329,12 +340,19 @@ nav img {
   text-align: center;
   font-family: para;
   line-height: 0.9;
-  /* letter-spacing: 2px; */
   font-weight: 500;
+  width: 80%;
+  margin: auto;
 }
 #section2-about-studio h3 .upper {
   font-family: paraItalic;
+  margin-right: 10px !important;
 }
+
+#section2-about-studio h3 .lower {
+  margin-right: 10px !important;
+}
+
 
 #section2-about-studio p {
   font-family: headingb;
@@ -353,9 +371,13 @@ nav img {
   margin-top: 40px;
   font-family: para;
 }
+#section2-about-studio h5 .lower{
+  margin-right: 5px !important;
+}
 #section2-about-studio h5 .upper {
   text-transform: capitalize !important;
   font-family: paraItalic !important;
+  margin-right: 5px !important;
 }
 
 /* SECTION2 CSS END */
@@ -486,7 +508,7 @@ nav img {
   margin-bottom: 2px;
 }
 .member-des {
-  opacity: 0.8 !important;
+  opacity: 0.5 !important;
 }
 .st2-tl {
   margin-bottom: 5px;
@@ -725,19 +747,35 @@ a {
   color: black;
   display: inline-block;
 }
-#menu-button{
+#menu-button {
+  display: none;
+}
+
+.des-title{
+  display: block;
+}
+.mobile-title{
   display: none;
 }
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
-  .off-menu-btn{
+  #toph span {
+    margin-right: 5px !important;
+  }
+  .des-title{
     display: none;
   }
-  #menu-button{
+  .mobile-title{
     display: block;
   }
-  
+  .off-menu-btn {
+    display: none;
+  }
+  #menu-button {
+    display: block;
+  }
+
   #service-page {
     position: fixed;
     top: -100%;
@@ -772,52 +810,65 @@ a {
   #toph {
     top: 28%;
     left: 50%;
-    font-size: 20px !important;
+    font-size: 37px !important;
     text-align: center;
     width: 100%;
-    line-height: 1.1 !important;
+    line-height: .8 !important;
+    text-overflow: ellipsis;
   }
   #btmh {
     font-family: paraItalic;
     font-weight: 500;
-    font-size: 18px !important;
+    font-size:25px !important;
     text-align: center;
     line-height: 1.1 !important;
   }
   #section1-studio {
-    padding-bottom: 40px !important;
+    padding-bottom: 60px !important;
   }
   .banner-studio {
-    clip-path: polygon(30% 45%, 70% 45%, 70% 80%, 30% 80%);
+    clip-path: polygon(30% 55%, 70% 55%, 70% 80%, 30% 80%);
   }
+  .about-header-text {
+    margin-bottom: 45px !important;
+}
   #section2-about-studio p {
-    font-size: 16px;
+    font-size: 14px !important;
     line-height: 1.3;
     width: 72%;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     text-align: center;
   }
   #section2-about-studio h3 {
-    font-size: 20px !important;
-    line-height: 1.1;
-    letter-spacing: 2px;
+    font-size: 30px !important;
+    line-height: .8 !important;
+    letter-spacing: 0 !important;
+    width: 90% !important;
+    margin:0 auto !important;
   }
   #section2-about-studio h5 {
-    font-size: 20px !important;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    width: 75%;
-    margin-top: 40px;
-  }
-  #section2-about-studio {
-    padding: 65px 0;
+    font-size: 27px !important;
+    letter-spacing: 1px;
+    line-height: .8 !important;
+    width: 90% !important;
+    margin-top: 10px !important;
+}
+  #section2-about-studio h5 {
+        font-size: 27px !important;
+        letter-spacing: 2px;
+        line-height: .8;
+        width: 90%;
+        margin-top: 10px;
+    }
+    #section2-about-studio {
+    padding: 100px 0;
   }
 
   #studio-2 {
     width: 100%;
     flex-direction: column-reverse;
     padding: 13px;
-    padding-top: 54px;
+    padding-top:0 !important;
     padding-bottom: 37px;
   }
   #studio-team {
@@ -851,6 +902,7 @@ a {
   }
   #brand-listing .client {
     padding-left: 0%;
+    font-size: 14px !important;
   }
   #brand-listing h4 {
     font-size: 14px !important;
@@ -867,19 +919,20 @@ a {
     padding-bottom: 0px;
   }
   footer {
-    height: 100vh;
+    height: 120vh;
     font-size: 14px !important;
   }
   #footer-text-center {
-    top: 25%;
+    top: 30%;
     width: 80%;
     gap: 1vw;
   }
   #footer-text-center h4 {
-    font-size: 20px !important;
+    font-size: 35px !important;
     font-weight: 500;
-    line-height: 1.1;
+    line-height: .8 !important;
     margin-bottom: 20px;
+    letter-spacing: 0 !important;
   }
   #footer-pt1 {
     width: 95%;
@@ -900,7 +953,7 @@ a {
     display: none;
   }
   #ft-rt {
-    display: none !important; 
+    display: none !important;
   }
   .rt-top {
     justify-content: start;
@@ -946,15 +999,11 @@ a {
     letter-spacing: 2px;
   }
   #section2-about-studio h5 {
-    font-size:30px;
+    font-size: 30px;
     width: 80%;
     margin-top: 40px;
   }
-  #footer-text-center h4 {
-    font-size: 25px;
-  }
 }
-
 
 @media (min-width: 460px) and (max-width: 576px) {
   .member {
@@ -1013,24 +1062,23 @@ a {
   #about-service-text {
     position: absolute;
     bottom: 10%;
-    left:none;
-    transform:none;
+    left: none;
+    transform: none;
     right: 0;
     font-size: 16px;
     font-weight: 500;
     font-family: headingm;
     width: 50%;
     height: 50px;
+  }
 }
-}
-
 
 /* Small Devices (Tablets) */
 @media (min-width: 575px) and (max-width: 767px) {
   #toph {
     top: 25%;
     left: 50%;
-    font-size: 4vw;
+    font-size: 3.9vw;
     text-align: center;
     width: 100%;
     line-height: 1.1 !important;
@@ -1348,13 +1396,10 @@ a {
   }
   #footer-text-center h4 {
     font-size: 2.54vw;
-}
+  }
 }
 
 /* Extra Large Devices (Wide Desktops) */
 @media (min-width: 1200px) {
   /* Styles for wide desktops */
 }
-
-
-

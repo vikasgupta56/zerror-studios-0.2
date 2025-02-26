@@ -140,7 +140,7 @@ nav {
 
 /* menu container */
 
-#menu-container{
+#menu-container {
   position: absolute;
   width: 100%;
   background-color: white;
@@ -151,7 +151,7 @@ nav {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  padding:30px 13px;
+  padding: 30px 13px;
   padding-top: 70px;
   font-family: paraBold;
   text-transform: uppercase;
@@ -159,44 +159,55 @@ nav {
   opacity: 0;
   display: none;
 }
-#menu-button{
-  font-family: paraBold !important;
-  text-transform: uppercase;
+#menu-button {
+  font-family: headingm !important;
+  text-transform: capitalize !important;
 }
 
-.menu-top{
+.menu-top {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.menu-top a{
+.menu-top a {
   display: inline-block;
   color: #000000;
   margin-bottom: 10px;
+  font-family: headingm !important;
+  text-decoration: none !important;
+  text-transform: capitalize !important;
 }
-.menu-top p{
+.menu-top p {
+  font-family: headingm !important;
   margin-bottom: 10px;
+  text-transform: capitalize !important;
 }
-.menu-btm{
+.menu-btm {
   width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
 }
-.menu-btm>p{
+.menu-btm > p {
   text-transform: lowercase;
   margin: 0 !important;
+  font-family: headingm !important;
+  border: none !important;
+  text-decoration: none !important;
 }
-.menu-social{
+.menu-social {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.menu-social a{
+.menu-social a {
   display: inline-block;
   margin-top: 10px;
+  text-decoration: none;
+  font-family: headingm !important;
+  text-transform: capitalize !important;
 }
-.off-menu-btn{
+.off-menu-btn {
   display: block;
 }
 
@@ -269,14 +280,14 @@ nav img {
 }
 
 .header-text h2 {
-  font-size: 3vw;
+  font-size: 3.5vw;
   text-align: center;
   font-family: paraItalic;
   line-height: 0.9;
 }
 .header-text h2 span {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .header-text h2 .lower {
   font-family: paraItalic;
@@ -674,25 +685,36 @@ footer {
 
 /* FOOTER CSS END */
 
-
 a {
   text-decoration: none;
   color: black;
 }
 
-#menu-button{
+#menu-button {
   display: none;
 }
 
+#des-title{
+  display: block;;
+}
+#mobile-title{
+  display: none;
+}
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
-  .off-menu-btn{
-    display: none;
+  #des-title{
+    display: none;;
   }
-  #menu-button{
+  #mobile-title{
     display: block;
   }
-  
+  .off-menu-btn {
+    display: none;
+  }
+  #menu-button {
+    display: block;
+  }
+
   #service-page {
     position: fixed;
     top: -100%;
@@ -725,7 +747,7 @@ a {
     flex-direction: column;
   }
   .header-text {
-    bottom: 35%;
+    bottom: 27%;
   }
   #filter-container {
     padding: 13px;
@@ -733,8 +755,8 @@ a {
     overflow-x: auto;
   }
   #filter-container p {
-    font-size: 16px;
-    padding: 8px 13px;
+    font-size: 14px !important;
+    padding: 4px 8px !important;
     display: flex;
     align-items: center;
   }
@@ -771,35 +793,39 @@ a {
     display: none;
   }
   .header-text h2 {
-    font-size: 20px;
-    line-height: 1.1;
+    font-size: 37px !important;
+    line-height: 0.8 !important;
   }
   #page2 {
     padding-bottom: 60px;
   }
-  .project-small h3,.project-large h3 {
+  .project-small h3,
+  .project-large h3 {
     font-size: 20px;
     font-weight: 500;
     line-height: 0.8;
     font-family: para;
     text-transform: uppercase;
-}
-  .project-small h4 ,.project-large h3{
+  }
+  .project-small h4,
+  .project-large h3 {
     font-size: 21px;
-}
+  }
   footer {
-    height: 100vh;
+    height: 120vh;
+    font-size: 14px !important;
   }
   #footer-text-center {
-    top: 25%;
+    top: 30%;
     width: 80%;
     gap: 1vw;
   }
   #footer-text-center h4 {
-    font-size: 20px;
+    font-size: 35px !important;
     font-weight: 500;
-    line-height: 1.1;
+    line-height: .8 !important;
     margin-bottom: 20px;
+    letter-spacing: 0 !important;
   }
   #footer-pt1 {
     width: 95%;
@@ -820,7 +846,7 @@ a {
     display: none;
   }
   #ft-rt {
-    display: none !important; 
+    display: none !important;
   }
   .rt-top {
     justify-content: start;
@@ -835,7 +861,7 @@ a {
     height: 16px;
   }
   footer {
-    font-size: 16px;
+    font-size: 14px !important;
   }
   #footer-content {
     transform: translateY(0%);
@@ -949,15 +975,15 @@ a {
   #about-service-text {
     position: absolute;
     bottom: 10%;
-    left:none;
-    transform:none;
+    left: none;
+    transform: none;
     right: 0;
     font-size: 16px;
     font-weight: 500;
     font-family: headingm;
     width: 50%;
     height: 50px;
-}
+  }
 }
 
 /* Small Devices (Tablets) */
@@ -1046,7 +1072,7 @@ a {
 /* Medium Devices (Small Laptops) */
 @media (min-width: 768px) and (max-width: 991px) {
   .header-text h2 {
-    font-size: 3.2vw;
+    font-size: 3.9vw;
     line-height: 1.1;
   }
   .options-fl-main {
@@ -1145,7 +1171,7 @@ a {
 /* Large Devices (Laptops and Desktops) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .header-text h2 {
-    font-size: 3.2vw;
+    font-size: 3.9vw;
     line-height: 1.1;
   }
   .options-fl-main {

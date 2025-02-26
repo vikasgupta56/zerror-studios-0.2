@@ -137,7 +137,6 @@ nav {
 }
 
 
-/* menu container */
 
 #menu-container{
   position: absolute;
@@ -159,8 +158,8 @@ nav {
   display: none;
 }
 #menu-button{
-  font-family: paraBold !important;
-  text-transform: uppercase;
+  font-family: headingm !important;
+  text-transform: capitalize !important;
 }
 
 .menu-top{
@@ -172,9 +171,14 @@ nav {
   display: inline-block;
   color: #000000;
   margin-bottom: 10px;
+  font-family: headingm !important;
+  text-decoration: none !important;;
+  text-transform: capitalize !important;
 }
 .menu-top p{
+  font-family: headingm !important;
   margin-bottom: 10px;
+  text-transform: capitalize !important;
 }
 .menu-btm{
   width: 100%;
@@ -182,9 +186,12 @@ nav {
   align-items: end;
   justify-content: space-between;
 }
-.menu-btm>p{
+.menu-btm > p {
   text-transform: lowercase;
   margin: 0 !important;
+  font-family: headingm !important;
+  border: none !important;
+  text-decoration: none !important;;
 }
 .menu-social{
   display: flex;
@@ -194,6 +201,9 @@ nav {
 .menu-social a{
   display: inline-block;
   margin-top: 10px;
+  text-decoration: none;
+  font-family: headingm !important;
+  text-transform: capitalize !important;
 }
 .off-menu-btn{
   display: block;

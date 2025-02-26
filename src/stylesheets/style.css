@@ -700,6 +700,7 @@ a {
 #mobile-title{
   display: none;
 }
+
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
   nav{

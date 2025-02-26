@@ -285,13 +285,17 @@ function serviceListingAnimation() {
         "Rock-solid hosting that keeps your website lightning-fast and always online.",
         "No compromises—enterprise-grade security to keep your data locked down.",
         "Because the internet never sleeps, and neither do we when it comes to keeping your site running.",
-        "Elevating Shopify stores with custom design, smooth UX, and seamless performance.",
-        "No templates, no shortcuts—just high-performance online stores built for scale.",
-        "Empowering brands with custom-built platforms for vendors, customers, and everything in between.",
+        "Powering high-performance Shopify stores with custom design, seamless UX, and rock-solid scalability.",
+        "Ditch the templates—our tailor-made GSAP-enhanced stores deliver next-level design, freedom, and immersive shopping experiences.",
+        "Building dynamic platforms where multiple vendors, customers, and cutting-edge features come together for a seamless ecosystem.",
+        "Fine-tuning online stores with intuitive UX, frictionless checkouts, and data-driven strategies to boost conversions.",
         "Designing and developing sleek, high-performance apps that people actually love using.",
         "We don’t do cookie-cutter solutions—we build CMS platforms tailored to your needs.",
+        "Whether it's niche or mass-market, we build digital marketplaces that stand out and scale up.",
         "High-traffic, high-functionality platforms designed for brands that want to be heard.",
-        "Whether it's niche or mass-market, we build digital marketplaces that stand out and scale up."
+        "Analyzing speed, security, and infrastructure to keep your platform fast, safe, and ahead of the game.",
+        "Expert guidance on bespoke digital solutions, from choosing the right tech stack to building scalable, future-ready systems.",
+        "A squad of elite developers, designers, and strategists working as an extension of your in-house team."
     ]
 
     document.querySelectorAll(".service-wrap .text-effect").forEach(function (textEffect) {

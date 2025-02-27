@@ -189,6 +189,9 @@ function openService() {
             duration: 1.2,
             onComplete:()=>{
                 gsap.set("body",{overflow: "auto"})
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 200);
             }
         })
     }

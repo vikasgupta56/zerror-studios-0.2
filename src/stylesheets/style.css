@@ -251,9 +251,9 @@ nav img {
   cursor: pointer;
   opacity: 0.5;
 }
-#nav-right #nav-service:hover {
+/* #nav-right #nav-service:hover {
   opacity: 1;
-}
+} */
 
 /* SERVICE CSS  END */
 

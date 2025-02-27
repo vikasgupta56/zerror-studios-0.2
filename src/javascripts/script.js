@@ -248,7 +248,7 @@ function homeLoader() {
 
         .from("#page2", {
             opacity: 0,
-            y: 10,
+            y: 30,
             duration: 1,
             delay: -.5,
             ease: "power3.out",
@@ -379,6 +379,9 @@ function openService() {
             duration: 1.2,
             onComplete: () => {
                 gsap.set("body", { overflow: "auto" })
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 200);
             }
         })
     }

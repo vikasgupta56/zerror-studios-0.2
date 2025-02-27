@@ -247,9 +247,9 @@ nav img {
   cursor: pointer;
   opacity: 0.5;
 }
-#nav-right #nav-service:hover {
+/* #nav-right #nav-service:hover {
   opacity: 1;
-}
+} */
 
 /* SERVICE CSS  END */
 
@@ -762,8 +762,22 @@ a {
   display: none;
 }
 
+
+#banner-des{
+  display: block;
+}
+#banner-mobile{
+  display: none;
+}
+
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  #banner-des{
+    display: none;
+  }
+  #banner-mobile{
+    display: block;
+  }
   nav{
     background-color: white !important;
     }

@@ -156,6 +156,7 @@ const allProjectData = [
     },
     {
         poster: "/projects/THR India/THR_India.webp",
+        hoverImg: "/projects/THR India/THR_India_Hover.webp",
         title: "THR India",
         desc: "Bollywood News & Entertainment",
         sector: "Media",

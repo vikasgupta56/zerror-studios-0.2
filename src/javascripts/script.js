@@ -20,53 +20,263 @@ function smoothScroll() {
     requestAnimationFrame(raf);
 }
 smoothScroll()
+const allProjectData = [
+    {
+        poster: "/projects/Casa Carigar/casa_carigar.webp",
+        hoverImg: "/projects/Casa Carigar/casa_carigar_hover.webp",
+        title: "Casa Carigar",
+        desc: "Luxuary Furniture Marketplace",
+        sector: "Life Style",
+        service: ["Shopify eCom Development", "Multi-Vendor eCom marketplace", "UI Design", "UX Design"]
+    },
+    {
+        poster: "/projects/Dhamaka Record/Dhamaka_Records.webp",
+        hovervideo: "/projects/Dhamaka Record/Dhamaka_Records_Hover.mp4",
+        title: "Dhamaka",
+        desc: "Marketing Agency",
+        sector: "Life Style",
+        service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Esquire India/Esquire_India.webp",
+        hoverImg: "/projects/Esquire India/Esquire_India_Hover.webp",
+        title: "Esquire India",
+        desc: "Man at his best",
+        sector: "Media",
+        service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "GSAP Web Animations", "Backend Development", "SEO Services"]
+    },
+    {
+        poster: "/projects/Greek Life/Greek_Life.webp",
+        hovervideo: "/projects/Greek Life/Greek_Life_Hover.mp4",
+        title: "The Greek Life",
+        desc: "Destination Management Services",
+        sector: "Hospitality",
+        service: ["UI Design", "UX Design", "Frontend Development", "Backend Development"]
+    },
+    {
+        poster: "/projects/Hefty Art/Heafty_Art.webp",
+        hovervideo: "/projects/Hefty Art/Heafty_Art_Hover.mp4",
+        title: "Heafty Art",
+        desc: "Web 3.0",
+        sector: "ART",
+        service: ["UI Design", "Frontend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Indian Gaming League/IGL_Cover.webp",
+        hoverImg: "/projects/Indian Gaming League/IGL_Hover.webp",
+        title: "Indian Gaming League",
+        desc: "eSport Platform",
+        sector: "Life Style",
+        service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "Custom CMS"]
+    },
+    {
+        poster: "/projects/iWhiteKorea/iwhitekorea_1.webp",
+        hovervideo: "/projects/iWhiteKorea/iwhitekorea_hover.mp4",
+        title: "I White Korea",
+        desc: "Korean Beauty Essentials",
+        sector: "Beauty",
+        service: ["UI Design", "UX Design", "Custom eCom Development", "SEO Services"]
+    },
+    {
+        poster: "/projects/JustNosh/JustNosh.webp",
+        title: "JustNosh",
+        desc: "Gourmet Snacks",
+        sector: "Food",
+        service: ["Shopify eCom Development", "E-Commerce Optimizations"]
+    },
+    {
+        poster: "/projects/Khelo Esports/Khelo_Esports.webp",
+        hovervideo: "/projects/Khelo Esports/Khelo_Esports_Hover.mp4",
+        title: "Khelo Esports",
+        desc: "Esports Events",
+        sector: "Life Style",
+        service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Manifest/Manifest.webp",
+        title: "Manifest",
+        desc: "Wedding Magazine",
+        sector: "Media",
+        service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Mr. and Mrs/Mr_and_Mrs.webp",
+        hovervideo: "/projects/Mr. and Mrs/Mr_and_Mrs_Hover.mp4",
+        title: "Mr. & Mrs.",
+        desc: "Ads Production & Events",
+        sector: "Advertising",
+        service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Point Of/Point_Of.webp",
+        hovervideo: "/projects/Point Of/Point_Of_Hover.mp4",
+        title: "Point Of",
+        desc: "Creative Agency",
+        sector: "Advertising",
+        service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Rage Media/Rage_Media.webp",
+        hovervideo: "/projects/Rage Media/Rage_Media_Hover.mp4",
+        title: "Rage Media",
+        desc: "Marketing Agency",
+        sector: "Advertising",
+        service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/ResideInBeing/reside_in_being.webp",
+        hoverImg: "/projects/ResideInBeing/reside_in_being_hover.webp",
+        title: "ResideInBeing",
+        desc: "Clothing Label",
+        sector: "Fashion",
+        service: ["Shopify eCom Development", "UI Design", "UX Design", "SEO Services"]
+    },
+    {
+        poster: "/projects/RPSG Group/rpsg_group.webp",
+        title: "RPSG Group",
+        desc: "Indian Multinational Conglomerate",
+        sector: "Media",
+        service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/Sensei Store/Sensei_Store.webp",
+        hovervideo: "/projects/Sensei Store/Sensei_Store_Hover.mp4",
+        title: "The Senseis Store",
+        desc: "eCommerce Store",
+        sector: "Fashion",
+        service: ["Custom eCom Development"]
+    },
+    {
+        poster: "/projects/RPSG Lifestyle Media/RPSG_Media.webp",
+        hoverImg: "/projects/RPSG Lifestyle Media/RPSG_Media_Hover.webp",
+        title: "RPSG Lifestyle Media",
+        desc: "Media Powerhouse",
+        sector: "Media",
+        service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations", "SEO Services"]
+    },
+    {
+        poster: "/projects/THR India/THR_India.webp",
+        title: "THR India",
+        desc: "Bollywood News & Entertainment",
+        sector: "Media",
+        service: ["UI Design", "UX Design", "SEO Services", "Frontend Development", "Backend Development", "GSAP Web Animations"]
+    },
+    {
+        poster: "/projects/WineeMedia/Winee_Media.webp",
+        hovervideo: "/projects/WineeMedia/Winee_Media_hover.mp4",
+        title: "WineeMedia",
+        desc: "Social Media Marketing Agency",
+        sector: "Advertising",
+        service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations", "SEO Services"]
+    },
+    {
+        poster: "/projects/Wealth Fusion/Wealth_Fusion.webp",
+        title: "Wealth Fusion",
+        desc: "Wealth Management Firm",
+        sector: "Finance",
+        service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
+    },
+
+];
+
+function allProjectRender() {
+    var projectContainer = document.getElementById("all-project");
+    projectRenderer(allProjectData, projectContainer)
+}
+allProjectRender()
+
+function projectRenderer(data, container) {
+    data.forEach(project => {
+        const projectElement = document.createElement("a");
+        projectElement.href = "/details";
+        projectElement.classList.add("project", "project-small");
+
+        const showcaseDiv = document.createElement("div");
+        showcaseDiv.classList.add("showcase");
+
+        if (project.hovervideo) {
+            const showcaseOverDiv = document.createElement("div");
+            showcaseOverDiv.classList.add("showcase-over");
+
+            const video = document.createElement("video");
+            video.src = project.hovervideo;
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.setAttribute("playsinline", "");
+
+            showcaseOverDiv.appendChild(video);
+            showcaseDiv.appendChild(showcaseOverDiv);
+        } else if (project.hoverImg) {
+            const showcaseOverDiv = document.createElement("div");
+            showcaseOverDiv.classList.add("showcase-over");
+
+            const img = document.createElement("img");
+            img.src = project.hoverImg;
+            img.alt = "hover-image";
+
+            showcaseOverDiv.appendChild(img);
+            showcaseDiv.appendChild(showcaseOverDiv);
+        }
+
+        const img = document.createElement("img");
+        img.src = project.poster;
+        img.alt = "project-banner";
+        img.loading = "lazy";
+        showcaseDiv.appendChild(img);
+
+        const title = document.createElement("h3");
+        title.textContent = project.title || "Project Title";
+
+        const desc = document.createElement("h4");
+        desc.textContent = project.desc || "Project Description";
+
+        projectElement.appendChild(showcaseDiv);
+        projectElement.appendChild(title);
+        projectElement.appendChild(desc);
+
+        container.appendChild(projectElement);
+    });
+}
 
 const porjectData = [
     {
         sectors: [
             {
-                name: "Art",
-                projects: [1, 2, 3, 4]
+                name: "ART",
+                projects: [1]
             },
             {
-                name: "Fashion",
-                projects: [1, 2, 3, 4]
-            },
-            {
-                name: "Hospitality",
-                projects: [1, 2, 3, 4]
-            },
-            {
-                name: "Sustainability",
+                name: "Advertising",
                 projects: [1, 2, 3, 4]
             },
             {
                 name: "Beauty",
-                projects: [1, 2, 3, 4]
+                projects: [1]
+            },
+            {
+                name: "Fashion",
+                projects: [1, 2]
+            },
+            {
+                name: "Food",
+                projects: [1]
             },
             {
                 name: "Finance",
-                projects: [1, 2, 3, 4]
+                projects: [1]
             },
             {
-                name: "Lifestyle",
-                projects: [1, 2, 3, 4]
+                name: "Life Style",
+                projects: [1, 2]
             },
             {
-                name: "Technology",
-                projects: [1, 2, 3, 4]
+                name: "Hospitality",
+                projects: [1]
             },
             {
-                name: "Entertainment",
-                projects: [1, 2, 3, 4]
-            },
-            {
-                name: "Food & Beverage",
-                projects: [1, 2, 3, 4]
-            },
-            {
-                name: "Sports",
-                projects: [1, 2, 3, 4]
+                name: "Media",
+                projects: [1, 2, 3, 4, 5]
             }
         ]
     },
@@ -133,7 +343,7 @@ const porjectData = [
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "GSAP Web Development",
+                service: "GSAP Web Animations",
                 projects: [1, 2, 3, 4]
             },
             {
@@ -153,7 +363,7 @@ const porjectData = [
                 projects: [1, 2, 3, 4]
             },
             {
-                service: "Multi-Vendor eCom Marketplace",
+                service: "Multi-Vendor eCom marketplace",
                 projects: [1, 2, 3, 4]
             },
             {
@@ -217,7 +427,7 @@ function homeLoader() {
             opacity: 0,
             duration: .8,
             ease: "ease-in-out",
-            delay: 1.5,
+            delay: 2,
             stagger: {
                 from: "center",
                 amount: .2
@@ -231,7 +441,7 @@ function homeLoader() {
             stagger: {
                 amount: .2
             },
-            delay: 1.6,
+            delay: 2.1,
         }, "a")
 
         .from("#main", {
@@ -242,8 +452,8 @@ function homeLoader() {
 
         .from(".header-text", {
             bottom: "0%",
-            duration: .8,
-            ease: "power3.out",
+            duration: .6,
+            // ease: "power3.out",
         }, "b")
 
         .from("#page2", {
@@ -389,46 +599,45 @@ function openService() {
 serviceAnimation()
 
 var currentCategory = "#featured-project"
+// window.onload = function () {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const mainFilter = urlParams.get('mainFilter');
 
-window.onload = function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const mainFilter = urlParams.get('mainFilter');
+//     // If mainFilter exists
+//     if (mainFilter) {
+//         // Fade out the #featured-project element
 
-    // If mainFilter exists
-    if (mainFilter) {
-        // Fade out the #featured-project element
-
-        currentCategory = "#all-project"
-        var allFilter = document.querySelectorAll("#filter-container p")
-        allFilter.forEach(function (filter) {
-            filter.classList.remove("active");
-            if (filter.textContent.toLowerCase() === "all") {
-                filter.classList.add("active");
-            }
-        })
-        var navLink = document.querySelectorAll("nav p")
-        navLink.forEach(function (link) {
-            link.classList.remove("active");
-        })
-        document.querySelector("#nav-project").classList.add("active");
+//         currentCategory = "#all-project"
+//         var allFilter = document.querySelectorAll("#filter-container p")
+//         allFilter.forEach(function (filter) {
+//             filter.classList.remove("active");
+//             if (filter.textContent.toLowerCase() === "all") {
+//                 filter.classList.add("active");
+//             }
+//         })
+//         var navLink = document.querySelectorAll("nav p")
+//         navLink.forEach(function (link) {
+//             link.classList.remove("active");
+//         })
+//         document.querySelector("#nav-project").classList.add("active");
 
 
-        document.querySelector("#featured-project").style.opacity = 0;
+//         document.querySelector("#featured-project").style.opacity = 0;
 
-        // Use setTimeout to delay hiding it until opacity transition is complete
-        setTimeout(function () {
-            // Hide #featured-project after it fades out
-            document.querySelector("#featured-project").style.display = 'none';
+//         // Use setTimeout to delay hiding it until opacity transition is complete
+//         setTimeout(function () {
+//             // Hide #featured-project after it fades out
+//             document.querySelector("#featured-project").style.display = 'none';
 
-            // Show #all-project
-            const allProject = document.querySelector("#all-project");
-            allProject.style.display = 'flex'; // Show it immediately
-            setTimeout(() => {
-                allProject.style.opacity = 1; // Fade it in
-            }, 50); // Delay for smooth transition
-        }, 500); // Match the duration of opacity transition
-    }
-};
+//             // Show #all-project
+//             const allProject = document.querySelector("#all-project");
+//             allProject.style.display = 'flex'; // Show it immediately
+//             setTimeout(() => {
+//                 allProject.style.opacity = 1; // Fade it in
+//             }, 50); // Delay for smooth transition
+//         }, 500); // Match the duration of opacity transition
+//     }
+// };
 
 const filterList = document.querySelector("#flip-filter-container")
 const sectorBtn = document.querySelector("#sectors-btn")
@@ -585,66 +794,62 @@ function filterAnimation() {
     document.querySelector("#flip-filter-container").addEventListener("click", function (e) {
 
         if (e.target.tagName === "P") {
-
             allFilter.forEach(function (filter) {
                 if (filter.classList.contains("active")) {
-                    filter.querySelector(".name-space").textContent = ` : ${e.target.textContent}`
+                    filter.querySelector(".name-space").textContent = ` : ${e.target.textContent.trim()}`
                     filter.querySelector(".name-project-count").textContent = `(4)`
                     filter.querySelector(".filter-close").innerHTML = `<i class="ri-close-line"></i>`
                 }
-            })
+            });
 
             filterList.style.opacity = "0";
             filterList.style.height = "0";
-            filterList.style.padding = "0"
+            filterList.style.padding = "0";
 
-            // const page2Height = document.querySelector("#page2").getBoundingClientRect().top
-            const currentContainer = document.querySelector(currentCategory)
-            const projectContainer = document.querySelector("#filter-project")
+            const currentContainer = document.querySelector(currentCategory);
+            var projectContainer = document.querySelector("#filter-project");
+            const filterBy = e.target.textContent.trim();
+            console.log(filterBy);
 
-            // if (currentCategory === '#featured-project') {
-            //     gsap.to(window, {
-            //         scrollTo: { y: 0, autoKill: false },
-            //         duration: 1
-            //     })
-            //     return; // Exit early, skipping the timeline
-            // }
 
-            var tl = gsap.timeline()
-            tl
-                .to(currentContainer, {
-                    // onStart: function () {
-                    //     gsap.to(window, {
-                    //         scrollTo: { y: 0, autoKill: false },
-                    //         duration: 1
-                    //     })
-                    // },
-                    opacity: 0,
-                    ease: "power3.out",
-                    duration: .5,
-                    onComplete: function () {
-                        gsap.set(currentContainer, { display: "none" })
-                    }
-                })
+            function renderProjects(filterBy) {
+                projectContainer.innerHTML = ""; // Clear previous content
+
+                const filteredProjects = allProjectData.filter(project =>
+                    project.sector === filterBy || (project.service && project.service.includes(filterBy))
+                );
+                console.log(filteredProjects);
+
+
+                projectRenderer(filteredProjects, projectContainer)
+            }
+
+            var tl = gsap.timeline();
+            tl.to(currentContainer, {
+                opacity: 0,
+                ease: "power3.out",
+                duration: 0.5,
+                onComplete: function () {
+                    gsap.set(currentContainer, { display: "none" });
+                    renderProjects(filterBy);
+                }
+            })
                 .to(projectContainer, {
                     opacity: 1,
                     ease: "power3.out",
-                    duration: .5,
+                    duration: 0.5,
                     onStart: function () {
-                        gsap.set(projectContainer, { display: "flex" })
+                        gsap.set(projectContainer, { display: "flex" });
                     },
                     onComplete: function () {
-                        currentCategory = "#filter-project"
+                        currentCategory = "#filter-project";
                         setTimeout(() => {
                             ScrollTrigger.refresh();
                         }, 200);
                     }
-                })
-
-
-
+                });
         }
-    })
+    });
 
 
 }

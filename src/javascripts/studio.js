@@ -1,26 +1,30 @@
-
+document.addEventListener("DOMContentLoaded", () => {
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(TextPlugin);
 // Initialize Lenis
 function smoothScroll() {
-
     const lenis = new Lenis({
         duration: 2,
         smooth: true,
         autoRaf: true,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
     });
-    window.scrollTo(0, 0);
+
+    // Call scrollTo once
     lenis.scrollTo(0);
 
+    // Define the RAF loop
     function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
     }
 
+    // Start the animation frame loop
     requestAnimationFrame(raf);
 }
-smoothScroll()
+
+smoothScroll();
+
 
 
 const clientData = [
@@ -153,7 +157,7 @@ function homeLoader() {
             opacity: 0,
             duration: .8,
             ease: "ease-in-out",
-            delay: 1.5,
+            delay: 2,
             stagger: {
                 from: "center",
                 amount: .2
@@ -167,7 +171,7 @@ function homeLoader() {
             stagger: {
                 amount: .2
             },
-            delay: 1.6,
+            delay: 2.1,
         }, "a")
 
         .from("#toph", {
@@ -342,9 +346,9 @@ function openService() {
             duration: 1.2,
             onComplete: () => {
                 gsap.set("body", { overflow: "auto" })
-                setTimeout(() => {
-                    ScrollTrigger.refresh();
-                }, 200);
+                // setTimeout(() => {
+                //     ScrollTrigger.refresh();
+                // }, 200);
             }
         })
     }
@@ -456,6 +460,70 @@ function brandListingAnimtion() {
 
 }
 brandListingAnimtion()
+
+function clientAnimeMobile() {
+    var clientList = document.querySelectorAll(".client");
+    var logoContainerImg = document.querySelector("#client-logo img");
+
+    function updateClientOpacity() {
+        let closest = null;
+        let closestDistance = Infinity;
+
+        clientList.forEach((client, index) => {
+            let rect = client.getBoundingClientRect();
+            let distance = Math.abs(rect.top - window.innerHeight / 2); // Exactly center
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closest = client;
+            }
+        });
+
+        clientList.forEach((client) => {
+            gsap.to(client, { opacity: client === closest ? 1 : 0.5, duration: 0.3 });
+        });
+
+        let closestIndex = Array.from(clientList).indexOf(closest);
+        if (closestIndex !== -1) {
+            logoContainerImg.src = clientData[closestIndex].logo;
+        }
+    }
+
+    clientList.forEach((c, index) => {
+        gsap.to(c, {
+            scrollTrigger: {
+                trigger: c,
+                scroller: "body",
+                start: "top 50%",
+                end: "top 40%",
+                scrub: 1,
+                // markers: true, 
+                onUpdate: updateClientOpacity,
+            }
+        });
+    });
+
+    // Handle fading last client
+    gsap.to(clientList[clientList.length - 1], {
+        scrollTrigger: {
+            trigger: clientList[clientList.length - 1],
+            scroller: "body",
+            start: "bottom 90%",
+            end: "bottom 20%",
+            scrub: 1,
+            onLeave: () => gsap.to(clientList[clientList.length - 1], { opacity: 0.5, duration: 0.3 }),
+            onLeaveBack: () => gsap.to(clientList[clientList.length - 1], { opacity: 0.5, duration: 0.3 }),
+        }
+    });
+
+    ScrollTrigger.refresh(); // Ensures positioning is updated
+}
+
+
+
+if(window.innerWidth < 575){
+    clientAnimeMobile()
+}
 
 function memberAnimation() {
     gsap.from(".m1", {
@@ -575,57 +643,57 @@ function memberAnimation() {
         }
     });
 
-    gsap.from(".m10", {
-        opacity: 1,
-        y: 1000,
-        duration: 2,
-        scrollTrigger: {
-            trigger: "#studio-2",
-            scroller: "body",
-            start: "top -160%",
-            end: "top -175%",
-            scrub: 1,
-        }
-    });
+    // gsap.from(".m10", {
+    //     opacity: 1,
+    //     y: 1000,
+    //     duration: 2,
+    //     scrollTrigger: {
+    //         trigger: "#studio-2",
+    //         scroller: "body",
+    //         start: "top -160%",
+    //         end: "top -175%",
+    //         scrub: 1,
+    //     }
+    // });
 
-    gsap.from(".m11", {
-        opacity: 1,
-        y: 600,
-        duration: 2,
-        scrollTrigger: {
-            trigger: "#studio-2",
-            scroller: "body",
-            start: "top -125%",
-            end: "top -140%",
-            scrub: 1,
-        }
-    });
+    // gsap.from(".m11", {
+    //     opacity: 1,
+    //     y: 600,
+    //     duration: 2,
+    //     scrollTrigger: {
+    //         trigger: "#studio-2",
+    //         scroller: "body",
+    //         start: "top -125%",
+    //         end: "top -140%",
+    //         scrub: 1,
+    //     }
+    // });
 
-    gsap.from(".m12", {
-        opacity: 1,
-        y: 800,
-        duration: 2,
-        scrollTrigger: {
-            trigger: "#studio-2",
-            scroller: "body",
-            start: "top -170%",
-            end: "top -185%",
-            scrub: 1,
-        }
-    });
+    // gsap.from(".m12", {
+    //     opacity: 1,
+    //     y: 800,
+    //     duration: 2,
+    //     scrollTrigger: {
+    //         trigger: "#studio-2",
+    //         scroller: "body",
+    //         start: "top -170%",
+    //         end: "top -185%",
+    //         scrub: 1,
+    //     }
+    // });
 
-    gsap.from(".m13", {
-        opacity: 1,
-        y: 600,
-        duration: 2,
-        scrollTrigger: {
-            trigger: "#studio-2",
-            scroller: "body",
-            start: "top -210%",
-            end: "top -230%",
-            scrub: 1,
-        }
-    });
+    // gsap.from(".m13", {
+    //     opacity: 1,
+    //     y: 600,
+    //     duration: 2,
+    //     scrollTrigger: {
+    //         trigger: "#studio-2",
+    //         scroller: "body",
+    //         start: "top -210%",
+    //         end: "top -230%",
+    //         scrub: 1,
+    //     }
+    // });
 
     gsap.to("#studio-contact", {
         opacity: 1,
@@ -751,11 +819,12 @@ document.querySelector("#menu-button").addEventListener("click", function () {
     }
 })
 
-
-
 document.querySelector("#menu-service").addEventListener("click", function () {
     if (!isMenuService) {
         document.querySelector("#menu-button").textContent = "menu"
         isMenuService = true;
     }
+})
+
+
 })

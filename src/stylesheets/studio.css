@@ -353,7 +353,7 @@ nav img {
 
 #section2-about-studio h3 .lower {
   margin-right: 10px !important;
-  font-family: paraItalic !important;
+  font-family: para !important;
 }
 
 
@@ -376,11 +376,11 @@ nav img {
 }
 #section2-about-studio h5 .lower{
   margin-right: 5px !important;
-  font-family: paraItalic !important;
+  font-family: para !important;
 
 }
 #section2-about-studio h5 .upper {
-  font-family: paraItalic !important;
+  font-family: para!important;
   margin-right: 5px !important;
 }
 
@@ -492,6 +492,21 @@ nav img {
   position: relative;
   padding-top: 54px;
   padding-bottom: 37px;
+  /* display: none; */
+}
+#client-logo{
+  height: 20px;
+  position: fixed;
+  top: 50%;
+  right: 13px;
+  transform: translateY(-50%);
+  z-index: 9;
+  display: none;
+}
+#client-logo img{
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 #studio-team {
   width: 72%;

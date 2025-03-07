@@ -34,7 +34,7 @@ const clientData = [
         "image": "https://images.prismic.io/malvah-v2/04b80e45-4541-43c3-8e09-531279af5047_Iso.jpg?auto=compress,format"
     },
     {
-        "name": "Esquire",
+        "name": "Esquire India",
         "logo": "/zs-logos/esquire.png",
         "image": "https://images.prismic.io/malvah-v2/4eb25f32-4cf1-4c40-ae23-c1fc3e72d222_S%26P.jpg?auto=compress,format"
     },
@@ -44,110 +44,90 @@ const clientData = [
         "image": "https://images.prismic.io/malvah-v2/dff6595a-7adc-4278-b833-71d66b99c346_Work+Thumbnail_M%26C.jpg?auto=format,compress"
     },
     {
-        "name": "RPSG Media",
+        "name": "RPSG Group",
         "logo": "/zs-logos/rpsg.png",
         "image": "https://images.prismic.io/malvah-v2/13c30cae-4517-49a8-a047-8fc8e1bece85_Pointblank.jpg?auto=compress,format"
     },
     {
-        "name": "RPSG Group (IMI)",
+        "name": "RPSG Lifestyle Media",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/8e6d2447-0195-4f80-9357-afb725558da2_Onion.jpg?auto=compress,format"
     },
     {
-        "name": "ResideInBeing",
+        "name": "Point Of",
         "logo": "/zs-logos/rib.avif",
         "image": "https://images.prismic.io/malvah-v2/91ad2da3-7088-407b-b96f-cd99c4b6605f_CS_Hailr-16.jpg?auto=format,compress"
     },
     {
-        "name": "JustNosh",
+        "name": "Wealth Fusion",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/65c628649be9a5b998b598f3_Spot.jpg?auto=format,compress"
     },
     {
-        "name": "Hefty Art",
+        "name": "Casa Carigar",
         "logo": "/zs-logos/hart.png",
         "image": "https://images.prismic.io/malvah-v2/647a9895-ec45-49ed-80c2-70fde7ddd6fd_Fold7.jpg?auto=compress,format"
     },
     {
-        "name": "Khelo Esports",
+        "name": "WineeMedia",
         "logo": "/zs-logos/ks.png",
         "image": "https://images.prismic.io/malvah-v2/64f0261f-3153-4ee0-bd4f-86be7f6189e0_sync.labs.jpg?auto=compress,format"
     },
     {
-        "name": "WineeMedia",
+        "name": "JustNosh",
         "logo": "/zs-logos/logo.png",
         "image": "https://images.prismic.io/malvah-v2/23cd5c52-1a5e-4b7f-acbd-bea70898fe5a_Natro.jpg?auto=compress,format"
     },
     {
-        "name": "The Senseis Store",
+        "name": "Hefty Art",
         "logo": "/zs-logos/senseis.png",
         "image": "https://images.prismic.io/malvah-v2/324e85f5-a768-425e-abf8-c110cece74b0_WB.jpg?auto=compress,format"
     },
-    // {
-    //     "name": "Aadesh Masala",
-    //     "logo": "/zs-logos/Aadesh.png",
-    //     "image": "https://images.prismic.io/malvah-v2/0d82b512-ff6e-4ad0-a2f0-543fc15c2bc6_ESD.jpg?auto=compress,format"
-    // },
     {
-        "name": "Point Of",
+        "name": "Khelo Esports",
         "logo": "/zs-logos/point.png",
         "image": "https://images.prismic.io/malvah-v2/65c626c09be9a5b998b598a9_Locomotive_2.jpg?auto=format,compress"
     },
     {
-        "name": "Wealth Fusion",
+        "name": "The Senseis Store",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/65c628769be9a5b998b598f5_MacMedia.jpg?auto=format,compress"
     },
     {
-        "name": "Casa Carigar",
+        "name": "Mr. & Mrs.",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/9e16d128-ee3b-4191-b784-15bc1bee9682_Amaren.jpg?auto=compress,format"
     },
     {
-        "name": "IGL",
+        "name": "Rage",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/fd9f6a77-0b3e-4eb0-9f75-a03f135cb556_Kode+Media.jpg?auto=compress,format"
     },
     {
-        "name": "The Greek Life",
+        "name": "Dhamaka",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/3899261c-2583-4e1c-af07-32565e29e63f_Milck.jpg?auto=compress,format"
     },
     {
-        "name": "I White Korea",
+        "name": "Indian Gaming League",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/4eeab1b9-c0fa-401b-8ee2-8203a9485fcb_R%26R.jpg?auto=compress,format"
     },
     {
-        "name": "WhenInMykonos",
+        "name": "The Greek Life",
         "logo": "/zs-logos/hart.png",
         "image": "https://images.prismic.io/malvah-v2/65c628649be9a5b998b598f3_Spot.jpg?auto=format,compress"
     },
     {
-        "name": "Mr. & Mrs.",
+        "name": "I White Korea",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/f9b97806-7864-4013-b7f8-23a54b1eae03_Heights.jpg?auto=compress,format"
     },
     {
-        "name": "Rage Media",
+        "name": "ResideInBeing",
         "logo": "/zs-logos/nosh.png",
         "image": "https://images.prismic.io/malvah-v2/3899261c-2583-4e1c-af07-32565e29e63f_Milck.jpg?auto=compress,format"
     },
-    {
-        "name": "Rage Entertainment",
-        "logo": "/zs-logos/hart.png",
-        "image": "https://images.prismic.io/malvah-v2/23cd5c52-1a5e-4b7f-acbd-bea70898fe5a_Natro.jpg?auto=compress,format"
-    },
-    {
-        "name": "Dhamaka Records",
-        "logo": "/zs-logos/nosh.png",
-        "image": "https://images.prismic.io/malvah-v2/41bd22e1-22ff-4ba2-863f-a5a7e7be73e0_Work+Thumbnail_Sunya.jpg?auto=format,compress"
-    },
-    {
-        "name": "Dhamaka Talent",
-        "logo": "/zs-logos/hart.png",
-        "image": "https://images.prismic.io/malvah-v2/91ad2da3-7088-407b-b96f-cd99c4b6605f_CS_Hailr-16.jpg?auto=format,compress"
-    }
 ]
 
 function homeLoader() {
@@ -429,22 +409,22 @@ function brandListingAnimtion() {
             showcaseImg.src = "/images/blank.png";
         });
     });
-    document.querySelector("#brand-listing").addEventListener("mousemove", function (e) {
-        const scrollPosition = e.clientY - document.querySelector("#brand-listing").getBoundingClientRect().top
-        gsap.to(document.querySelector("#brand-logo"), {
-            top: scrollPosition,
-        })
-    })
-    document.querySelector("#brand-list").addEventListener("mouseenter", function () {
-        gsap.to(document.querySelector("#brand-logo"), {
-            opacity: 1,
-        })
-    })
-    document.querySelector("#brand-list").addEventListener("mouseleave", function () {
-        gsap.to(document.querySelector("#brand-logo"), {
-            opacity: 0,
-        })
-    })
+    // document.querySelector("#brand-listing").addEventListener("mousemove", function (e) {
+    //     const scrollPosition = e.clientY - document.querySelector("#brand-listing").getBoundingClientRect().top
+    //     gsap.to(document.querySelector("#brand-logo"), {
+    //         top: scrollPosition,
+    //     })
+    // })
+    // document.querySelector("#brand-list").addEventListener("mouseenter", function () {
+    //     gsap.to(document.querySelector("#brand-logo"), {
+    //         opacity: 1,
+    //     })
+    // })
+    // document.querySelector("#brand-list").addEventListener("mouseleave", function () {
+    //     gsap.to(document.querySelector("#brand-logo"), {
+    //         opacity: 0,
+    //     })
+    // })
 
 
     gsap.to("#brand-showcase", {

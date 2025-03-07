@@ -269,7 +269,7 @@ const porjectData = [
             },
             {
                 name: "Life Style",
-                projects: [1, 2]
+                projects: [1, 2,3,4]
             },
             {
                 name: "Hospitality",
@@ -333,43 +333,43 @@ const porjectData = [
         services: [
             {
                 service: "UI Design",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
             },
             {
                 service: "UX Design",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17]
             },
             {
                 service: "Frontend Development",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15]
             },
             {
                 service: "GSAP Web Animations",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13]
             },
             {
                 service: "Backend Development",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6,7,8,9]
             },
             {
                 service: "SEO Services",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3, 4,5,6]
             },
             {
                 service: "Shopify eCom Development",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2, 3]
             },
             {
                 service: "Custom eCom Development",
-                projects: [1, 2, 3, 4]
+                projects: [1, 2]
             },
             {
                 service: "Multi-Vendor eCom marketplace",
-                projects: [1, 2, 3, 4]
+                projects: [1]
             },
             {
                 service: "E-Commerce Optimizations",
-                projects: [1, 2, 3, 4]
+                projects: [1]
             },
             {
                 service: "Custom CMS",
@@ -795,13 +795,7 @@ function filterAnimation() {
     document.querySelector("#flip-filter-container").addEventListener("click", function (e) {
 
         if (e.target.tagName === "P") {
-            allFilter.forEach(function (filter) {
-                if (filter.classList.contains("active")) {
-                    filter.querySelector(".name-space").textContent = ` : ${e.target.textContent.trim()}`
-                    filter.querySelector(".name-project-count").textContent = `(4)`
-                    filter.querySelector(".filter-close").innerHTML = `<i class="ri-close-line"></i>`
-                }
-            });
+            
 
             filterList.style.opacity = "0";
             filterList.style.height = "0";
@@ -810,8 +804,6 @@ function filterAnimation() {
             const currentContainer = document.querySelector(currentCategory);
             var projectContainer = document.querySelector("#filter-project");
             const filterBy = e.target.textContent.trim();
-            console.log(filterBy);
-
 
             function renderProjects(filterBy) {
                 projectContainer.innerHTML = ""; // Clear previous content
@@ -819,7 +811,13 @@ function filterAnimation() {
                 const filteredProjects = allProjectData.filter(project =>
                     project.sector === filterBy || (project.service && project.service.includes(filterBy))
                 );
-                console.log(filteredProjects);
+                allFilter.forEach(function (filter) {
+                    if (filter.classList.contains("active")) {
+                        filter.querySelector(".name-space").textContent = ` : ${e.target.textContent.trim()}`
+                        filter.querySelector(".name-project-count").textContent = `(${filteredProjects.length})`
+                        filter.querySelector(".filter-close").innerHTML = `<i class="ri-close-line"></i>`
+                    }
+                });
 
 
                 projectRenderer(filteredProjects, projectContainer)

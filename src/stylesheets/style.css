@@ -681,6 +681,7 @@ footer {
 }
 .footer-mail p {
   font-family: headingb !important;
+  line-height: 1 !important;
 }
 
 /* FOOTER CSS END */
@@ -1236,6 +1237,22 @@ a {
   .project-large .showcase {
     width: 100%;
     height: 100vh;
+    margin-bottom: 8px;
+  }
+  .projects-container {
+    gap: 7px !important;
+  }
+}
+
+
+@media (min-width: 1400px) and (max-width: 1450px){
+  .project-small .showcase {
+    height: 390px;
+    margin-bottom: 8px;
+  }
+  .project-large .showcase {
+    width: 100%;
+    height: 90vh;
     margin-bottom: 8px;
   }
   .projects-container {

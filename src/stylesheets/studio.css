@@ -407,8 +407,9 @@ nav img {
   justify-content: center;
 }
 .showcase-img {
-  width: 380px;
-  height: 60%;
+  width: 390px;
+  /* height: 60%; */
+  height: auto !important;
   overflow: hidden;
 }
 .showcase-img img {
@@ -728,6 +729,7 @@ footer {
 }
 .footer-mail p {
   font-family: headingb !important;
+  line-height: 1 !important;
 }
 
 /* FOOTER CSS END */

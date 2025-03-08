@@ -124,8 +124,8 @@ const allProjectData = [
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/ResideInBeing/reside_in_being.webp",
-        hoverImg: "/projects/ResideInBeing/reside_in_being_hover.webp",
+        poster: "/projects/ResideInBeing/reside_in_being_hover.webp",
+        hovervideo: "/projects/ResideInBeing/reside_in_being_hover_2.mp4",
         title: "ResideInBeing",
         desc: "Clothing Label",
         sector: "Fashion",
@@ -187,6 +187,8 @@ function allProjectRender() {
 allProjectRender()
 
 function projectRenderer(data, container) {
+    const isSmallScreen = window.innerWidth <= 576;
+
     data.forEach(project => {
         const projectElement = document.createElement("a");
         projectElement.href = "/details";
@@ -195,29 +197,45 @@ function projectRenderer(data, container) {
         const showcaseDiv = document.createElement("div");
         showcaseDiv.classList.add("showcase");
 
-        if (project.hovervideo) {
-            const showcaseOverDiv = document.createElement("div");
-            showcaseOverDiv.classList.add("showcase-over");
+        if (!isSmallScreen) {
+            if (project.hovervideo) {
+                const showcaseOverDiv = document.createElement("div");
+                showcaseOverDiv.classList.add("showcase-over");
 
-            const video = document.createElement("video");
-            video.src = project.hovervideo;
-            video.autoplay = true;
-            video.muted = true;
-            video.loop = true;
-            video.setAttribute("playsinline", "");
+                const video = document.createElement("video");
+                video.src = project.hovervideo;
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.setAttribute("playsinline", "");
 
-            showcaseOverDiv.appendChild(video);
-            showcaseDiv.appendChild(showcaseOverDiv);
-        } else if (project.hoverImg) {
-            const showcaseOverDiv = document.createElement("div");
-            showcaseOverDiv.classList.add("showcase-over");
+                showcaseOverDiv.appendChild(video);
+                showcaseDiv.appendChild(showcaseOverDiv);
+                showcaseDiv.addEventListener("mouseenter", () => {
+                    showcaseOverDiv.style.opacity = "1";
+                });
 
-            const img = document.createElement("img");
-            img.src = project.hoverImg;
-            img.alt = "hover-image";
+                showcaseDiv.addEventListener("mouseleave", () => {
+                    showcaseOverDiv.style.opacity = "0";
+                });
+            } else if (project.hoverImg) {
+                const showcaseOverDiv = document.createElement("div");
+                showcaseOverDiv.classList.add("showcase-over");
 
-            showcaseOverDiv.appendChild(img);
-            showcaseDiv.appendChild(showcaseOverDiv);
+                const img = document.createElement("img");
+                img.src = project.hoverImg;
+                img.alt = "hover-image";
+
+                showcaseOverDiv.appendChild(img);
+                showcaseDiv.appendChild(showcaseOverDiv);
+                showcaseDiv.addEventListener("mouseenter", () => {
+                    showcaseOverDiv.style.opacity = "1";
+                });
+
+                showcaseDiv.addEventListener("mouseleave", () => {
+                    showcaseOverDiv.style.opacity = "0";
+                });
+            }
         }
 
         const img = document.createElement("img");
@@ -238,7 +256,9 @@ function projectRenderer(data, container) {
 
         container.appendChild(projectElement);
     });
+    projectAnimation();
 }
+
 
 const porjectData = [
     {
@@ -269,7 +289,7 @@ const porjectData = [
             },
             {
                 name: "Life Style",
-                projects: [1, 2,3,4]
+                projects: [1, 2, 3, 4]
             },
             {
                 name: "Hospitality",
@@ -333,27 +353,27 @@ const porjectData = [
         services: [
             {
                 service: "UI Design",
-                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+                projects: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
             },
             {
                 service: "UX Design",
-                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+                projects: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
             },
             {
                 service: "Frontend Development",
-                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15]
+                projects: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
             },
             {
                 service: "GSAP Web Animations",
-                projects: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13]
+                projects: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
             },
             {
                 service: "Backend Development",
-                projects: [1, 2, 3, 4,5,6,7,8,9]
+                projects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
             },
             {
                 service: "SEO Services",
-                projects: [1, 2, 3, 4,5,6]
+                projects: [1, 2, 3, 4, 5, 6]
             },
             {
                 service: "Shopify eCom Development",
@@ -658,10 +678,10 @@ function filterAnimation() {
                 filterList.style.padding = "0"
                 // document.querySelector("#nav-project").classList.add("active");
             }
-            else {
-                // document.querySelector("#nav-project").classList.remove("active");
-                history.pushState(null, '', '/');
-            }
+            // else {
+            //     // document.querySelector("#nav-project").classList.remove("active");
+            //     history.pushState(null, '', '/');
+            // }
             this.classList.add("active");
         })
     })
@@ -795,8 +815,6 @@ function filterAnimation() {
     document.querySelector("#flip-filter-container").addEventListener("click", function (e) {
 
         if (e.target.tagName === "P") {
-            
-
             filterList.style.opacity = "0";
             filterList.style.height = "0";
             filterList.style.padding = "0";
@@ -855,12 +873,58 @@ function filterAnimation() {
 filterAnimation()
 
 
+function backToFeatured(btn){
+    const currentContainer = document.querySelector("#filter-project")
+    const projectContainer = document.querySelector("#featured-project")
+
+    gsap.to(window, {
+        scrollTo: { y: 0, autoKill: false },
+        duration: 1
+    })
+    var tl = gsap.timeline()
+    tl
+        .to(currentContainer, {
+            onStart: function () {
+                gsap.to(window, {
+                    scrollTo: { y: 0, autoKill: false },
+                    duration: 1
+                })
+            },
+            opacity: 0,
+            ease: "power3.out",
+            duration: .5,
+            onComplete: function () {
+                gsap.set(currentContainer, { display: "none" })
+            }
+        })
+        .to(projectContainer, {
+            opacity: 1,
+            ease: "power3.out",
+            duration: .5,
+            onStart: function () {
+                gsap.set(projectContainer, { display: "flex" })
+                document.querySelector(btn).classList.remove("active")
+                document.querySelector("#featured-btn").classList.add("active")
+            },
+            onComplete: function () {
+                currentCategory = "#featured-project"
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 200);
+            }
+        })
+
+}
+
+
 function filterListing() {
     var isOpen = null;
 
     sectorBtn.addEventListener("click", function () {
 
         if (isOpen === "sector") {
+            console.log("yes it is");
+
             document.querySelectorAll(".listing-filter").forEach(function (p) {
                 p.querySelector(".name-space").textContent = ``
                 p.querySelector(".name-project-count").textContent = ``
@@ -870,6 +934,8 @@ function filterListing() {
             filterList.style.opacity = "0";
             filterList.style.height = "0";
             filterList.style.padding = "0"
+
+            backToFeatured("#sectors-btn")
             isOpen = null;
             return;
         }
@@ -977,6 +1043,7 @@ function filterListing() {
             filterList.style.opacity = "0";
             filterList.style.height = "0";
             filterList.style.padding = "0"
+            backToFeatured("#service-btn")
             isOpen = null;
             return;
         }

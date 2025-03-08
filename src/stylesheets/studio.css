@@ -407,15 +407,17 @@ nav img {
   justify-content: center;
 }
 .showcase-img {
-  width: 390px;
-  /* height: 60%; */
-  height: auto !important;
+  width: auto !important;
+  height: 60%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .showcase-img img {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   user-select: none;
 }

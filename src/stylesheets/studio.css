@@ -759,7 +759,7 @@ footer {
 }
 .footer-mail p {
   font-family: headingb !important;
-  line-height: 1 !important;
+  line-height: 1;
 }
 
 /* FOOTER CSS END */
@@ -819,6 +819,10 @@ a {
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  .footer-mail p {
+    line-height: normal;
+  }
+  
   #banner-des{
     display: none;
   }
@@ -1088,6 +1092,9 @@ a {
   }
 }
 @media (min-width: 576px) and (max-width: 875px) {
+  .footer-mail p {
+    line-height: normal;
+  }
   #our-service {
     width: 100%;
     display: flex;

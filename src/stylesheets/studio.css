@@ -408,7 +408,7 @@ nav img {
 }
 .showcase-img {
   width: auto !important;
-  height: 60%;
+  height: 58%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -525,9 +525,34 @@ nav img {
 }
 .member img {
   width: 100%;
-  height: auto;
-  aspect-ratio: .8;
-  object-fit: cover;
+  object-fit: cover
+}
+.m1 img{
+  height: 450px;
+}
+.m2 img{
+  height: 440px;
+}
+.m3 img{
+  height: 452px;
+}
+.m4 img{
+  height: 440px;
+}
+.m5 img{
+  height: 350px;
+}
+.m6 img{
+  height: 438px;
+}
+.m7 img{
+  height: 450px;
+}
+.m8 img{
+  height: 360px;
+}
+.m9 img{
+  height: 448px;
 }
 .member p {
   margin-bottom: 2px;

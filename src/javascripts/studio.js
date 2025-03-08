@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 scrub: true,
                 pin: "#brand-showcase",
                 anticipatePin: 1,  // Helps smoother transition
-                invalidateOnRefresh: true  // Recalculates values on resize
+invalidateOnRefresh: true  // Recalculates values on resize
             }
         });
 

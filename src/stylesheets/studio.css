@@ -525,6 +525,9 @@ nav img {
 }
 .member img {
   width: 100%;
+  height: auto;
+  aspect-ratio: .8;
+  object-fit: cover;
 }
 .member p {
   margin-bottom: 2px;

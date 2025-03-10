@@ -30,102 +30,102 @@ document.addEventListener("DOMContentLoaded", () => {
     const clientData = [
         {
             "name": "THR India",
-            "logo": "/zs-logos/thr-logo.png",
+            "logo": "/Logos/thr_logo.webp",
             "image": "/brands/thr_our_studio.webp"
         },
         {
             "name": "Esquire India",
-            "logo": "/zs-logos/esquire.png",
+            "logo": "/Logos/esquire_logo.webp",
             "image": "/brands/esquire_our_studio.webp"
         },
         {
             "name": "Manifest",
-            "logo": "/zs-logos/manifest.png",
+            "logo": "/Logos/manifest.webp",
             "image": "/brands/manifest_our_studio.webp"
         },
         {
             "name": "RPSG Group",
-            "logo": "/zs-logos/rpsg.png",
+            "logo": "/Logos/RPSG_group_logo.webp",
             "image": "/brands/rpsg_group_our_studio.webp"
         },
         {
             "name": "RPSG Lifestyle Media",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/RPSG_media_logo.webp",
             "image": "/brands/rpsg_media_our_studio.webp"
         },
         {
             "name": "Point Of",
-            "logo": "/zs-logos/rib.avif",
+            "logo": "/Logos/point.png",
             "image": "/brands/po_our_studio.webp"
         },
         {
             "name": "Wealth Fusion",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/wf_logo.webp",
             "image": "/brands/wealth_fusion_our_studio.webp"
         },
         {
             "name": "Casa Carigar",
-            "logo": "/zs-logos/hart.png",
+            "logo": "/Logos/cc_logo_2.webp",
             "image": "/brands/cc_our_studio.webp"
         },
         {
             "name": "WineeMedia",
-            "logo": "/zs-logos/ks.png",
+            "logo": "/Logos/wineemedia_logo_2.webp",
             "image": "/brands/wineemedia_our_studio.webp"
         },
         {
             "name": "JustNosh",
-            "logo": "/zs-logos/logo.png",
+            "logo": "/Logos/justnosh_logo.webp",
             "image": "/brands/just_nosh_our_studio.webp"
         },
         {
             "name": "Hefty Art",
-            "logo": "/zs-logos/senseis.png",
+            "logo": "/Logos/hefty_art_logo.webp",
             "image": "/brands/hefty_art_our_studio.webp"
         },
         {
             "name": "Khelo Esports",
-            "logo": "/zs-logos/point.png",
+            "logo": "/Logos/khelo_esport_logo_2.webp",
             "image": "/brands/khelo_esports_our_studio.webp"
         },
         {
             "name": "The Senseis Store",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/sensei_store_logo.webp",
             "image": "/brands/sensei_store_our_studio.webp"
         },
         {
             "name": "Mr. & Mrs.",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/mr_and_mrs_films_logo.webp",
             "image": "/brands/mr_and_mrs_our_studio.webp"
         },
         {
             "name": "Rage",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/rage_media_logo_2.webp",
             "image": "/brands/rage_our_studio.webp"
         },
         {
             "name": "Dhamaka",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/dhamaka_record_logo.webp",
             "image": "/brands/dhamaka_records_our_studio.webp"
         },
         {
             "name": "Indian Gaming League",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/the_greek_life_logo_2.webp",
             "image": "/brands/IGL_our_studio.webp"
         },
         {
             "name": "The Greek Life",
-            "logo": "/zs-logos/hart.png",
+            "logo": "/Logos/the_greek_life_logo_2.webp",
             "image": "/brands/greek_life_our_studio.webp"
         },
         {
             "name": "I White Korea",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/i_white_korea_logo.webp",
             "image": "/brands/iWhiteKorea_our_studio.webp"
         },
         {
             "name": "ResideInBeing",
-            "logo": "/zs-logos/nosh.png",
+            "logo": "/Logos/rib.avif",
             "image": "/brands/reside_in_being_our_studio.webp"
         },
     ]

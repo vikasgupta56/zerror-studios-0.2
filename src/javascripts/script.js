@@ -22,40 +22,40 @@ function smoothScroll() {
 smoothScroll()
 const allProjectData = [
     {
-        poster: "/projects/Casa Carigar/casa_carigar.webp",
-        hoverImg: "/projects/Casa Carigar/casa_carigar_hover.webp",
+        poster: "/projects/Casa Carigar/cc_cover.webp",
+        hoverImg: "/projects/Casa Carigar/cc_hover.webp",
         title: "Casa Carigar",
         desc: "Luxuary Furniture Marketplace",
         sector: "Life Style",
         service: ["Shopify eCom Development", "Multi-Vendor eCom marketplace", "UI Design", "UX Design"]
     },
     {
-        poster: "/projects/Dhamaka Record/Dhamaka_Records.webp",
-        hovervideo: "/projects/Dhamaka Record/Dhamaka_Records_Hover.mp4",
+        poster: "/projects/Dhamaka Record/dhamaka_records_cover.webp",
+        hovervideo: "/projects/Dhamaka Record/Dhamaka_Records_Hover.webm",
         title: "Dhamaka",
         desc: "Marketing Agency",
         sector: "Life Style",
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Esquire India/Esquire_India.webp",
-        hoverImg: "/projects/Esquire India/Esquire_India_Hover.webp",
+        poster: "/projects/Esquire India/esquire_cover.webp",
+        hoverImg: "/projects/Esquire India/esquire_hover.webp",
         title: "Esquire India",
         desc: "Man at his best",
         sector: "Media",
         service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "GSAP Web Animations", "Backend Development", "SEO Services"]
     },
     {
-        poster: "/projects/Greek Life/Greek_Life.webp",
-        hovervideo: "/projects/Greek Life/Greek_Life_Hover.mp4",
+        poster: "/projects/Greek Life/greek_life_cover.webp",
+        hovervideo: "/projects/Greek Life/Greek_Life_Hover.webm",
         title: "The Greek Life",
         desc: "Destination Management Services",
         sector: "Hospitality",
         service: ["UI Design", "UX Design", "Frontend Development", "Backend Development"]
     },
     {
-        poster: "/projects/Hefty Art/Heafty_Art.webp",
-        hovervideo: "/projects/Hefty Art/Heafty_Art_Hover.mp4",
+        poster: "/projects/Hefty Art/hefty_art_cover.webp",
+        hovervideo: "/projects/Hefty Art/Heafty_Art_Hover.webm",
         title: "Heafty Art",
         desc: "Web 3.0",
         sector: "ART",
@@ -63,29 +63,29 @@ const allProjectData = [
     },
     {
         poster: "/projects/Indian Gaming League/IGL_Cover.webp",
-        hoverImg: "/projects/Indian Gaming League/IGL_Hover.webp",
+        hoverImg: "/projects/Indian Gaming League/IGL_hover.webp",
         title: "Indian Gaming League",
         desc: "eSport Platform",
         sector: "Life Style",
         service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "Custom CMS"]
     },
     {
-        poster: "/projects/iWhiteKorea/iwhitekorea_1.webp",
-        hovervideo: "/projects/iWhiteKorea/iwhitekorea_hover.mp4",
+        poster: "/projects/iWhiteKorea/iWhiteKorea_cover.webp",
+        hovervideo: "/projects/iWhiteKorea/iwhitekorea_hover.webm",
         title: "I White Korea",
         desc: "Korean Beauty Essentials",
         sector: "Beauty",
         service: ["UI Design", "UX Design", "Custom eCom Development", "SEO Services"]
     },
     {
-        poster: "/projects/JustNosh/JustNosh.webp",
+        poster: "/projects/JustNosh/just_nosh_cover.webp",
         title: "JustNosh",
         desc: "Gourmet Snacks",
         sector: "Food",
         service: ["Shopify eCom Development", "E-Commerce Optimizations"]
     },
     {
-        poster: "/projects/Khelo Esports/Khelo_Esports.webp",
+        poster: "/projects/Khelo Esports/khelo_esports.webp",
         hovervideo: "/projects/Khelo Esports/Khelo_Esports_Hover.mp4",
         title: "Khelo Esports",
         desc: "Esports Events",
@@ -93,38 +93,38 @@ const allProjectData = [
         service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Manifest/Manifest.webp",
+        poster: "/projects/Manifest/manifest_cover.webp",
         title: "Manifest",
         desc: "Wedding Magazine",
         sector: "Media",
         service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Mr. and Mrs/Mr_and_Mrs.webp",
-        hovervideo: "/projects/Mr. and Mrs/Mr_and_Mrs_Hover.mp4",
+        poster: "/projects/Mr. and Mrs/mr_and_mrs_cover.webp",
+        hovervideo: "/projects/Mr. and Mrs/Mr_and_Mrs_Hover_2.webm",
         title: "Mr. & Mrs.",
         desc: "Ads Production & Events",
         sector: "Advertising",
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Point Of/Point_Of.webp",
-        hovervideo: "/projects/Point Of/Point_Of_Hover.mp4",
+        poster: "/projects/Point Of/po_cover.webp",
+        hovervideo: "/projects/Point Of/Point_Of_Hover.webm",
         title: "Point Of",
         desc: "Creative Agency",
         sector: "Advertising",
         service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Rage Media/Rage_Media.webp",
-        hovervideo: "/projects/Rage Media/Rage_Media_Hover.mp4",
+        poster: "/projects/Rage Media/rage_cover.webp",
+        hovervideo: "/projects/Rage Media/Rage_Media_Hover_2.webm",
         title: "Rage Media",
         desc: "Marketing Agency",
         sector: "Advertising",
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/ResideInBeing/reside_in_being_hover.webp",
+        poster: "/projects/ResideInBeing/RIB_hover.webp",
         hovervideo: "/projects/ResideInBeing/reside_in_being_hover_2.mp4",
         title: "ResideInBeing",
         desc: "Clothing Label",
@@ -132,46 +132,46 @@ const allProjectData = [
         service: ["Shopify eCom Development", "UI Design", "UX Design", "SEO Services"]
     },
     {
-        poster: "/projects/RPSG Group/rpsg_group.webp",
+        poster: "/projects/RPSG Group/rpsg_group_cover.webp",
         title: "RPSG Group",
         desc: "Indian Multinational Conglomerate",
         sector: "Media",
         service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Sensei Store/Sensei_Store.webp",
-        hovervideo: "/projects/Sensei Store/Sensei_Store_Hover.mp4",
+        poster: "/projects/Sensei Store/sensei_store.webp",
+        hovervideo: "/projects/Sensei Store/Sensei_Store_Hover.webm",
         title: "The Senseis Store",
         desc: "eCommerce Store",
         sector: "Fashion",
         service: ["Custom eCom Development"]
     },
     {
-        poster: "/projects/RPSG Lifestyle Media/RPSG_Media.webp",
-        hoverImg: "/projects/RPSG Lifestyle Media/RPSG_Media_Hover.webp",
+        poster: "/projects/RPSG Lifestyle Media/rpsg_media.webp",
+        hoverImg: "/projects/RPSG Lifestyle Media/RPSG_media_hover.webp",
         title: "RPSG Lifestyle Media",
         desc: "Media Powerhouse",
         sector: "Media",
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations", "SEO Services"]
     },
     {
-        poster: "/projects/THR India/THR_India.webp",
-        hoverImg: "/projects/THR India/THR_India_Hover.webp",
+        poster: "/projects/THR India/thr_cover.webp",
+        hoverImg: "/projects/THR India/THR_hover.webp",
         title: "THR India",
         desc: "Bollywood News & Entertainment",
         sector: "Media",
         service: ["UI Design", "UX Design", "SEO Services", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/WineeMedia/Winee_Media.webp",
-        hovervideo: "/projects/WineeMedia/Winee_Media_hover.mp4",
+        poster: "/projects/WineeMedia/wineemedia_cover.webp",
+        hovervideo: "/projects/WineeMedia/Winee_Media_hover.webm",
         title: "WineeMedia",
         desc: "Social Media Marketing Agency",
         sector: "Advertising",
         service: ["UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations", "SEO Services"]
     },
     {
-        poster: "/projects/Wealth Fusion/Wealth_Fusion.webp",
+        poster: "/projects/Wealth Fusion/wealth_fusion_cover.webp",
         title: "Wealth Fusion",
         desc: "Wealth Management Firm",
         sector: "Finance",

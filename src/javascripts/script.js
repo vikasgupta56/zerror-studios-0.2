@@ -62,7 +62,7 @@ const allProjectData = [
         service: ["UI Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Indian Gaming League/IGL_Cover.webp",
+        poster: "/projects/Indian Gaming League/indian_game_hover.webp",
         hoverImg: "/projects/Indian Gaming League/IGL_hover.webp",
         title: "Indian Gaming League",
         desc: "eSport Platform",

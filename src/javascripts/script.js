@@ -85,7 +85,7 @@ const allProjectData = [
         service: ["Shopify eCom Development", "E-Commerce Optimizations"]
     },
     {
-        poster: "/projects/Khelo Esports/khelo_esports.webp",
+        poster: "/projects/Khelo Esports/khelo_esports_cover.webp",
         hovervideo: "/projects/Khelo Esports/Khelo_Esports_Hover.mp4",
         title: "Khelo Esports",
         desc: "Esports Events",
@@ -139,7 +139,7 @@ const allProjectData = [
         service: ["Custom CMS", "UI Design", "UX Design", "Frontend Development", "Backend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Sensei Store/sensei_store.webp",
+        poster: "/projects/Sensei Store/sensei_store_cover.webp",
         hovervideo: "/projects/Sensei Store/Sensei_Store_Hover.webm",
         title: "The Senseis Store",
         desc: "eCommerce Store",
@@ -147,8 +147,8 @@ const allProjectData = [
         service: ["Custom eCom Development"]
     },
     {
-        poster: "/projects/RPSG Lifestyle Media/rpsg_media.webp",
-        hoverImg: "/projects/RPSG Lifestyle Media/RPSG_media_hover.webp",
+        poster: "/projects/RPSG Lifestyle Media/rpsg_media_cover.webp",
+        hoverImg: "/projects/RPSG Lifestyle Media/rpsg_media_hover.webp",
         title: "RPSG Lifestyle Media",
         desc: "Media Powerhouse",
         sector: "Media",

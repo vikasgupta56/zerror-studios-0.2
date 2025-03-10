@@ -38,7 +38,7 @@ const allProjectData = [
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Esquire India/esquire_cover.webp",
+        poster: "/projects/Esquire India/esquire_india_cover.webp",
         hoverImg: "/projects/Esquire India/esquire_hover.webp",
         title: "Esquire India",
         desc: "Man at his best",
@@ -62,8 +62,8 @@ const allProjectData = [
         service: ["UI Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/Indian Gaming League/indian_game_hover.webp",
-        hoverImg: "/projects/Indian Gaming League/IGL_hover.webp",
+        poster: "/projects/Indian Gaming League/indian_cover.webp",
+        hoverImg: "/projects/Indian Gaming League/indian_hover.webp",
         title: "Indian Gaming League",
         desc: "eSport Platform",
         sector: "Life Style",
@@ -124,8 +124,8 @@ const allProjectData = [
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]
     },
     {
-        poster: "/projects/ResideInBeing/RIB_hover.webp",
-        hovervideo: "/projects/ResideInBeing/reside_in_being_hover_2.mp4",
+        poster: "/projects/ResideInBeing/RIB_Cover.webp",
+        hovervideo: "/projects/ResideInBeing/RIB_Hover.webm",
         title: "ResideInBeing",
         desc: "Clothing Label",
         sector: "Fashion",
@@ -148,7 +148,7 @@ const allProjectData = [
     },
     {
         poster: "/projects/RPSG Lifestyle Media/rpsg_media_cover.webp",
-        hoverImg: "/projects/RPSG Lifestyle Media/rpsg_media_hover.webp",
+        hoverImg: "/projects/RPSG Lifestyle Media/rpsg_hover.webp",
         title: "RPSG Lifestyle Media",
         desc: "Media Powerhouse",
         sector: "Media",

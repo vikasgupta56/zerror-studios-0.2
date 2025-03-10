@@ -32,7 +32,7 @@ const allProjectData = [
     {
         poster: "/projects/Dhamaka Record/dhamaka_records_cover.webp",
         hovervideo: "/projects/Dhamaka Record/Dhamaka_Records_Hover.webm",
-        title: "Dhamaka",
+        title: "Dhamaka Records",
         desc: "Marketing Agency",
         sector: "Life Style",
         service: ["UI Design", "UX Design", "Frontend Development", "GSAP Web Animations"]

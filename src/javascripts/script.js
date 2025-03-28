@@ -21,6 +21,7 @@ function smoothScroll() {
 }
 smoothScroll()
 const allProjectData = [
+
     {
         poster: "/projects/Casa Carigar/cc_cover.webp",
         hoverImg: "/projects/Casa Carigar/cc_hover.webp",
@@ -199,25 +200,25 @@ function projectRenderer(data, container) {
 
         if (!isSmallScreen) {
             if (project.hovervideo) {
-                const showcaseOverDiv = document.createElement("div");
-                showcaseOverDiv.classList.add("showcase-over");
+                // const showcaseOverDiv = document.createElement("div");
+                // showcaseOverDiv.classList.add("showcase-over");
 
-                const video = document.createElement("video");
-                video.src = project.hovervideo;
-                video.autoplay = true;
-                video.muted = true;
-                video.loop = true;
-                video.setAttribute("playsinline", "");
+                // const video = document.createElement("video");
+                // video.src = project.hovervideo;
+                // video.autoplay = true;
+                // video.muted = true;
+                // video.loop = true;
+                // video.setAttribute("playsinline", "");
 
-                showcaseOverDiv.appendChild(video);
-                showcaseDiv.appendChild(showcaseOverDiv);
-                showcaseDiv.addEventListener("mouseenter", () => {
-                    showcaseOverDiv.style.opacity = "1";
-                });
+                // showcaseOverDiv.appendChild(video);
+                // showcaseDiv.appendChild(showcaseOverDiv);
+                // showcaseDiv.addEventListener("mouseenter", () => {
+                //     showcaseOverDiv.style.opacity = "1";
+                // });
 
-                showcaseDiv.addEventListener("mouseleave", () => {
-                    showcaseOverDiv.style.opacity = "0";
-                });
+                // showcaseDiv.addEventListener("mouseleave", () => {
+                //     showcaseOverDiv.style.opacity = "0";
+                // });
             } else if (project.hoverImg) {
                 const showcaseOverDiv = document.createElement("div");
                 showcaseOverDiv.classList.add("showcase-over");
@@ -1194,7 +1195,6 @@ document.querySelector("#menu-button").addEventListener("click", function () {
         isMenu = false;
     }
 })
-
 
 document.querySelector("#menu-service").addEventListener("click", function () {
     if (!isMenuService) {

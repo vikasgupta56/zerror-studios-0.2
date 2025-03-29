@@ -199,26 +199,26 @@ function projectRenderer(data, container) {
         showcaseDiv.classList.add("showcase");
 
         if (!isSmallScreen) {
-            if (project.hovervideo) {
-                // const showcaseOverDiv = document.createElement("div");
-                // showcaseOverDiv.classList.add("showcase-over");
+            if (window.innerWidth > 767 && project.hovervideo) {
+                const showcaseOverDiv = document.createElement("div");
+                showcaseOverDiv.classList.add("showcase-over");
 
-                // const video = document.createElement("video");
-                // video.src = project.hovervideo;
-                // video.autoplay = true;
-                // video.muted = true;
-                // video.loop = true;
-                // video.setAttribute("playsinline", "");
+                const video = document.createElement("video");
+                video.src = project.hovervideo;
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.setAttribute("playsinline", "");
 
-                // showcaseOverDiv.appendChild(video);
-                // showcaseDiv.appendChild(showcaseOverDiv);
-                // showcaseDiv.addEventListener("mouseenter", () => {
-                //     showcaseOverDiv.style.opacity = "1";
-                // });
+                showcaseOverDiv.appendChild(video);
+                showcaseDiv.appendChild(showcaseOverDiv);
+                showcaseDiv.addEventListener("mouseenter", () => {
+                    showcaseOverDiv.style.opacity = "1";
+                });
 
-                // showcaseDiv.addEventListener("mouseleave", () => {
-                //     showcaseOverDiv.style.opacity = "0";
-                // });
+                showcaseDiv.addEventListener("mouseleave", () => {
+                    showcaseOverDiv.style.opacity = "0";
+                });
             } else if (project.hoverImg) {
                 const showcaseOverDiv = document.createElement("div");
                 showcaseOverDiv.classList.add("showcase-over");

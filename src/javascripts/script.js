@@ -199,26 +199,26 @@ function projectRenderer(data, container) {
         showcaseDiv.classList.add("showcase");
 
         if (!isSmallScreen) {
-            if (window.innerWidth > 767 && project.hovervideo) {
-                const showcaseOverDiv = document.createElement("div");
-                showcaseOverDiv.classList.add("showcase-over");
+            if (project.hovervideo) {
+                // const showcaseOverDiv = document.createElement("div");
+                // showcaseOverDiv.classList.add("showcase-over");
 
-                const video = document.createElement("video");
-                video.src = project.hovervideo;
-                video.autoplay = true;
-                video.muted = true;
-                video.loop = true;
-                video.setAttribute("playsinline", "");
+                // const video = document.createElement("video");
+                // video.src = project.hovervideo;
+                // video.autoplay = true;
+                // video.muted = true;
+                // video.loop = true;
+                // video.setAttribute("playsinline", "");
 
-                showcaseOverDiv.appendChild(video);
-                showcaseDiv.appendChild(showcaseOverDiv);
-                showcaseDiv.addEventListener("mouseenter", () => {
-                    showcaseOverDiv.style.opacity = "1";
-                });
+                // showcaseOverDiv.appendChild(video);
+                // showcaseDiv.appendChild(showcaseOverDiv);
+                // showcaseDiv.addEventListener("mouseenter", () => {
+                //     showcaseOverDiv.style.opacity = "1";
+                // });
 
-                showcaseDiv.addEventListener("mouseleave", () => {
-                    showcaseOverDiv.style.opacity = "0";
-                });
+                // showcaseDiv.addEventListener("mouseleave", () => {
+                //     showcaseOverDiv.style.opacity = "0";
+                // });
             } else if (project.hoverImg) {
                 const showcaseOverDiv = document.createElement("div");
                 showcaseOverDiv.classList.add("showcase-over");
@@ -440,49 +440,56 @@ textEffectAnimation()
 
 
 function homeLoader() {
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const mainFilter = urlParams.get('mainFilter');
-    // if (mainFilter) return;
-    var loader = gsap.timeline()
+    // Detect if the page was refreshed (not navigated via routes)
+    const isReload = performance.navigation.type === 1; 
+
+    // If it's a reload, remove the sessionStorage flag
+    if (isReload) {
+        sessionStorage.removeItem("homeLoaderPlayed");
+    }
+
+    // Check if the loader has already played in this session
+    if (sessionStorage.getItem("homeLoaderPlayed")) return;
+
+    var loader = gsap.timeline();
     loader
         .from(".upper", {
             opacity: 0,
-            duration: .8,
+            duration: 0.8,
             ease: "ease-in-out",
             delay: 2,
             stagger: {
                 from: "center",
-                amount: .2
+                amount: 0.2
             }
         }, "a")
 
         .from(".lower", {
             opacity: 0,
-            duration: .8,
+            duration: 0.8,
             ease: "ease-in-out",
             stagger: {
-                amount: .2
+                amount: 0.2
             },
             delay: 2.1,
         }, "a")
 
         .from("#main", {
             backgroundColor: "#F5E31A",
-            duration: .8,
+            duration: 0.8,
             ease: "ease-in-out",
         }, "b")
 
         .from(".header-text", {
             bottom: "0%",
-            duration: .6,
-            // ease: "power3.out",
+            duration: 0.6,
         }, "b")
 
         .from("#page2", {
             opacity: 0,
             y: 30,
             duration: 1,
-            delay: -.5,
+            delay: -0.5,
             ease: "power3.out",
         }, "c")
 
@@ -490,18 +497,24 @@ function homeLoader() {
             opacity: 0,
             y: 10,
             duration: 1,
-            delay: -.5,
+            delay: -0.5,
             ease: "power3.out",
         }, "c")
 
         .from("nav", {
             opacity: 0,
             duration: 1,
-            delay: -.5,
+            delay: -0.5,
             ease: "power3.out",
-        }, "c")
+        }, "c");
+
+    // Set flag in sessionStorage so the loader doesn't play again when navigating back
+    sessionStorage.setItem("homeLoaderPlayed", "true");
 }
-homeLoader()
+
+// Run the loader when the page loads
+homeLoader();
+
 
 function serviceListingAnimation() {
     const serviceDets = [

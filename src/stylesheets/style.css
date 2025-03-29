@@ -705,9 +705,6 @@ a {
 /* Extra Small Devices (Phones) */
 
 @media (max-width: 576px) {
-  .showcase-over{
-    display: none !important;
-  }
   #filter-container p:hover {
     background-color: transparent;
   }
@@ -1016,9 +1013,6 @@ a {
 
 /* Small Devices (Tablets) */
 @media (min-width: 576px) and (max-width: 767px) {
-  .showcase-over{
-    display: none !important;
-  }
   .header-text h2 {
     font-size: 32px;
     line-height: 1.1;

@@ -136,6 +136,7 @@ nav {
   justify-content: space-between;
   padding: 8px 13px;
   z-index: 2;
+  background-color: white;
 }
 
 /* menu container */
@@ -192,7 +193,7 @@ nav {
   margin: 0 !important;
   font-family: headingb !important;
   border: none !important;
-  text-decoration: none !important;;
+  text-decoration: none !important;
 }
 .menu-social {
   display: flex;
@@ -202,7 +203,7 @@ nav {
 .menu-social a {
   display: inline-block;
   margin-top: 10px;
-  text-decoration: none !important;;
+  text-decoration: none !important;
   text-transform: capitalize !important;
   font-family: headingb !important;
 }
@@ -218,10 +219,15 @@ nav #studio-btn.active .effect {
 nav #nav-service.active {
   opacity: 1 !important;
 }
+nav .inactive {
+  opacity: 0.5 !important;
+}
 #logo {
   font-family: headingb;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 nav a {
   text-decoration: none;
@@ -240,18 +246,28 @@ nav img {
   font-size: 14px;
   text-transform: capitalize;
   gap: 20px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9;
 }
 #nav-right #nav-service {
   cursor: pointer;
   opacity: 0.5;
 }
-/* #nav-right #nav-service:hover {
-  opacity: 1;
-} */
 
 /* SERVICE CSS  END */
+
+/* play */
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.play-btn p {
+  line-height: 1;
+}
 
 #main {
   position: relative;
@@ -268,59 +284,62 @@ nav img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
-  padding-bottom: 90px;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
 }
-#section1-studio h2 {
-  font-weight: 500;
-  line-height: 0.9;
-}
-#toph {
-  position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3.5vw;
-  text-align: center;
-  width: 95%;
-}
-#toph span {
-  display: inline-block;
-  margin-right: 10px;
-}
-#toph .lower {
-  font-family: paraItalic;
-  font-weight: 500;
-}
-#toph .upper {
-  font-family: para;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-#btmh {
-  font-family: paraItalic;
-  font-weight: 500;
-  font-size: 1.6vw;
-  display: none !important;
-}
-.btmwrap {
-  opacity: 0;
-}
-.banner-studio {
+#image-render {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(43% 40%, 57% 40%, 57% 80%, 43% 80%);
 }
-.banner-studio img {
-  width: 100%;
-  height: 100%;
+#section1-studio h1 {
+  font-family: headingb;
+  font-weight: 600;
+  font-size: 8vw;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+#des-title {
+  display: block;
+}
+#mobile-title {
+  display: none;
+}
+
+#section1-studio h2 {
+  font-size: 3.5vw;
+  text-align: center;
+  font-family: paraItalic;
+  line-height: 0.9;
+  z-index: 1;
+}
+#section1-studio h2 span {
+  display: inline-block;
+  margin-right: 5px;
+}
+#section1-studio h2 .lower {
+  font-family: paraItalic;
+  font-weight: 500;
+}
+#section1-studio h2 .upper {
+  font-family: para;
+  font-weight: 500;
+}
+
+.trail-image {
+  position: absolute;
+  width: 420px;
+  height: auto;
   object-fit: cover;
-  object-position: 50% 60%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
 /* SECTION1 CSS END */
 
 /* SECTION2 CSS START */
@@ -356,7 +375,6 @@ nav img {
   font-family: para !important;
 }
 
-
 #section2-about-studio p {
   font-family: headingb;
   font-size: 17px;
@@ -374,17 +392,135 @@ nav img {
   margin-top: 40px;
   font-family: para;
 }
-#section2-about-studio h5 .lower{
+#section2-about-studio h5 .lower {
   margin-right: 5px !important;
   font-family: para !important;
-
 }
 #section2-about-studio h5 .upper {
-  font-family: para!important;
+  font-family: para !important;
   margin-right: 5px !important;
 }
 
 /* SECTION2 CSS END */
+
+/* SHOWCASE PROJECT */
+#showcase-project {
+  width: 100%;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 0 13px;
+}
+.showcase-cont {
+  overflow: hidden;
+}
+.showcase-cont-wrap {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+}
+.showcase-cont-wrap:hover .showcase-cont-hover {
+  opacity: 1;
+}
+.showcase-cont-hover {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all ease 0.4s;
+}
+
+.showcase-cont img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.showcase-cont video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* aspect-ratio: 1 / 1; */
+}
+.showcase1 {
+  grid-column: 1 / span 3;
+}
+.showcase2 {
+  grid-column: 6 / span 7;
+}
+.showcase3 {
+  grid-column: 2 / span 9;
+  margin: 50px 0 150px;
+}
+.showcase4 {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+}
+.showcase5 {
+  grid-column: 10 / span 3;
+}
+.showcase6 {
+  grid-column: 5 / span 7;
+  margin: 50px 0 150px;
+}
+.showcase7 {
+  grid-column: 1 / span 3;
+}
+.showcase8 {
+  grid-column: 6 / span 7;
+}
+.showcase9 {
+  grid-column: 2 / span 9;
+  margin: 50px 0 150px;
+}
+/* SHOWCASE PROJECT END*/
+
+/* TEAM SECTION */
+
+#our-team {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+}
+#our-team h3 {
+  font-size: 3vw;
+  text-align: center;
+  font-family: para;
+  line-height: 0.9;
+  font-weight: 500;
+  width: 80%;
+  margin: auto;
+}
+#our-team p {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
+  font-family: headingb;
+  font-size: 17px;
+  line-height: 1.3;
+}
+#team-mobile {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+#group {
+  width: 100%;
+  height: 85vh;
+  cursor: grab;
+}
+#group:active {
+  cursor: grabbing;
+}
+#group canvas {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+/* TEAM SECTION END*/
 
 /* STUDIO BRNAD START */
 
@@ -397,91 +533,54 @@ nav img {
   justify-content: space-between;
   padding: 0 13px;
   margin: 30px 0;
+  /* display: none; */
 }
-#brand-showcase {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-}
-.showcase-img {
-  width: auto !important;
-  height: 58%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.showcase-img img {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  user-select: none;
-}
+
 #brand-listing {
   width: 100%;
   padding-top: 60px;
   padding-bottom: 80px;
   position: relative;
-}
-#brand-logo {
-  position: absolute;
-  width: 150px;
-  height: 90px;
-  right: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  transform: translateY(-50%);
-  opacity: 0;
-  pointer-events: none;
-}
-#brand-logo img {
-  width: 80%;
-  filter: grayscale(100%) brightness(0) contrast(100%);
+  overflow: hidden;
 }
 #brand-listing h4 {
   text-transform: uppercase;
   font-family: paraBold;
   font-size: 14px;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  padding-left: 50%;
+  padding-bottom: 10px;
+  padding-left: 28%;
   position: relative;
+  letter-spacing: 1px;
 }
 #brand-listing h4::after {
   content: "";
   position: absolute;
   bottom: 0;
   right: 0%;
-  width: 50%;
-  height: 1px;
-  background-color: rgba(1, 1, 1, 0.284);
+  width: 100%;
+  height: 0.01vw;
+  background-color: black;
 }
 
-#brand-listing .client {
-  display: flex;
+#brand-listing p {
   width: 100%;
-  gap: 30px;
   font-family: headingb;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: capitalize;
-  padding-bottom: 13px;
-  opacity: 0.5;
-  transition: opacity ease 0.3s;
+  padding: 10px 0;
   cursor: default;
-  padding-left: 50%;
+  margin-left: 28%;
+  color: #7f7f7f;
+  border-bottom: 0.01vw solid black;
 }
-#brand-listing .client:hover {
-  opacity: 1;
+#brand-listing p span {
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
-.brand-count {
-  width: 20px;
-}
+
 /* STUDIO BRNAD END */
 
 /* STUDIO PAGE2 START */
@@ -495,9 +594,9 @@ nav img {
   position: relative;
   padding-top: 54px;
   padding-bottom: 37px;
-  /* display: none; */
+  display: none;
 }
-#client-logo{
+#client-logo {
   height: 20px;
   position: fixed;
   top: 50%;
@@ -506,7 +605,7 @@ nav img {
   z-index: 9;
   display: none;
 }
-#client-logo img{
+#client-logo img {
   height: 100%;
   width: auto;
   object-fit: contain;
@@ -525,33 +624,33 @@ nav img {
 }
 .member img {
   width: 100%;
-  object-fit: cover
+  object-fit: cover;
 }
-.m1 img{
+.m1 img {
   height: 450px;
 }
-.m2 img{
+.m2 img {
   height: 440px;
 }
-.m3 img{
+.m3 img {
   height: 452px;
 }
-.m4 img{
+.m4 img {
   height: 440px;
 }
-.m5 img{
+.m5 img {
   height: 350px;
 }
-.m6 img{
+.m6 img {
   height: 438px;
 }
-.m7 img{
+.m7 img {
   height: 450px;
 }
-.m8 img{
+.m8 img {
   height: 360px;
 }
-.m9 img{
+.m9 img {
   height: 448px;
 }
 .member p {
@@ -802,43 +901,107 @@ a {
   display: none;
 }
 
-.des-title{
+.des-title {
   display: block;
 }
-.mobile-title{
+.mobile-title {
   display: none;
 }
 
-
-#banner-des{
+#banner-des {
   display: block;
 }
-#banner-mobile{
+#banner-mobile {
   display: none;
 }
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  #des-title {
+    display: none;
+  }
+  #mobile-title {
+    display: block;
+  }
+  #section1-studio h2 {
+    font-size: 37px !important;
+    line-height: 0.8 !important;
+  }
+
+  #music-controls {
+    display: none;
+  }
+
+  #showcase-project {
+    gap: 15px;
+  }
+  #image-render {
+    display: none;
+  }
+  .showcase-cont {
+    grid-column: auto / span 12;
+  }
+  .showcase3,
+  .showcase6,
+  .showcase9 {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  #our-team p {
+    display: none;
+  }
+  #our-team h3 {
+    font-size: 31px !important;
+    line-height: 0.9 !important;
+    letter-spacing: 0 !important;
+    width: 90% !important;
+    margin: 50px auto !important;
+  }
+  #brand-listing p {
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  #brand-listing p span {
+    font-size: 13px;
+  }
+  .play-btn {
+    display: none;
+  }
+  #nav-right {
+    position: static;
+    transform: none;
+  }
+  #nav-right > div {
+    display: none;
+  }
+  #group {
+    display: none;
+  }
+  #team-mobile {
+    display: block;
+    margin-bottom: 50px;
+  }
   .footer-mail p {
     line-height: normal;
   }
-  
-  #banner-des{
+
+  #banner-des {
     display: none;
   }
-  #banner-mobile{
+  #banner-mobile {
     display: block;
   }
-  nav{
+  nav {
     background-color: white !important;
-    }
+  }
   #toph span {
     margin-right: 5px !important;
   }
-  .des-title{
+  .des-title {
     display: none;
   }
-  .mobile-title{
+  .mobile-title {
     display: block;
   }
   .off-menu-btn {
@@ -886,13 +1049,13 @@ a {
     font-size: 37px !important;
     text-align: center;
     width: 100%;
-    line-height: .8 !important;
+    line-height: 0.8 !important;
     text-overflow: ellipsis;
   }
   #btmh {
     font-family: paraItalic;
     font-weight: 500;
-    font-size:25px !important;
+    font-size: 25px !important;
     text-align: center;
     line-height: 1.1 !important;
   }
@@ -904,7 +1067,7 @@ a {
   }
   .about-header-text {
     margin-bottom: 45px !important;
-}
+  }
   #section2-about-studio p {
     font-size: 14px !important;
     line-height: 1.3;
@@ -914,26 +1077,26 @@ a {
   }
   #section2-about-studio h3 {
     font-size: 31px !important;
-    line-height: .9 !important;
+    line-height: 0.9 !important;
     letter-spacing: 0 !important;
     width: 90% !important;
-    margin:0 auto !important;
+    margin: 0 auto !important;
   }
   #section2-about-studio h5 {
     font-size: 27px !important;
     letter-spacing: 1px;
-    line-height: .8 !important;
+    line-height: 0.8 !important;
     width: 90% !important;
     margin-top: 10px !important;
-}
+  }
   #section2-about-studio h5 {
-        font-size: 27px !important;
-        letter-spacing: 2px;
-        line-height: .8;
-        width: 90%;
-        margin-top: 10px;
-    }
-    #section2-about-studio {
+    font-size: 27px !important;
+    letter-spacing: 2px;
+    line-height: 0.8;
+    width: 90%;
+    margin-top: 10px;
+  }
+  #section2-about-studio {
     padding: 110px 0;
   }
 
@@ -941,7 +1104,7 @@ a {
     width: 100%;
     flex-direction: column-reverse;
     padding: 13px;
-    padding-top:0 !important;
+    padding-top: 0 !important;
     padding-bottom: 37px;
   }
   #studio-team {
@@ -1005,7 +1168,7 @@ a {
   #footer-text-center h4 {
     font-size: 35px !important;
     font-weight: 500;
-    line-height: .8 !important;
+    line-height: 0.8 !important;
     margin-bottom: 20px;
     letter-spacing: 0 !important;
   }
@@ -1055,7 +1218,7 @@ a {
   #mail {
     display: none;
   }
-  #mail-mobile{
+  #mail-mobile {
     display: none !important;
   }
 }
@@ -1092,6 +1255,51 @@ a {
   }
 }
 @media (min-width: 576px) and (max-width: 875px) {
+   .header-text h2 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+  #showcase-project {
+    gap: 15px;
+  }
+  #image-render {
+    display: none;
+  }
+  .showcase-cont {
+    grid-column: auto / span 12;
+  }
+  .showcase3,
+  .showcase6,
+  .showcase9 {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  #our-team p {
+    display: none;
+  }
+  #our-team h3 {
+    font-size: 31px !important;
+    line-height: 0.9 !important;
+    letter-spacing: 0 !important;
+    width: 90% !important;
+    margin: 50px auto !important;
+  }
+  #brand-listing p {
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  #brand-listing p span {
+    font-size: 13px;
+  }
+  #group {
+    display: none;
+  }
+  #team-mobile {
+    display: block;
+    margin-bottom: 50px;
+  }
+
   .footer-mail p {
     line-height: normal;
   }

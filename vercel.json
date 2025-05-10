@@ -5,12 +5,12 @@
         "dest": "/details.html"
       },
       {
-        "src": "/studio",
-        "dest": "/studio.html"
-      },
-      {
         "src": "/",
         "dest": "/index.html"
+      },
+      {
+        "src": "/work",
+        "dest": "/work.html"
       }
     ]
   }

@@ -25,6 +25,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     smoothScroll();
 
+    function imageRenderer() {
+        const imageContainer = document.getElementById('image-render');
+        const MAX_IMAGES = 10;
+        const MIN_DISTANCE = 20; // minimum movement in pixels
+
+        let lastX = 0;
+        let lastY = 0;
+        let index = 0;
+        // Dummy image URLs - replace with real assets or use `unsplash.it` for random ones
+        const images = [
+            '/cursor/cur1.png',
+            '/cursor/cur2.png',
+            '/cursor/cur3.png',
+            '/cursor/cur4.png',
+            '/cursor/cur5.png',
+            '/cursor/cur6.png',
+            '/cursor/cur7.jpg',
+            '/cursor/cur8.png',
+            '/cursor/cur9.png',
+            '/cursor/cur10.png',
+            '/cursor/cur11.png',
+        ];
+        window.addEventListener('mousemove', (e) => {
+            const dx = Math.abs(e.clientX - lastX);
+            const dy = Math.abs(e.clientY - lastY);
+
+            // Only add image if moved enough
+            if (dx < MIN_DISTANCE && dy < MIN_DISTANCE) return;
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+
+            const img = document.createElement('img');
+            img.src = images[index % images.length];
+            img.className = 'trail-image';
+            img.style.left = `${e.clientX}px`;
+            img.style.top = `${e.clientY}px`;
+
+            imageContainer.appendChild(img);
+
+            if (imageContainer.children.length > MAX_IMAGES) {
+                imageContainer.removeChild(imageContainer.children[0]);
+            }
+
+            index++;
+        });
+
+    }
+    imageRenderer()
+
 
 
     const clientData = [
@@ -129,57 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "image": "/brands/reside_in_being_our_studio.webp"
         },
     ]
-
-    function homeLoader() {
-        var loader = gsap.timeline()
-        loader
-            .from(".upper", {
-                opacity: 0,
-                duration: .8,
-                ease: "ease-in-out",
-                delay: 2,
-                stagger: {
-                    from: "center",
-                    amount: .2
-                }
-            }, "a")
-
-            .from(".lower", {
-                opacity: 0,
-                duration: .8,
-                ease: "ease-in-out",
-                stagger: {
-                    amount: .2
-                },
-                delay: 2.1,
-            }, "a")
-
-            .from("#toph", {
-                top: "50%",
-                duration: .8,
-                ease: "power3.out",
-            }, "b")
-            .from(".banner-studio", {
-                opacity: 0,
-                duration: 1,
-                delay: -.5,
-                ease: "power3.out",
-            }, "c")
-            .from("nav", {
-                opacity: 0,
-                duration: 1,
-                delay: -.5,
-                ease: "power3.out",
-            }, "c")
-            .to(".btmwrap", {
-                opacity: 1,
-                duration: 1,
-                delay: -.5,
-                ease: "power3.out",
-            }, "c")
-    }
-    homeLoader()
-
 
     function textEffectAnimation() {
         document.querySelectorAll(".text-effect .effect").forEach(function (element) {
@@ -298,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function openService() {
         if (isService) {
-            gsap.set("nav", { backgroundColor: "#fff" })
+            // gsap.set("nav", { backgroundColor: "#fff" })
             gsap.to("#main", {
                 top: "calc(100% - 40px)",
                 ease: "power3.out",
@@ -314,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         } else {
             document.querySelector("#nav-service").classList.remove("active")
-            gsap.set("nav", { backgroundColor: "transparent" })
+            // gsap.set("nav", { backgroundColor: "transparent" })
             gsap.to("#main", {
                 top: "0%",
                 ease: "power3.out",
@@ -334,382 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     serviceAnimation()
-
-    function studioSection1Animation() {
-        var tlh = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#section1-studio",
-                scroller: "body",
-                start: "top top",
-                end: "top -100%",
-                pin: true,
-                scrub: 1
-            }
-        })
-        tlh
-            .to(".banner-studio", {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-            }, "a")
-            .to(".banner-studio img", {
-                objectPosition: "50% 10%"
-            }, "a")
-            .to("#toph", {
-                y: -70,
-                opacity: 0,
-                duration: .3
-            }, "a")
-            .to("#btmh", {
-                y: 70,
-                opacity: 0,
-                duration: .3
-            }, "a")
-    }
-    studioSection1Animation()
-
-    function brandListingAnimtion() {
-        var clutter = ""
-        clientData.forEach(function (data, i) {
-            clutter += `<div class="client" data-index=${i}>
-                        <p class="brand-count">${i + 1 > 9 ? i + 1 : `0${i + 1}`}.</p>
-                        <p>${data.name}</p>
-                    </div>`
-        })
-        document.querySelector("#brand-list").innerHTML = clutter
-
-        var showcaseImg = document.querySelector("#brand-showcase-img")
-        var brandLogo = document.querySelector("#brand-logo img")
-        document.querySelectorAll("#brand-listing .client").forEach(function (client) {
-            client.addEventListener("mouseenter", function (e) {
-                if (e.target.dataset.index) {
-                    var client = clientData[e.target.dataset.index];
-                    showcaseImg.src = client.image;
-                    brandLogo.src = client.logo;
-
-                    gsap.set(showcaseImg, { scale: 1 });
-
-                    gsap.fromTo(
-                        showcaseImg,
-                        { scale: 1.08, opacity: 0 },
-                        {
-                            scale: 1,
-                            opacity: 1,
-                            duration: 0.6,
-                            ease: "power2.out"
-                        }
-                    );
-                }
-            });
-
-            client.addEventListener("mouseleave", function (e) {
-                gsap.to(showcaseImg, {
-                    opacity: 0,
-                    duration: 0.4,
-                    ease: "power2.out",
-                });
-                showcaseImg.src = "/images/blank.png";
-            });
-        });
-        document.querySelector("#brand-listing").addEventListener("mousemove", function (e) {
-            const scrollPosition = e.clientY - document.querySelector("#brand-listing").getBoundingClientRect().top
-            gsap.to(document.querySelector("#brand-logo"), {
-                top: scrollPosition,
-            })
-        })
-        document.querySelector("#brand-list").addEventListener("mouseenter", function () {
-            gsap.to(document.querySelector("#brand-logo"), {
-                opacity: 1,
-            })
-        })
-        document.querySelector("#brand-list").addEventListener("mouseleave", function () {
-            gsap.to(document.querySelector("#brand-logo"), {
-                opacity: 0,
-            })
-        })
-
-
-        gsap.to("#brand-showcase", {
-            scrollTrigger: {
-                trigger: "#studio-brand",
-                scroller: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true,
-                pin: "#brand-showcase",
-                anticipatePin: 1,  // Helps smoother transition
-invalidateOnRefresh: true  // Recalculates values on resize
-            }
-        });
-
-    }
-    brandListingAnimtion()
-
-    function clientAnimeMobile() {
-        var clientList = document.querySelectorAll(".client");
-        var logoContainerImg = document.querySelector("#client-logo img");
-
-        function updateClientOpacity() {
-            let closest = null;
-            let closestDistance = Infinity;
-
-            clientList.forEach((client, index) => {
-                let rect = client.getBoundingClientRect();
-                let distance = Math.abs(rect.top - window.innerHeight / 2); // Exactly center
-
-                if (distance < closestDistance) {
-                    closestDistance = distance;
-                    closest = client;
-                }
-            });
-
-            clientList.forEach((client) => {
-                gsap.to(client, { opacity: client === closest ? 1 : 0.5, duration: 0.3 });
-            });
-
-            let closestIndex = Array.from(clientList).indexOf(closest);
-            if (closestIndex !== -1) {
-                logoContainerImg.src = clientData[closestIndex].logo;
-            }
-        }
-
-        clientList.forEach((c, index) => {
-            gsap.to(c, {
-                scrollTrigger: {
-                    trigger: c,
-                    scroller: "body",
-                    start: "top 50%",
-                    end: "top 40%",
-                    scrub: 1,
-                    // markers: true, 
-                    onUpdate: updateClientOpacity,
-                }
-            });
-        });
-
-        // Handle fading last client
-        gsap.to(clientList[clientList.length - 1], {
-            scrollTrigger: {
-                trigger: clientList[clientList.length - 1],
-                scroller: "body",
-                start: "bottom 90%",
-                end: "bottom 20%",
-                scrub: 1,
-                onLeave: () => gsap.to(clientList[clientList.length - 1], { opacity: 0.5, duration: 0.3 }),
-                onLeaveBack: () => gsap.to(clientList[clientList.length - 1], { opacity: 0.5, duration: 0.3 }),
-            }
-        });
-
-        ScrollTrigger.refresh(); // Ensures positioning is updated
-    }
-
-
-
-    if (window.innerWidth < 575) {
-        clientAnimeMobile()
-    }
-
-    function memberAnimation() {
-        gsap.from(".m1", {
-            opacity: 1,
-            y: 400,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top 45%",
-                end: "top 35%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m2", {
-            opacity: 1,
-            y: 600,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top 22%",
-                end: "top 8%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m3", {
-            opacity: 1,
-            y: 600,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top 30%",
-                end: "top 20%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m4", {
-            opacity: 1,
-            y: 1000,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -45%",
-                end: "top -55%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m5", {
-            opacity: 1,
-            y: 600,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -15%",
-                end: "top -35%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m6", {
-            opacity: 1,
-            y: 800,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -30%",
-                end: "top -40%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m7", {
-            opacity: 1,
-            y: 800,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -70%",
-                end: "top -85%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m8", {
-            opacity: 1,
-            y: 800,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -105%",
-                end: "top -120%",
-                scrub: 1,
-            }
-        });
-
-        gsap.from(".m9", {
-            opacity: 1,
-            y: 600,
-            duration: 2,
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top -85%",
-                end: "top -100%",
-                scrub: 1,
-            }
-        });
-
-        // gsap.from(".m10", {
-        //     opacity: 1,
-        //     y: 1000,
-        //     duration: 2,
-        //     scrollTrigger: {
-        //         trigger: "#studio-2",
-        //         scroller: "body",
-        //         start: "top -160%",
-        //         end: "top -175%",
-        //         scrub: 1,
-        //     }
-        // });
-
-        // gsap.from(".m11", {
-        //     opacity: 1,
-        //     y: 600,
-        //     duration: 2,
-        //     scrollTrigger: {
-        //         trigger: "#studio-2",
-        //         scroller: "body",
-        //         start: "top -125%",
-        //         end: "top -140%",
-        //         scrub: 1,
-        //     }
-        // });
-
-        // gsap.from(".m12", {
-        //     opacity: 1,
-        //     y: 800,
-        //     duration: 2,
-        //     scrollTrigger: {
-        //         trigger: "#studio-2",
-        //         scroller: "body",
-        //         start: "top -170%",
-        //         end: "top -185%",
-        //         scrub: 1,
-        //     }
-        // });
-
-        // gsap.from(".m13", {
-        //     opacity: 1,
-        //     y: 600,
-        //     duration: 2,
-        //     scrollTrigger: {
-        //         trigger: "#studio-2",
-        //         scroller: "body",
-        //         start: "top -210%",
-        //         end: "top -230%",
-        //         scrub: 1,
-        //     }
-        // });
-
-        gsap.to("#studio-contact", {
-            opacity: 1,
-            duration: 1,
-            scrollTrigger: {
-                trigger: "#studio-contact",
-                scroller: "body",
-                start: "top 30%",
-                end: "top 5%",
-                scrub: true,
-            }
-        });
-
-        gsap.to("#studio-contact", {
-            scrollTrigger: {
-                trigger: "#studio-2",
-                scroller: "body",
-                start: "top top",
-                end: "100% 40%",
-                scrub: true,
-                pin: "#studio-contact",
-                anticipatePin: 1,  // Helps smoother transition
-                invalidateOnRefresh: true  // Recalculates values on resize
-            }
-        });
-
-
-
-
-    }
-
-    if (window.innerWidth > 991) {
-        memberAnimation()
-    }
 
 
     function footerAnimation() {
@@ -763,9 +386,6 @@ invalidateOnRefresh: true  // Recalculates values on resize
 
 
 
-
-
-
     var isMenu = false;
     document.querySelector("#menu-button").addEventListener("click", function () {
         if (isMenuService) {
@@ -811,6 +431,157 @@ invalidateOnRefresh: true  // Recalculates values on resize
             isMenuService = true;
         }
     })
+
+
+    function dragTeam() {
+        const canvas = document.getElementById('teamCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas resolution to match CSS size
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        // Array to hold team member images
+        const teamMembers = [];
+
+        // Load images
+        const imageSources = [
+            '/team/m1.avif', '/team/m2.avif', '/team/m3.avif', '/team/m4.avif', '/team/m5.avif', '/team/m6.avif',
+            '/team/m7.avif', '/team/m8.avif', '/team/m9.avif', '/team/m10.avif', '/team/m11.avif', '/team/m12.avif',
+        ];
+
+        // Function to load images
+        function loadImages(sources, callback) {
+            let loadedImages = 0;
+            const images = [];
+
+            for (let i = 0; i < sources.length; i++) {
+                images[i] = new Image();
+                images[i].src = sources[i];
+                images[i].onload = () => {
+                    loadedImages++;
+                    if (loadedImages === sources.length) {
+                        callback(images);
+                    }
+                };
+            }
+        }
+
+        // Initialize team members
+        loadImages(imageSources, (images) => {
+            const imageHeight = 500;
+            const imageWidths = images.map(img => imageHeight * (img.width / img.height));
+            const totalWidth = imageWidths.reduce((sum, w) => sum + w, 0);
+            const availableWidth = canvas.width - 300;
+            const spacing = (availableWidth - totalWidth) / (images.length + 1);
+            let currentX = 150 + spacing;
+
+            images.forEach((img, index) => {
+                const imageWidth = imageWidths[index];
+                teamMembers.push({
+                    image: img,
+                    x: currentX,
+                    y: canvas.height - imageHeight - 20,
+                    width: imageWidth,
+                    height: imageHeight,
+                    isDragging: false
+                });
+                currentX += imageWidth + spacing;
+            });
+            draw();
+        });
+
+        // Draw function
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            teamMembers.forEach(member => {
+                ctx.drawImage(member.image, member.x, member.y, member.width, member.height);
+            });
+        }
+
+        // Pixelate function
+        function applyPixelationEffect(member) {
+            const pixelSize = 12;
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCanvas.width = member.width;
+            tempCanvas.height = member.height;
+
+            // Draw the original image to the temporary canvas
+            tempCtx.drawImage(member.image, 0, 0, member.width, member.height);
+
+            // Set the opacity level (less than 1 means more transparency)
+            const opacity = 1; // You can adjust this value to make it lighter or more transparent
+
+            // Loop through and apply pixelation using drawImage
+            for (let y = 0; y < member.height; y += pixelSize) {
+                for (let x = 0; x < member.width; x += pixelSize) {
+                    // Sample color from the top-left pixel of each block
+                    const imageData = tempCtx.getImageData(x, y, 1, 1).data;
+                    tempCtx.fillStyle = `rgba(${imageData[0]}, ${imageData[1]}, ${imageData[2]}, ${imageData[3] / 255})`;
+                    tempCtx.fillRect(x, y, pixelSize, pixelSize);
+                }
+            }
+
+            // Draw the pixelated image onto the main canvas with reduced opacity
+            ctx.globalAlpha = opacity; // Set opacity for drawing the image
+            ctx.drawImage(tempCanvas, member.x, member.y, member.width, member.height);
+            ctx.globalAlpha = 1; // Reset opacity to full for future drawings
+        }
+
+
+        // Mouse event handlers
+        let selectedMember = null;
+        let offsetX, offsetY;
+
+        canvas.addEventListener('mousedown', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            for (let i = teamMembers.length - 1; i >= 0; i--) {
+                const member = teamMembers[i];
+                if (
+                    mouseX > member.x &&
+                    mouseX < member.x + member.width &&
+                    mouseY > member.y &&
+                    mouseY < member.y + member.height
+                ) {
+                    selectedMember = member;
+                    offsetX = mouseX - member.x;
+                    offsetY = mouseY - member.y;
+                    member.isDragging = true;
+                    applyPixelationEffect(member);
+                    teamMembers.push(teamMembers.splice(i, 1)[0]);
+                    break;
+                }
+            }
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (selectedMember && selectedMember.isDragging) {
+                const newX = e.clientX - offsetX;
+                const newY = e.clientY - offsetY;
+                selectedMember.x = Math.max(0, Math.min(newX, canvas.width - selectedMember.width));
+                selectedMember.y = Math.max(0, Math.min(newY, canvas.height - selectedMember.height));
+                draw();
+                applyPixelationEffect(selectedMember);
+            }
+        });
+
+       canvas.addEventListener('mouseup', () => {
+    if (selectedMember) {
+        selectedMember.isDragging = false;
+
+        // Snap to bottom
+        selectedMember.y = canvas.height - selectedMember.height - 20;
+
+        draw();
+        selectedMember = null;
+    }
+});
+
+    }
+    dragTeam()
 
 
 })

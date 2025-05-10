@@ -7,7 +7,8 @@
     <title>Zerror Studios | Animated Websites, eCommerce & Custom CMS</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/game.css">
+    <link rel="stylesheet" href="/stylesheets/studio.css">
     <!-- Meta Title & Description -->
     <meta name="title" content="Zerror Studios | Animated Websites, eCommerce & Custom CMS">
     <meta name="description"
@@ -193,21 +194,32 @@
         <nav>
             <a href="/" id="logo">Zerror Studios</a>
             <div id="nav-right">
-                <div class="text-effect off-menu-btn" id="studio-btn">
-                    <a href="/studio" class="effect">studio</a>
-                    <a href="/studio" class="effect">studio</a>
+                <div class="text-effect active off-menu-btn" id="studio-btn">
+                    <a href="/" class="effect">studio</a>
+                    <a href="/" class="effect">studio</a>
+                </div>
+                <div class="text-effect inactive">
+                    <a href="/work" class="effect">work</a>
+                    <a href="/work" class="effect">work</a>
                 </div>
                 <div id="nav-service" class="text-effect hover-effect service-open-btn off-menu-btn">
                     <p class="effect">services</p>
                     <p class="effect">services</p>
                 </div>
-                <p class="effect" id="menu-button">menu</p>
+                <div class="text-effect inactive" id="play-game">
+                    <p class="effect">relax</p>
+                    <p class="effect">relax</p>
+                </div>
+                <p id="menu-button" class="effect">menu</p>
+            </div>
+            <div class="play-btn">
+                <p class="effect" id="mute-music"><i class="ri-volume-mute-line"></i></p>
             </div>
             <div id="menu-container">
                 <div class="menu-top">
-                    <a href="/">home</a>
+                    <a href="/">studio</a>
                     <p class="service-open-btn" id="menu-service">services</p>
-                    <a href="/studio">studio</a>
+                    <a href="/work">work</a>
                 </div>
                 <div class="menu-btm">
                     <p>hello@zerrorstudios.com</p>
@@ -218,199 +230,279 @@
                 </div>
             </div>
         </nav>
+
+    </section>
+    <section id="relax-section">
+        <div class="header">
+            <a href="/" id="logo">Zerror Studios</a>
+            <div class="text-effect" id="close-game">
+                <p class="effect">close</p>
+                <p class="effect">close</p>
+            </div>
+            <div id="music-controls">
+                <div data-audio="/music/EDWARD SIMONI - Enchanted World (amazing pan flute music).mp3"
+                    class="music-box">
+                    <p>Pan Flute</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+                <div data-audio="/music/Songs of Hope_ The Dawn Chorus, Pt. 4_ Hihi & Distant Tieke (Stitchbirds & Saddlebacks) (Wattle....mp3"
+                    class="music-box">
+                    <p>Dawn Chorus</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+                <div data-audio="/music/Babbling Brook, Pt. 19.mp3" class="music-box">
+                    <p>Babbling Brook</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <canvas id="physicsCanvas"></canvas>
     </section>
     <main id="main">
-        <section id="page1">
-            <div class="header-text">
-                <h2 id="des-title"><span class="lower">We are a </span><span class="upper">CREATIVE </span><span
-                        class="lower">studio </span><span class="upper">DEDICATED </span><span class="lower">to
-                    </span><span class="upper">SHAPING</span><br><span class="upper">EXPERIENCES</span><span
-                        class="lower">through </span><span class="upper">STRATEGY </span><span class="lower">and
-                    </span><span class="upper">DESIGN.</span></h2>
-                <h2 id="mobile-title"><span class="lower">We are a </span><span class="upper">CREATIVE </span><br><span
-                        class="lower">studio </span><span class="upper">DEDICATED </span><br><span class="lower">to
-                    </span><span class="upper">SHAPING</span><br><span class="upper">EXPERIENCES</span><br><span
-                        class="lower">through </span><span class="upper">STRATEGY </span><br><span class="lower">and
-                    </span><span class="upper">DESIGN.</span></h2>
+        <section id="section1-studio">
+            <!-- <h1>Zerror Studios</h1> -->
+            <h2 id="des-title"><span class="lower">We are a </span><span class="upper">CREATIVE </span><span
+                    class="lower">studio </span><span class="upper">DEDICATED </span><span class="lower">to
+                </span><span class="upper">SHAPING</span><br><span class="upper">EXPERIENCES</span><span
+                    class="lower">through </span><span class="upper">STRATEGY </span><span class="lower">and
+                </span><span class="upper">DESIGN.</span></h2>
+            <h2 id="mobile-title"><span class="lower">We are a </span><span class="upper">CREATIVE </span><br><span
+                    class="lower">studio </span><span class="upper">DEDICATED </span><br><span class="lower">to
+                </span><span class="upper">SHAPING</span><br><span class="upper">EXPERIENCES</span><br><span
+                    class="lower">through </span><span class="upper">STRATEGY </span><br><span class="lower">and
+                </span><span class="upper">DESIGN.</span></h2>
+            <div id="image-render"></div>
+        </section>
+        <section id="section2-about-studio">
+            <div class="about-header-text">
+                <h3><span class="lower">We turn</span><span class="upper">“what ifs”</span><span
+                        class="lower">into</span><span class="upper">“hell
+                        yes.”</span><span class="lower">Whether it’s</span><span class="upper">animated
+                        websites</span><span class="lower">that
+                        wow,</span><span class="upper">eCommerce solutions</span>
+                    <span class="lower">that scale, or</span><span class="upper">custom CMS platforms</span><span
+                        class="lower">so slick they power
+                        some of the world’s biggest media giants.</span>
+                </h3>
             </div>
-            <div>
-                <div id="filter-container">
-                    <p class="active" id="featured-btn">featured <sup></sup></p>
-                    <p id="sectors-btn" class="listing-filter">sectors<span class="name-tag"><span
-                                class="name-space"></span><sup class="name-project-count"></sup><span
-                                class="filter-close"></span></span></p>
-                    <!-- <p id="client-btn" class="listing-filter">clients<span class="name-tag"><span
-                                class="name-space"></span><sup class="name-project-count"></sup><span
-                                class="filter-close"></span></span></p> -->
-                    <p id="service-btn" class="listing-filter">services<span class="name-tag"><span
-                                class="name-space"></span><sup class="name-project-count"></sup><span
-                                class="filter-close"></span></span></p>
-                    <p class="all-project-button">all <sup></sup></p>
+            <p>We're all about creating digital moments that punch through the noise, harder than your morning
+                cutting-chai.</p>
+            <p>Born in Mumbai but built for the world, we’re a crew of dreamers, doers, and rule-breakers who believe
+                the internet doesn’t need another meh moment—it needs unforgettable experiences.
+            </p>
+            <h5><span class="lower">So, if you’re ready to </span><span class="upper">create something bold, loud, and
+                    unapologetically awesome—We’re here!</span></h5>
+
+        </section>
+        <section id="showcase-project">
+            <div class="showcase1 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/iWhiteKorea/iWhiteKorea_cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <video autoplay muted loop playsinline
+                            src="/projects/iWhiteKorea/iwhitekorea_hover.mp4"></video>
+                    </div>
                 </div>
+            </div>
+            <div class="showcase2 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/Esquire India/esquire_india_cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <img src="/projects/Esquire India/esquire_hover.webp" alt="project-banner">
+                    </div>
+                </div>
+            </div>
+            <div class="showcase3 showcase-cont">
+                <img src="https://images.prismic.io/motionsickness/7e27502b-8650-4854-a907-a269224cd7b0_her.jpg?ixlib=js-3.3.0&auto=format%2C%20compress&w=750&dpr=2&q=50"
+                    alt="project-banner">
             </div>
         </section>
-        <section id="page2">
-            <div id="flip-filter-container">
-            </div>
-            <div class="projects-container" id="featured-project">
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/iWhiteKorea/iwhitekorea_hover.mp4"></video>
-                        </div>
-                        <img src="/projects/iWhiteKorea/iWhiteKorea_cover.webp" alt="project-banner" loading="lazy">
+        <section id="showcase-project">
+            <div class="showcase4 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/Casa Carigar/cc_cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <img src="/projects/Casa Carigar/cc_hover.webp" alt="project-banner">
                     </div>
-                    <h3>I White Korea</h3>
-                    <h4>Korean Beauty Essentials</h4>
-                </a>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/WineeMedia/Winee_Media_hover.mp4"></video>
-                        </div>
-                        <img src="/projects/WineeMedia/wineemedia_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>WineeMedia</h3>
-                    <h4>Social Media Marketing Agency</h4>
-                </a>
-                <a href="/details" class="project project-large">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <img src="/projects/Esquire India/esquire_hover.webp" alt="project-banner"
-                                loading="lazy">
-                        </div>
-                        <img src="/projects/Esquire India/esquire_india_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Esquire India</h3>
-                    <h4>Man at his best</h4>
-                </a>
-                <a href="/details" class="project project-large">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <img src="/projects/Casa Carigar/cc_hover.webp" alt="project-banner"
-                                loading="lazy">
-                        </div>
-                        <img src="/projects/Casa Carigar/cc_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Casa Carigar</h3>
-                    <h4>Luxuary Furniture Marketplace</h4>
-                </a>
-                <div class="project project-small empty-space">
-                    <div class="showcase"></div>
-                    <h3>converse</h3>
-                    <h4>global campaign</h4>
                 </div>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <img src="/projects/Indian Gaming League/indian_hover.webp" alt="project-banner"
-                                loading="lazy">
-                        </div>
-                        <img src="/projects/Indian Gaming League/indian_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Indian Gaming League</h3>
-                    <h4>eSport Platform</h4>
-                </a>
-                <div class="project project-small empty-space">
-                    <div class="showcase"></div>
-                    <h3>converse</h3>
-                    <h4>global campaign</h4>
-                </div>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/Greek Life/Greek_Life_Hover.mp4"></video>
-                        </div>
-                        <img src="/projects/Greek Life/greek_life_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>The Greek Life</h3>
-                    <h4>Destination Management Services</h4>
-                </a>
-                <a href="/details" class="project project-large">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/ResideInBeing/RIB_Hover.mp4"></video>
-                        </div>
-                        <img src="/projects/ResideInBeing/RIB_Cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>ResideInBeing</h3>
-                    <h4>Clothing Label</h4>
-                </a>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <img src="/projects/THR India/THR_hover.webp" alt="project-banner"
-                                loading="lazy">
-                        </div>
-                        <img src="/projects/THR India/thr_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>THR India</h3>
-                    <h4>Bollywood News & Entertainment</h4>
-                </a>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/Khelo Esports/Khelo_Esports_Hover.mp4"></video>
-                        </div>
-                        <img src="/projects/Khelo Esports/khelo_esports_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Khelo Esports</h3>
-                    <h4>Esports Events</h4>
-                </a>
-                <div class="project project-small empty-space">
-                    <div class="showcase"></div>
-                    <h3>converse</h3>
-                    <h4>global campaign</h4>
-                </div>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <img src="/projects/Manifest/manifest_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Manifest</h3>
-                    <h4>Wedding Magazine</h4>
-                </a>
-                <a href="/details" class="project project-large">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline src="/projects/Point Of/Point_Of_Hover.mp4"></video>
-                        </div>
-                        <img src="/projects/Point Of/po_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Point Of</h3>
-                    <h4>Creative Agency</h4>
-                </a>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/Dhamaka Record/Dhamaka_Records_Hover.mp4"></video>
-                        </div>
-                        <img src="/projects/Dhamaka Record/dhamaka_records_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Dhamaka Records</h3>
-                    <h4>Marketing Agency</h4>
-                </a>
-                <a href="/details" class="project project-small">
-                    <div class="showcase">
-                        <div class="showcase-over">
-                            <video autoplay muted loop playsinline
-                                src="/projects/Mr. and Mrs/Mr_and_Mrs_Hover_2.mp4"></video>
-                        </div>
-                        <img src="/projects/Mr. and Mrs/mr_and_mrs_cover.webp" alt="project-banner" loading="lazy">
-                    </div>
-                    <h3>Mr. & Mrs.</h3>
-                    <h4>Ads Production & Events</h4>
-                </a>
             </div>
-            <div class="projects-container" id="all-project">
+            <div class="showcase5 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/Indian Gaming League/indian_cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <img src="/projects/Indian Gaming League/indian_hover.webp" alt="project-banner">
+                    </div>
+                </div>
+
             </div>
-            <div class="projects-container" id="filter-project">
-                <!-- filter container -->
+            <div class="showcase6 showcase-cont">
+                <img src="https://images.prismic.io/motionsickness/583e01dd-b481-4026-816b-93e4abdbef58_f980a434-ddb1-47e2-be08-120a145a3957_Hero-Truck-01.jpg?ixlib=js-3.3.0&auto=format%2C%20compress&w=750&dpr=2&q=50"
+                    alt="project-banner">
+            </div>
+        </section>
+        <section id="showcase-project">
+            <div class="showcase7 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/WineeMedia/wineemedia_cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <video autoplay muted loop playsinline src="/projects/WineeMedia/Winee_Media_hover.mp4"></video>
+                    </div>
+                </div>
+
+            </div>
+            <div class="showcase8 showcase-cont">
+                <div class="showcase-cont-wrap">
+                    <img src="/projects/ResideInBeing/RIB_Cover.webp" alt="project-banner">
+                    <div class="showcase-cont-hover">
+                        <video autoplay muted loop playsinline src="/projects/ResideInBeing/RIB_Hover.mp4"></video>
+                        <img src="/projects/Indian Gaming League/indian_hover.webp" alt="project-banner">
+                    </div>
+                </div>
+            </div>
+            <div class="showcase9 showcase-cont">
+                <img src="https://images.prismic.io/motionsickness/aAF-jOvxEdbNPNjX_groupshoth.jpg?ixlib=js-3.3.0&auto=format%2C%20compress&w=750&dpr=2&q=50"
+                    alt="project-banner">
+            </div>
+        </section>
+        <section id="our-team">
+            <h3>The chaos crew bringing your wildest ideas to life—no rules, just magic and a whole lot of “whoa!”
+                Fueled by chaos, chai, and heart, we’re either coding at 3 AM or dreaming big over pizza—always pushing
+                boundaries and having a blast.</h3>
+            <p>Click and drag below to build your team.</p>
+            <div id="group">
+                <canvas id="teamCanvas"></canvas>
+            </div>
+            <img id="team-mobile" src="/team/team-photo.avif" alt="group-image">
+        </section>
+        <section id="studio-2">
+            <div id="studio-team">
+                <p class="st2-tl"></p>
+                <div id="team-members">
+                    <div class="member m1">
+                        <img src="/team/rohit.webp" alt="team-member">
+                        <p>Rohit Tiwari</p>
+                        <p class="member-des">Founder & CEO</p>
+                        <p class="member-des">Design Director / HR Head / Finance Head</p>
+                    </div>
+                    <div class="member m2">
+                        <img src="/team/vikas.webp" alt="team-member">
+                        <p>Vikas Gupta</p>
+                        <p class="member-des">Founder & CTO</p>
+                    </div>
+                    <div class="member m3">
+                        <img src="/team/rutuja.webp" alt="team-member">
+                        <p>Rutuja Dorkar</p>
+                        <p class="member-des">UI/UX Designer / Studio Manager</p>
+                    </div>
+                    <div class="member m4">
+                        <img src="/team/anand.webp" alt="team-member">
+                        <p>Anand Vishwakarma</p>
+                        <p class="member-des">Full-Stack Developer</p>
+                    </div>
+                    <div class="member m5">
+                        <img src="/team/prince.webp" alt="team-member">
+                        <p>Prince Singh</p>
+                        <p class="member-des">Frontend Developer</p>
+                    </div>
+                    <div class="member m6">
+                        <img src="/team/murtaza.webp" alt="team-member">
+                        <p>Murtaza Singapurwala</p>
+                        <p class="member-des">Backend Developer</p>
+                    </div>
+                    <div class="member m7">
+                        <img src="/team/ayush.webp" alt="team-member">
+                        <p>Ayush Ahirwar</p>
+
+                        <p class="member-des">GSAP Developer</p>
+                    </div>
+                    <div class="member m8">
+                        <img src="/team/sameer.webp" alt="team-member">
+                        <p>Sameer khan</p>
+                        <p class="member-des">GSAP Developer</p>
+                    </div>
+                    <div class="member m9">
+                        <img src="/team/puneet.webp" alt="team-member">
+                        <p>Punnet Kumar</p>
+                        <p class="member-des">Shopify Developer</p>
+                    </div>
+                    <!-- <div class="member m10">
+                        <img src="https://studiolekko.com/wp-content/uploads/2023/08/karolinagrzywnowiczcofounderartdirectiondesignstrategy-720x903.jpg"
+                            alt="project-banner">
+                        <p>??</p>
+                        <p class="member-des">??</p>
+                    </div>
+                    <div class="member m11">
+                        <img src="https://studiolekko.com/wp-content/uploads/2023/08/sorayamobasherigraphicdesign-720x1018.jpg"
+                            alt="project-banner">
+                        <p>??</p>
+                        <p class="member-des">??</p>
+                    </div>
+                    <div class="member m12">
+                        <img src="https://studiolekko.com/wp-content/uploads/2024/12/misia-borzyminska-headshot-t-720x943.jpg"
+                            alt="project-banner">
+                        <p>??</p>
+                        <p class="member-des">??</p>
+                    </div>
+                    <div class="member m13">
+                        <img src="https://studiolekko.com/wp-content/uploads/2023/08/vladboykographicmotiondesign-720x1065.jpg"
+                            alt="project-banner">
+                        <p>??</p>
+                        <p class="member-des">??</p>
+                    </div> -->
+                </div>
+            </div>
+            <div id="studio-contact">
+                <p class="st2-tl">We are Zerrorians:</p>
+                <p class="para-st2 para-contact">The chaos crew turning your wildest ideas into reality. <br>
+                    No rules, just magic, and a whole lot of “whoa!”
+                </p>
+                <p class="para-st2 para-contact">Our secret sauce? A pinch of chaos, endless chai refills, <br> and a
+                    whole lot of
+                    heart. Whether we’re coding like maniacs <br> at 3 AM or brainstorming your next big idea over <br>
+                    a pizza-fueled jam session, we’re all about pushing <br> boundaries and having a blast doing it.</p>
+            </div>
+        </section>
+        <section id="studio-brand">
+            <div id="brand-listing">
+                <h4>What they're saying about us.</h4>
+                <div id="brand-list">
+                    <p><span>NZ Marketing Magazine</span> Behind The Rise Of Motion Sickness</p>
+                    <p><span>LBB Online Global</span> Agency Of The Year win for Motion Sickness in London</p>
+                    <p><span>Roastbrief USA</span> Motion Sickness launches new design agency : The Motion Sickness
+                        Design Office</p>
+                    <p><span>Stoppress</span> Motion Sickness’ new design arm: The Design Office</p>
+                    <p><span>Stoppress</span> Motion Sickness secures Kathmandu account</p>
+                    <p><span>Campaign Brief</span> Motion Sickness wins Idea Of The Year</p>
+                    <p><span>LBB</span> Motion Sickness Named Boutique Agency of the Year</p>
+                    <p><span>Stoppress</span> Motion Sickness wins big at Campaign Awards</p>
+                    <p><span>Stoppress</span> Motion Sickness cooks up Effie success</p>
+                    <p><span>LLB Online</span> Motion Sickness Takes Out Effies Golds, Including Coveted ‘Hardest
+                        Challenge’</p>
+                    <p><span>Stoppress</span> Smooth sailing for Motion Sickness as young agency takes industry by
+                        storm.</p>
+                    <p><span>LBB Online</span> How Motion Sickness captured K Road in a bottle.</p>
+                    <p><span>NewsHub</span> Road by Karangahape aims to bottle the scent of Auckland's most iconic strip
+                    </p>
+                    <p><span>Campaign</span> Brief Motion Sickness makes the cut at Cannes Lions with You're Cooked.</p>
+                    <p><span>LBB Online</span> Indie agencies that roared in 2022.</p>
+                    <p><span>Daily Mail UK</span> The cookbook for when you're drunk created by firefighters.</p>
+                    <p><span>Campaign Asia</span> 2022 Agency of the year awards. Motion Sickness Creative Agency Of the
+                        Year New Zealand.</p>
+                    <p><span>LBB Online</span> Motion Sickness tells Kiwis to get Cooked.</p>
+                    <p><span>Stuff</span> Auckland businesses reveal hurt behind 'Bad Reviews' via new campaign.</p>
+                    <p><span>Campaign Brief</span> Motion Sickness bolsters team with 5 hires including new Kaitaunaki
+                        Māori position.</p>
+                    <p><span>Campaign Brief</span> Fire and Emergency unveil new safety platform via Motion Sickness</p>
+                    <p><span>The Guardian</span> New Zealand advert featuring nude ‘porn actors’ praised for promoting
+                        internet safety</p>
+                </div>
             </div>
         </section>
         <footer>
@@ -457,16 +549,16 @@
                         <div class="rt-top">
                             <div>
                                 <div class="text-effect">
-                                    <a href="/" class="effect">Home</a>
-                                    <a href="/" class="effect">Home</a>
+                                    <a href="/" class="effect">Studio</a>
+                                    <a href="/" class="effect">Studio</a>
                                 </div>
                                 <div class="text-effect service-open-btn">
                                     <p class="effect">Services</p>
                                     <p class="effect">Services</p>
                                 </div>
                                 <div class="text-effect">
-                                    <a href="/studio" class="effect">Studio</a>
-                                    <a href="/studio" class="effect">Studio</a>
+                                    <a href="/work" class="effect">work</a>
+                                    <a href="/work" class="effect">work</a>
                                 </div>
                             </div>
                             <div>
@@ -504,6 +596,7 @@
             <div class="footer-layer"></div>
         </footer>
     </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
         integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -517,7 +610,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="/javascripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+
+    <script type="module" src="/javascripts/game.js"></script>
+    <script type="module" src="/javascripts/studio.js"></script>
 </body>
 
 </html>

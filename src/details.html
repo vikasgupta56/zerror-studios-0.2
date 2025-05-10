@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zerror Studios | Animated Websites, eCommerce & Custom CMS</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/game.css">
     <link rel="stylesheet" href="/stylesheets/details.css">
     <!-- Meta Title & Description -->
     <meta name="title" content="Zerror Studios | Animated Websites, eCommerce & Custom CMS">
@@ -50,6 +52,7 @@
         }
         </script>
 </head>
+
 <body>
     <section id="service-page">
         <div id="service-top">
@@ -191,21 +194,32 @@
         <nav>
             <a href="/" id="logo">Zerror Studios</a>
             <div id="nav-right">
-                <div class="text-effect off-menu-btn" id="studio-btn">
-                    <a href="/studio" class="effect">studio</a>
-                    <a href="/studio" class="effect">studio</a>
+                <div class="text-effect  off-menu-btn inactive">
+                    <a href="/" class="effect">studio</a>
+                    <a href="/" class="effect">studio</a>
                 </div>
-                <div id="nav-service" class="text-effect hover-effect service-open-btn off-menu-btn">
+                <div class="text-effect inactive">
+                    <a href="/work" class="effect">work</a>
+                    <a href="/work" class="effect">work</a>
+                </div>
+                <div id="nav-service" class="text-effect inactive hover-effect service-open-btn off-menu-btn">
                     <p class="effect">services</p>
                     <p class="effect">services</p>
                 </div>
-                    <p class="effect" id="menu-button">menu</p>
+                <div class="text-effect inactive" id="play-game">
+                    <p class="effect">relax</p>
+                    <p class="effect">relax</p>
+                </div>
+                <p id="menu-button" class="effect">menu</p>
+            </div>
+             <div class="play-btn">
+                <p class="effect" id="mute-music"><i class="ri-volume-mute-line"></i></p>
             </div>
             <div id="menu-container">
                 <div class="menu-top">
-                    <a href="/">home</a>
+                    <a href="/">studio</a>
                     <p class="service-open-btn" id="menu-service">services</p>
-                    <a href="/studio">studio</a>
+                    <a href="/studio">work</a>
                 </div>
                 <div class="menu-btm">
                     <p>hello@zerrorstudios.com</p>
@@ -216,6 +230,39 @@
                 </div>
             </div>
         </nav>
+    </section>
+    <section id="relax-section">
+        <div class="header">
+            <a href="/" id="logo">Zerror Studios</a>
+            <div class="text-effect" id="close-game">
+                <p class="effect">close</p>
+                <p class="effect">close</p>
+            </div>
+            <div id="music-controls">
+                <div data-audio="/music/EDWARD SIMONI - Enchanted World (amazing pan flute music).mp3"
+                    class="music-box">
+                    <p>Pan Flute</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+                <div data-audio="/music/Songs of Hope_ The Dawn Chorus, Pt. 4_ Hihi & Distant Tieke (Stitchbirds & Saddlebacks) (Wattle....mp3"
+                    class="music-box">
+                    <p>Dawn Chorus</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+                <div data-audio="/music/Babbling Brook, Pt. 19.mp3" class="music-box">
+                    <p>Babbling Brook</p>
+                    <div class="volume">
+                        <div class="volume-control"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <canvas id="physicsCanvas"></canvas>
     </section>
     <main id="main">
         <div id="under-development">
@@ -391,12 +438,16 @@
                         </div>
                         <div>
                             <div class="text-effect">
-                                <a target="_blank" href="https://www.instagram.com/wearezerrorians/" class="effect">Instagram</a>
-                                <a target="_blank" href="https://www.instagram.com/wearezerrorians/" class="effect">Instagram</a>
+                                <a target="_blank" href="https://www.instagram.com/wearezerrorians/"
+                                    class="effect">Instagram</a>
+                                <a target="_blank" href="https://www.instagram.com/wearezerrorians/"
+                                    class="effect">Instagram</a>
                             </div>
                             <div class="text-effect">
-                                <a target="_blank" href="https://www.linkedin.com/company/official-zerror-studios/" class="effect">LinkedIn</a>
-                                <a target="_blank" href="https://www.linkedin.com/company/official-zerror-studios/" class="effect">LinkedIn</a>
+                                <a target="_blank" href="https://www.linkedin.com/company/official-zerror-studios/"
+                                    class="effect">LinkedIn</a>
+                                <a target="_blank" href="https://www.linkedin.com/company/official-zerror-studios/"
+                                    class="effect">LinkedIn</a>
                             </div>
                         </div>
                         <div id="mail-d">
@@ -412,18 +463,21 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
-    integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"
         integrity="sha512-xAxjKW1J/R4TFytv43xvQ7jFTrJlBzsDOH/Aw0fFc2nvarQkE3d08lTicjzUsZJYDoHYDCpwsUUqOJXh34A1sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+
+    <script type="module" src="/javascripts/game.js"></script>
     <script type="module" src="/javascripts/details.js"></script>
 </body>
 

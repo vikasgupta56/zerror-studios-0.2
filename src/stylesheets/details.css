@@ -134,6 +134,10 @@ nav {
   justify-content: space-between;
   padding: 8px 13px;
   z-index: 2;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: headingb;
+  font-weight: 600;
 }
 
 
@@ -220,10 +224,15 @@ nav #studio-btn.active .effect {
 nav #nav-service.active {
   opacity: 1 !important;
 }
+nav .inactive{
+  opacity: .5 !important;
+}
 #logo {
   font-family: headingb;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
 }
 nav a {
   text-decoration: none;
@@ -238,11 +247,13 @@ nav img {
 #nav-right {
   display: flex;
   align-items: center;
-  font-family: paraBold;
+  font-family: headingb;
   font-size: 14px;
   text-transform: capitalize;
   gap: 20px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9;
 }
 #nav-right #nav-service {
@@ -254,6 +265,19 @@ nav img {
 } */
 
 /* SERVICE CSS  END */
+
+/* play */
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.play-btn p {
+  line-height: 1;
+}
+
+
 
 #main {
   position: relative;
@@ -636,6 +660,16 @@ a {
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 575px) {
+  .play-btn {
+    display: none;
+  }
+  #nav-right {
+    position: static;
+    transform: none;
+  }
+  #nav-right > div {
+    display: none;
+  }
   #under-development p{
     font-size: 6vw;
     line-height: 1.3;
@@ -645,6 +679,10 @@ a {
   }
   #menu-button{
     display: block;
+    font-weight: 500;
+  }
+  #menu-container{
+    font-weight: 500;
   }
   
   #service-page {

@@ -161,7 +161,7 @@ function serviceAnimation() {
 }
 function openService() {
     if (isService) {
-        gsap.set("nav", { backgroundColor: "#fff" })
+        // gsap.set("nav", { backgroundColor: "#fff" })
         gsap.to("#main", {
             top: "calc(100% - 40px)",
             ease: "power3.out",
@@ -177,7 +177,7 @@ function openService() {
         })
     } else {
         document.querySelector("#nav-service").classList.remove("active")
-        gsap.set("nav", { backgroundColor: "transparent" })
+        // gsap.set("nav", { backgroundColor: "transparent" })
         gsap.to("#main", {
             top: "0%",
             ease: "power3.out",

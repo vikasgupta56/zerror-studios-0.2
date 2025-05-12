@@ -513,7 +513,7 @@ function homeLoader() {
 }
 
 // Run the loader when the page loads
-homeLoader();
+// homeLoader();
 
 
 function serviceListingAnimation() {

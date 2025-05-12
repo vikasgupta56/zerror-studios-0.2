@@ -221,7 +221,7 @@ document.querySelectorAll("#play-game").forEach((button) => {
             duration: 0.6,
         });
 
-        const volumes = [0.3, 0.2, 0.1];
+          const volumes = [0.3, 0.2, 0.1];
 
         musicBoxes.forEach((box, index) => {
             const audio = audioInstances[index]; // Use the same instance
@@ -236,16 +236,45 @@ document.querySelectorAll("#play-game").forEach((button) => {
             }
         });
 
+        
         Matter.Render.run(render);
         Matter.Runner.run(runner, engine);
         addShapesAndText();
     });
 });
 
+ document.querySelector("#enter-btn").addEventListener("click", function () {
+    if(window.innerWidth < 575) return;
+       setTimeout(() => {
+         const volumes = [0.3, 0.2, 0.1];
+
+        musicBoxes.forEach((box, index) => {
+            const audio = audioInstances[index]; // Use the same instance
+            const volumeControl = box.querySelector('.volume-control');
+            const volume = volumes[index];
+
+            audio.volume = volume;
+            volumeControl.style.left = (volume * 100) + '%';
+
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+       }, 1000);
+
+    })
+
+
+
+
 
 let isMuted = false;
 
 document.querySelector("#mute-music").addEventListener("click", function () {
+    // Play toggle sound
+    const toggleSound = new Audio('/music/mute.mp3');
+    toggleSound.play();
+
     isMuted = !isMuted;
 
     musicBoxes.forEach((box, index) => {
@@ -265,16 +294,16 @@ document.querySelector("#mute-music").addEventListener("click", function () {
         }
     });
 
-    // Update button text
-  document.querySelectorAll("#mute-music").forEach(el => {
-    const icon = document.createElement('i');
-    icon.className = isMuted ? 'ri-volume-mute-line' : 'ri-volume-up-line';
+    // Update button icon
+    document.querySelectorAll("#mute-music").forEach(el => {
+        const icon = document.createElement('i');
+        icon.className = isMuted ? 'ri-volume-mute-line' : 'ri-volume-up-line';
 
-    el.innerHTML = ''; // Clear existing content
-    el.appendChild(icon);
+        el.innerHTML = ''; // Clear existing content
+        el.appendChild(icon);
+    });
 });
 
-});
 
 document.querySelector("#close-game").addEventListener("click", function () {
     gsap.to("#relax-section", {

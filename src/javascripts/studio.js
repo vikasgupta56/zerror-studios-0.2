@@ -22,36 +22,91 @@ document.addEventListener("DOMContentLoaded", () => {
         // Start the animation frame loop
         requestAnimationFrame(raf);
     }
-
     smoothScroll();
+
+    gsap.set("body", { overflow: "hidden" });
+
+    function homeLoader() {
+        var loader = gsap.timeline({
+            onComplete: function () {
+                // Re-enable scrolling after the animation completes
+                gsap.set("body", { overflow: "auto" });
+                imageRenderer(); // Your image rendering function
+            }
+        });
+
+        // Disable scrolling before the animation starts
+
+        loader
+            .to("#main", {
+                backgroundColor: "white",
+                duration: 0.8,
+                ease: "ease-in-out",
+                delay: .3,
+            }, "b")
+            .to("nav", {
+                opacity: 1,
+                duration: 1,
+                delay: -0.5,
+                ease: "power3.out",
+            }, "c");
+    }
+    document.querySelector("#enter-btn").addEventListener("click", function () {
+        gsap.to("#enter-btn", {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power3.out",
+            onComplete: function () {
+                gsap.set("#enter-btn", { display: "none" })
+            }
+        })
+        homeLoader();
+    });
+
 
     function imageRenderer() {
         const imageContainer = document.getElementById('image-render');
         const MAX_IMAGES = 10;
-        const MIN_DISTANCE = 20; // minimum movement in pixels
-
+        const MIN_DISTANCE = 20;
         let lastX = 0;
         let lastY = 0;
         let index = 0;
-        // Dummy image URLs - replace with real assets or use `unsplash.it` for random ones
+        let idleTimeout;
+        let clearIntervalId;
+
         const images = [
-            '/cursor/cur1.png',
-            '/cursor/cur2.png',
-            '/cursor/cur3.png',
-            '/cursor/cur4.png',
-            '/cursor/cur5.png',
-            '/cursor/cur6.png',
-            '/cursor/cur7.jpg',
-            '/cursor/cur8.png',
-            '/cursor/cur9.png',
-            '/cursor/cur10.png',
-            '/cursor/cur11.png',
+            '/cursor/cur1.png', '/cursor/cur2.png', '/cursor/cur3.png',
+            '/cursor/cur4.png', '/cursor/cur5.png', '/cursor/cur6.png',
+            '/cursor/cur7.jpg', '/cursor/cur8.png', '/cursor/cur9.png',
+            '/cursor/cur10.png', '/cursor/cur11.png',
         ];
-        window.addEventListener('mousemove', (e) => {
+
+        // Sound to play when images are created
+        const sound = new Audio('/music/buttonHover.mp3');
+
+        const section = document.querySelector("#section1-studio");
+
+        function clearImagesOneByOne() {
+            clearInterval(clearIntervalId); // prevent overlap
+            clearIntervalId = setInterval(() => {
+                if (imageContainer.children.length > 0) {
+                    imageContainer.removeChild(imageContainer.children[0]);
+                } else {
+                    clearInterval(clearIntervalId);
+                }
+            }, 100); // removes one image every 100ms
+        }
+
+        function resetIdleTimer() {
+            clearTimeout(idleTimeout);
+            idleTimeout = setTimeout(() => {
+                clearImagesOneByOne();
+            }, 4000); // 4 seconds idle time
+        }
+
+        section.addEventListener('mousemove', (e) => {
             const dx = Math.abs(e.clientX - lastX);
             const dy = Math.abs(e.clientY - lastY);
-
-            // Only add image if moved enough
             if (dx < MIN_DISTANCE && dy < MIN_DISTANCE) return;
 
             lastX = e.clientX;
@@ -65,16 +120,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
             imageContainer.appendChild(img);
 
+            // Play the hover sound
+            sound.play();
+
             if (imageContainer.children.length > MAX_IMAGES) {
                 imageContainer.removeChild(imageContainer.children[0]);
             }
 
             index++;
+            resetIdleTimer();
         });
 
+        section.addEventListener('mouseleave', () => {
+            clearTimeout(idleTimeout);
+            clearImagesOneByOne();
+        });
     }
-    imageRenderer()
 
+    // imageRenderer();
+
+    function parallaxPgae1() {
+        gsap.to("#section1-studio h2", {
+            y: -200, // or more/less depending on the intensity you want
+            filter:"blur(10px)",
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#section1-studio",
+                scroller: "body",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
+    }
+    parallaxPgae1()
+
+    window.addEventListener("load", () => {
+        document.fonts.ready.then(() => {
+            SplitText.create(".splitlines", {
+                type: "lines",
+                linesClass: "lines"
+            });
+
+            function animateLines(selector, direction) {
+                const lines = document.querySelectorAll(`${selector} .lines`);
+
+                lines.forEach((line) => {
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: line,
+                            scroller: "html, body", // ensure full scroll area is considered
+                            start: "top 90%",
+                            end: "top 60%", // Slightly earlier to trigger animation earlier
+                            scrub: 1.5, // Make scroll trigger smoother
+                            markers: false, // Turn off markers for cleaner visuals
+                        }
+                    });
+
+                    const xValue = direction === 'left' ? -30 : 30; // Reduce movement to make it subtler
+
+                    tl.from(line, {
+                        x: xValue,
+                        opacity: 0,
+                        stagger: 0.05, // Reduce stagger for more seamless flow
+                        duration: 1.5, // Increase duration for a smoother effect
+                        ease: "expo.out", // Smooth and fluid easing
+                    });
+                });
+            }
+
+            // Call for left and right lines
+            animateLines('.lineleft', 'left');
+            animateLines('.lineright', 'right');
+
+
+
+
+        });
+    });
 
 
     const clientData = [
@@ -334,6 +458,84 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     serviceAnimation()
 
+    function stringAnimation() {
+        let soundEnabled = false;
+        let audioIndex = 0;
+        const audioFiles = ["/music/1.mp3", "/music/2.mp3"];
+
+        // Enable sound on first user interaction
+        document.addEventListener("click", () => {
+            soundEnabled = true;
+        });
+
+        function adjustStrings() {
+            const containers = document.querySelectorAll(".string-container");
+
+            containers.forEach((container, index) => {
+                const svg = container.querySelector("svg");
+                const path = svg.querySelector("path");
+                const width = container.clientWidth;
+                const height = svg.clientHeight;
+                const midY = height / 2;
+
+                // Set the viewBox dynamically based on the actual width and height
+                svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+                svg.setAttribute("width", width);
+                svg.setAttribute("height", height);
+
+                // Initial straight path
+                const initialPath = `M 0 ${midY} Q ${width / 2} ${midY} ${width} ${midY}`;
+                path.setAttribute("d", initialPath);
+
+                // String animation
+                container.addEventListener("mouseenter", () => {
+                    if (soundEnabled) {
+                        const audio = new Audio(audioFiles[audioIndex]);
+                        audio.play();
+                        audioIndex = (audioIndex + 1) % audioFiles.length;
+                    }
+
+                    gsap.to(path, {
+                        duration: 0.2,
+                        attr: { d: `M 0 ${midY} Q ${width / 2} ${midY - 50} ${width} ${midY}` }, // Reduced the height change
+                        ease: "elastic.out(1, 0.2)",
+                    });
+                });
+
+                container.addEventListener("mousemove", (e) => {
+                    const offsetFactorX = 0.01;  // Reduced the X-axis movement
+                    const offsetFactorY = 0.2;   // Reduced the Y-axis movement
+                    const rect = container.getBoundingClientRect();
+                    const xOffset = (e.clientX - rect.left - width / 2) * offsetFactorX;
+                    const yOffset = (e.clientY - rect.top - midY) * offsetFactorY;
+
+                    const newPath = `M 0 ${midY} Q ${width / 2 + xOffset} ${midY + yOffset} ${width} ${midY}`;
+
+                    gsap.to(path, {
+                        duration: 0.2,
+                        attr: { d: newPath },
+                        ease: "elastic.out(1, 0.2)",
+                    });
+                });
+
+                container.addEventListener("mouseleave", () => {
+                    gsap.to(path, {
+                        duration: 1.2,
+                        attr: { d: initialPath },
+                        ease: "elastic.out(1, 0.2)",
+                    });
+                });
+            });
+        }
+
+        // Adjust on load and resize
+        window.addEventListener("load", adjustStrings);
+        window.addEventListener("resize", adjustStrings);
+    }
+
+    stringAnimation();
+
+
 
     function footerAnimation() {
 
@@ -568,17 +770,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-       canvas.addEventListener('mouseup', () => {
-    if (selectedMember) {
-        selectedMember.isDragging = false;
+        canvas.addEventListener('mouseup', () => {
+            if (selectedMember) {
+                selectedMember.isDragging = false;
 
-        // Snap to bottom
-        selectedMember.y = canvas.height - selectedMember.height - 20;
+                // Snap to bottom
+                selectedMember.y = canvas.height - selectedMember.height - 20;
 
-        draw();
-        selectedMember = null;
-    }
-});
+                draw();
+                selectedMember = null;
+            }
+        });
 
     }
     dragTeam()

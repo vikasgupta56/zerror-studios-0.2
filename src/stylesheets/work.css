@@ -38,6 +38,29 @@ body {
   height: 100%;
 }
 
+/* POINTER */
+
+#pointer {
+  width: 40px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  will-change: transform, left, top;
+}
+#pointer svg {
+  width: 100%;
+  height: auto;
+}
+
 /* SERVICE CSS START */
 
 #service-page {
@@ -103,6 +126,7 @@ body {
 #our-service .services p {
   font-family: headingb;
   font-size: 17px;
+  font-variant-numeric: tabular-nums;
 }
 .service-title {
   padding-bottom: 12px;
@@ -136,7 +160,9 @@ nav {
   justify-content: space-between;
   padding: 8px 13px;
   z-index: 2;
-   background-color: white;
+  background-color: white;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /* menu container */
@@ -174,7 +200,7 @@ nav {
   display: inline-block;
   color: #000000;
   margin-bottom: 10px;
-  font-family: headingb!important;
+  font-family: headingb !important;
   text-decoration: none !important;
   text-transform: capitalize !important;
 }
@@ -223,15 +249,15 @@ nav #studio-btn.active .effect {
 nav #nav-service.active {
   opacity: 1 !important;
 }
-nav .inactive{
-  opacity: .5 !important;
+nav .inactive {
+  opacity: 0.5 !important;
 }
 #logo {
   font-family: headingb;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 nav a {
   text-decoration: none;
@@ -272,7 +298,6 @@ nav img {
 .play-btn p {
   line-height: 1;
 }
-
 
 #main {
   position: relative;
@@ -397,6 +422,10 @@ nav img {
   align-items: start;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.projects-container a{
+  cursor: none;
 }
 
 #all-project,
@@ -681,6 +710,7 @@ footer {
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
+  display: block;
   font-family: paraBold !important;
 }
 .Instagram {
@@ -712,40 +742,46 @@ a {
   display: none;
 }
 
-#des-title{
-  display: block;;
+#des-title {
+  display: block;
 }
-#mobile-title{
+#mobile-title {
   display: none;
 }
 
 /* Extra Small Devices (Phones) */
 
 @media (max-width: 576px) {
-   .play-btn {
+   #pointer {
+    display: none;
+  }
+  .play-btn {
     display: none;
   }
   #nav-right {
     position: static;
     transform: none;
   }
-  #nav-right > div {
+    #nav-right > div , #nav-right > a {
+    display: none;
+  }
+  #mute-music{
     display: none;
   }
   #filter-container p:hover {
     background-color: transparent;
   }
-  
+
   .footer-mail p {
     line-height: normal;
   }
-  nav{
-  background-color: white !important;
+  nav {
+    background-color: white !important;
   }
-  #des-title{
-    display: none;;
+  #des-title {
+    display: none;
   }
-  #mobile-title{
+  #mobile-title {
     display: block;
   }
   .off-menu-btn {
@@ -864,7 +900,7 @@ a {
   #footer-text-center h4 {
     font-size: 35px !important;
     font-weight: 500;
-    line-height: .8 !important;
+    line-height: 0.8 !important;
     margin-bottom: 20px;
     letter-spacing: 0 !important;
   }
@@ -914,10 +950,9 @@ a {
   #mail {
     display: none;
   }
-  #mail-mobile{
+  #mail-mobile {
     display: none !important;
   }
-
 }
 
 @media (min-width: 460px) and (max-width: 576px) {
@@ -925,7 +960,6 @@ a {
     width: 100%;
     flex-direction: row;
     gap: 7px !important;
-    
   }
 
   .project-small {
@@ -975,7 +1009,6 @@ a {
 }
 
 @media (min-width: 576px) and (max-width: 875px) {
- 
   .footer-mail p {
     line-height: normal;
   }
@@ -1283,8 +1316,7 @@ a {
   }
 }
 
-
-@media (min-width: 1400px) and (max-width: 1450px){
+@media (min-width: 1400px) and (max-width: 1450px) {
   .project-small .showcase {
     height: 390px;
     margin-bottom: 8px;

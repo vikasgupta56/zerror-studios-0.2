@@ -1,5 +1,20 @@
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(TextPlugin);
+let soundEnabled = false;
+
+// Check localStorage on page load
+const isAllowed = localStorage.getItem("musicAllowed") === "true";
+if (isAllowed) {
+    soundEnabled = true;
+}
+
+// Enable sound on first user interaction
+document.addEventListener("click", () => {
+    if (!soundEnabled) {
+        soundEnabled = true;
+    }
+});
+
 // Initialize Lenis
 function smoothScroll() {
 
@@ -20,6 +35,69 @@ function smoothScroll() {
     requestAnimationFrame(raf);
 }
 smoothScroll()
+
+function pointer() {
+    let rotate = 0;
+    let diffrot = 0;
+    let currentAngle = 0;
+    let timeout;
+
+    // Linear interpolation function
+    function lerp(start, end, amt) {
+        return (1 - amt) * start + amt * end;
+    }
+
+    window.addEventListener("mousemove", function (e) {
+        clearTimeout(timeout);
+
+        diffrot = e.clientX - rotate;
+        rotate = e.clientX;
+
+        let targetAngle = diffrot * 2;
+        targetAngle = Math.max(-80, Math.min(80, targetAngle)); // clamp softly
+
+        // Smoothly interpolate angle
+        currentAngle = lerp(currentAngle, targetAngle, 0.2);
+
+        gsap.to("#pointer", {
+            left: e.clientX,
+            top: e.clientY,
+            rotate: currentAngle,
+            duration: 0.3,
+            ease: "power3.out",
+        });
+
+        timeout = setTimeout(() => {
+            currentAngle = lerp(currentAngle, 0, 0.2);
+            gsap.to("#pointer", {
+                rotate: 0,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        }, 100);
+    });
+
+
+    document.querySelectorAll(".projects-container a").forEach(function (project) {
+        project.addEventListener("mouseenter", function () {
+            gsap.to("#pointer", {
+                opacity: 1,
+                duration: 0.2,
+                ease: "power2.out"
+            });
+        })
+        project.addEventListener("mouseleave", function () {
+            gsap.to("#pointer", {
+                opacity: 0,
+                duration: 0.2,
+                ease: "power2.out"
+            });
+        })
+    })
+
+}
+pointer()
+
 const allProjectData = [
 
     {
@@ -258,6 +336,8 @@ function projectRenderer(data, container) {
         container.appendChild(projectElement);
     });
     projectAnimation();
+    pointer()
+
 }
 
 
@@ -401,6 +481,7 @@ const porjectData = [
 ]
 
 function textEffectAnimation() {
+    const sound = new Audio('/music/buttonHover.mp3');
     document.querySelectorAll(".text-effect .effect").forEach(function (element) {
         var clutter2 = ""
         element.textContent.split("").forEach(function (letter) {
@@ -415,6 +496,9 @@ function textEffectAnimation() {
 
     document.querySelectorAll(".text-effect").forEach(function (elem) {
         elem.addEventListener("mouseenter", function (e) {
+            if (soundEnabled && window.innerWidth > 575) {
+                sound.play();
+            }
             gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
                 y: "0%",
             }, {
@@ -441,7 +525,7 @@ textEffectAnimation()
 
 function homeLoader() {
     // Detect if the page was refreshed (not navigated via routes)
-    const isReload = performance.navigation.type === 1; 
+    const isReload = performance.navigation.type === 1;
 
     // If it's a reload, remove the sessionStorage flag
     if (isReload) {
@@ -889,7 +973,7 @@ function filterAnimation() {
 filterAnimation()
 
 
-function backToFeatured(btn){
+function backToFeatured(btn) {
     const currentContainer = document.querySelector("#filter-project")
     const projectContainer = document.querySelector("#featured-project")
 
@@ -1122,6 +1206,49 @@ function projectAnimation() {
     })
 }
 projectAnimation()
+
+window.addEventListener("load", () => {
+    document.fonts.ready.then(() => {
+        SplitText.create(".splitlines", {
+            type: "lines",
+            linesClass: "lines"
+        });
+
+        function animateLines(selector) {
+            const lines = document.querySelectorAll(`${selector} .lines`);
+
+            lines.forEach((line) => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: line,
+                        scroller: "html, body", // ensure full scroll area is considered
+                        start: "top 95%",
+                        end: "top 75%", // Slightly earlier to trigger animation earlier
+                        scrub: 1.5, // Make scroll trigger smoother
+                        markers: false, // Turn off markers for cleaner visuals
+                    }
+                });
+
+                tl.from(line, {
+                    y: 30,
+                    filter: "blur(10px)",
+                    opacity: 0,
+                    stagger: 0.05, // Reduce stagger for more seamless flow
+                    duration: 1.5, // Increase duration for a smoother effect
+                    ease: "expo.out", // Smooth and fluid easing
+                });
+            });
+        }
+
+        // Call for left and right lines
+        animateLines('.lineleft');
+        animateLines('.lineright');
+
+
+
+
+    });
+});
 
 function footerAnimation() {
 

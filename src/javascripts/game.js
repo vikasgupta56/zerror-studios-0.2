@@ -221,7 +221,7 @@ document.querySelectorAll("#play-game").forEach((button) => {
             duration: 0.6,
         });
 
-          const volumes = [0.3, 0.2, 0.1];
+        const volumes = [0, 0.1, 0.05];
 
         musicBoxes.forEach((box, index) => {
             const audio = audioInstances[index]; // Use the same instance
@@ -236,36 +236,46 @@ document.querySelectorAll("#play-game").forEach((button) => {
             }
         });
 
-        
+
         Matter.Render.run(render);
         Matter.Runner.run(runner, engine);
         addShapesAndText();
     });
 });
 
- document.querySelector("#enter-btn").addEventListener("click", function () {
-    if(window.innerWidth < 575) return;
-       setTimeout(() => {
-         const volumes = [0.3, 0.2, 0.1];
+window.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth < 575) return;
 
-        musicBoxes.forEach((box, index) => {
-            const audio = audioInstances[index]; // Use the same instance
-            const volumeControl = box.querySelector('.volume-control');
-            const volume = volumes[index];
+    const isAllowed = localStorage.getItem("musicAllowed") === "true";
+    if (!isAllowed) return;
 
-            audio.volume = volume;
-            volumeControl.style.left = (volume * 100) + '%';
+    // Wait for any user interaction
+    const handleUserInteraction = () => {
+        setTimeout(() => {
+            const volumes = [0, 0.1, 0.05];
 
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-       }, 1000);
+            musicBoxes.forEach((box, index) => {
+                const audio = audioInstances[index];
+                const volumeControl = box.querySelector('.volume-control');
+                const volume = volumes[index];
 
-    })
+                audio.volume = volume;
+                volumeControl.style.left = (volume * 100) + '%';
 
+                if (audio.paused) {
+                    audio.play().catch(e => console.log("Autoplay failed:", e));
+                }
+            });
+        }, 1000);
 
+        // Remove the event listener after the first interaction
+        window.removeEventListener("click", handleUserInteraction);
+    };
+    handleUserInteraction()
 
+    // Add one-time user interaction listener
+    window.addEventListener("click", handleUserInteraction);
+});
 
 
 let isMuted = false;
@@ -282,26 +292,34 @@ document.querySelector("#mute-music").addEventListener("click", function () {
         const volumeControl = box.querySelector('.volume-control');
 
         if (isMuted) {
-            // Store current volume so we can restore it
+            // Save current volume to restore later
             audio.dataset.prevVolume = audio.volume;
             audio.volume = 0;
             volumeControl.style.left = '0%';
         } else {
-            const prevVolume = parseFloat(audio.dataset.prevVolume || 0.3);
+            const prevVolume = parseFloat(audio.dataset.prevVolume || 0.05);
             audio.volume = prevVolume;
             volumeControl.style.left = (prevVolume * 100) + '%';
             if (audio.paused) audio.play();
         }
     });
 
-    // Update button icon
-    document.querySelectorAll("#mute-music").forEach(el => {
-        const icon = document.createElement('i');
-        icon.className = isMuted ? 'ri-volume-mute-line' : 'ri-volume-up-line';
+    // Update mute button text
+    document.querySelectorAll("#mute-music p").forEach(el => {
+        // Clear previous content
+        el.innerHTML = '';
 
-        el.innerHTML = ''; // Clear existing content
-        el.appendChild(icon);
+        // Choose the label
+        const label = isMuted ? 'unmute' : 'mute';
+
+        // Split into letters and wrap each in <span>
+        label.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            el.appendChild(span);
+        });
     });
+
 });
 
 

@@ -101,6 +101,7 @@ body {
 #our-service .services p {
   font-family: headingb;
   font-size: 17px;
+  font-variant-numeric: tabular-nums;
 }
 .service-title {
   padding-bottom: 12px;
@@ -137,6 +138,7 @@ nav {
   background-color: #fff;
   font-size: 14px;
   font-family: headingb;
+  text-transform: uppercase;
   font-weight: 600;
 }
 
@@ -606,6 +608,7 @@ footer {
   margin-bottom: 3px;
   width: fit-content;
   cursor: pointer;
+  display: block;
 }
 .text-effect span {
   display: inline-block;
@@ -667,7 +670,10 @@ a {
     position: static;
     transform: none;
   }
-  #nav-right > div {
+     #nav-right > div , #nav-right > a {
+    display: none;
+  }
+  #mute-music{
     display: none;
   }
   #under-development p{

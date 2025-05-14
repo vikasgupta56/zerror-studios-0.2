@@ -1,17 +1,20 @@
 {
-    "routes": [
-      {
-        "src": "/details",
-        "dest": "/details.html"
-      },
-      {
-        "src": "/",
-        "dest": "/index.html"
-      },
-      {
-        "src": "/work",
-        "dest": "/work.html"
-      }
-    ]
-  }
-  
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/studio",
+      "dest": "/studio.html"
+    },
+    {
+      "src": "/work",
+      "dest": "/work.html"
+    },
+    {
+      "src": "/details",
+      "dest": "/details.html"
+    }
+  ]
+}

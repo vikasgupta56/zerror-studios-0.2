@@ -1,5 +1,19 @@
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(TextPlugin);
+   let soundEnabled = false;
+
+    // Check localStorage on page load
+    const isAllowed = localStorage.getItem("musicAllowed") === "true";
+    if (isAllowed) {
+        soundEnabled = true;
+    }
+
+    // Enable sound on first user interaction
+    document.addEventListener("click", () => {
+        if (!soundEnabled) {
+            soundEnabled = true;
+        }
+    });
 
 // Initialize Lenis
 function smoothScroll() {
@@ -45,6 +59,7 @@ function detailLoader() {
 detailLoader()
 
 function textEffectAnimation() {
+    const sound = new Audio('/music/buttonHover.mp3');
     document.querySelectorAll(".text-effect .effect").forEach(function (element) {
         var clutter2 = ""
         element.textContent.split("").forEach(function (letter) {
@@ -59,6 +74,9 @@ function textEffectAnimation() {
 
     document.querySelectorAll(".text-effect").forEach(function (elem) {
         elem.addEventListener("mouseenter", function (e) {
+            if (soundEnabled && window.innerWidth > 575) {
+                sound.play();
+            }
             gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
                 y: "0%",
             }, {
@@ -82,7 +100,8 @@ function textEffectAnimation() {
 }
 textEffectAnimation()
 
-function serviceListingAnimation(){
+
+function serviceListingAnimation() {
     const serviceDets = [
         "Digging deep to define your audience, vision, and what sets you apart.",
         "Positioning your brand with a clear mission and a bold identity.",
@@ -112,21 +131,21 @@ function serviceListingAnimation(){
         "Expert guidance on bespoke digital solutions, from choosing the right tech stack to building scalable, future-ready systems.",
         "A squad of elite developers, designers, and strategists working as an extension of your in-house team."
     ]
-    
-    document.querySelectorAll(".service-wrap .text-effect").forEach(function(textEffect) {
-        textEffect.addEventListener("mouseenter",function(e){
+
+    document.querySelectorAll(".service-wrap .text-effect").forEach(function (textEffect) {
+        textEffect.addEventListener("mouseenter", function (e) {
             const text = serviceDets[e.target.dataset.index]
-    
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:text,
+
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: text,
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
             })
         })
-        textEffect.addEventListener("mouseleave",function(){
-            gsap.to(document.querySelector("#about-service-text"),{
-                text:"",
+        textEffect.addEventListener("mouseleave", function () {
+            gsap.to(document.querySelector("#about-service-text"), {
+                text: "",
                 duration: 1,
                 ease: "power3.out",
                 overwrite: "auto"
@@ -140,7 +159,7 @@ var isService = false;
 function serviceAnimation() {
     var previousLink = ""
 
-    document.querySelectorAll(".service-open-btn").forEach(function(btn){
+    document.querySelectorAll(".service-open-btn").forEach(function (btn) {
         btn.addEventListener("click", function (e) {
             document.querySelector("#nav-service").classList.add("active");
             // document.querySelector("#studio-btn").classList.remove("active");
@@ -157,7 +176,7 @@ function serviceAnimation() {
         // document.querySelector("#studio-btn").classList.add("active");
     })
 
-    
+
 }
 function openService() {
     if (isService) {
@@ -171,8 +190,8 @@ function openService() {
             top: "-40px",
             ease: "power3.out",
             duration: 1.2,
-            onComplete:()=>{
-                gsap.set("body",{overflow: "hidden"})
+            onComplete: () => {
+                gsap.set("body", { overflow: "hidden" })
             }
         })
     } else {
@@ -187,8 +206,8 @@ function openService() {
             top: "-100%",
             ease: "power3.out",
             duration: 1.2,
-            onComplete:()=>{
-                gsap.set("body",{overflow: "auto"})
+            onComplete: () => {
+                gsap.set("body", { overflow: "auto" })
                 setTimeout(() => {
                     ScrollTrigger.refresh();
                 }, 200);

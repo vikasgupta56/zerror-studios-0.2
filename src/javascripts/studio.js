@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollToPlugin);
     gsap.registerPlugin(TextPlugin);
+    let soundEnabled = false;
+
+    // Check localStorage on page load
+    const isAllowed = localStorage.getItem("musicAllowed") === "true";
+    if (isAllowed) {
+        soundEnabled = true;
+    }
+    // Enable sound on first user interaction
+    document.addEventListener("click", () => {
+        if (!soundEnabled) {
+            soundEnabled = true;
+            localStorage.setItem("musicAllowed", "true");
+        }
+    });
+
+
     // Initialize Lenis
     function smoothScroll() {
         const lenis = new Lenis({
@@ -20,18 +36,82 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Start the animation frame loop
+
         requestAnimationFrame(raf);
     }
     smoothScroll();
 
-    gsap.set("body", { overflow: "hidden" });
+    function pointer() {
+        let rotate = 0;
+        let diffrot = 0;
+        let currentAngle = 0;
+        let timeout;
+
+        // Linear interpolation function
+        function lerp(start, end, amt) {
+            return (1 - amt) * start + amt * end;
+        }
+
+        window.addEventListener("mousemove", function (e) {
+            clearTimeout(timeout);
+
+            diffrot = e.clientX - rotate;
+            rotate = e.clientX;
+
+            let targetAngle = diffrot * 2;
+            targetAngle = Math.max(-80, Math.min(80, targetAngle)); // clamp softly
+
+            // Smoothly interpolate angle
+            currentAngle = lerp(currentAngle, targetAngle, 0.2);
+
+            gsap.to("#pointer", {
+                left: e.clientX,
+                top: e.clientY,
+                rotate: currentAngle,
+                duration: 0.3,
+                ease: "power3.out",
+            });
+
+            timeout = setTimeout(() => {
+                currentAngle = lerp(currentAngle, 0, 0.2);
+                gsap.to("#pointer", {
+                    rotate: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            }, 100);
+        });
+
+
+        document.querySelectorAll(".showcase-cont-cursor").forEach(function (project) {
+            project.addEventListener("mouseenter", function () {
+                gsap.to("#pointer", {
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
+            })
+            project.addEventListener("mouseleave", function () {
+                gsap.to("#pointer", {
+                    opacity: 0,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
+            })
+        })
+
+    }
+    pointer()
+
+
+    // gsap.set("body", { overflow: "hidden" });
 
     function homeLoader() {
         var loader = gsap.timeline({
             onComplete: function () {
                 // Re-enable scrolling after the animation completes
                 gsap.set("body", { overflow: "auto" });
-                imageRenderer(); // Your image rendering function
+                // imageRenderer(); // Your image rendering function
             }
         });
 
@@ -44,6 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 ease: "ease-in-out",
                 delay: .3,
             }, "b")
+            .to("#enter-btn", {
+                opacity: 0,
+                duration: 0.3,
+                ease: "power3.out",
+                onComplete: function () {
+                    gsap.set("#enter-btn", { display: "none" })
+                }
+            })
             .to("nav", {
                 opacity: 1,
                 duration: 1,
@@ -51,18 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ease: "power3.out",
             }, "c");
     }
-    document.querySelector("#enter-btn").addEventListener("click", function () {
-        gsap.to("#enter-btn", {
-            opacity: 0,
-            duration: 0.3,
-            ease: "power3.out",
-            onComplete: function () {
-                gsap.set("#enter-btn", { display: "none" })
-            }
-        })
-        homeLoader();
-    });
-
+    // homeLoader();
 
     function imageRenderer() {
         const imageContainer = document.getElementById('image-render');
@@ -121,7 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
             imageContainer.appendChild(img);
 
             // Play the hover sound
-            sound.play();
+            if (soundEnabled) {
+                sound.play().catch(error => {
+                    console.error("Audio play failed:", error);
+                });
+            }
 
             if (imageContainer.children.length > MAX_IMAGES) {
                 imageContainer.removeChild(imageContainer.children[0]);
@@ -137,12 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // imageRenderer();
+    imageRenderer();
 
     function parallaxPgae1() {
         gsap.to("#section1-studio h2", {
             y: -200, // or more/less depending on the intensity you want
-            filter:"blur(10px)",
+            filter: "blur(10px)",
             opacity: 0,
             ease: "none",
             scrollTrigger: {
@@ -163,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 linesClass: "lines"
             });
 
-            function animateLines(selector, direction) {
+            function animateLines(selector) {
                 const lines = document.querySelectorAll(`${selector} .lines`);
 
                 lines.forEach((line) => {
@@ -171,17 +252,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         scrollTrigger: {
                             trigger: line,
                             scroller: "html, body", // ensure full scroll area is considered
-                            start: "top 90%",
-                            end: "top 60%", // Slightly earlier to trigger animation earlier
+                            start: "top 95%",
+                            end: "top 75%", // Slightly earlier to trigger animation earlier
                             scrub: 1.5, // Make scroll trigger smoother
                             markers: false, // Turn off markers for cleaner visuals
                         }
                     });
 
-                    const xValue = direction === 'left' ? -30 : 30; // Reduce movement to make it subtler
-
                     tl.from(line, {
-                        x: xValue,
+                        y: 30,
+                        filter: "blur(10px)",
                         opacity: 0,
                         stagger: 0.05, // Reduce stagger for more seamless flow
                         duration: 1.5, // Increase duration for a smoother effect
@@ -191,8 +271,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Call for left and right lines
-            animateLines('.lineleft', 'left');
-            animateLines('.lineright', 'right');
+            animateLines('.lineleft');
+            animateLines('.lineright');
 
 
 
@@ -305,6 +385,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
 
     function textEffectAnimation() {
+        const sound = new Audio('/music/buttonHover.mp3');
+
         document.querySelectorAll(".text-effect .effect").forEach(function (element) {
             var clutter2 = ""
             element.textContent.split("").forEach(function (letter) {
@@ -319,6 +401,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelectorAll(".text-effect").forEach(function (elem) {
             elem.addEventListener("mouseenter", function (e) {
+                if (soundEnabled && window.innerWidth > 575) {
+                     sound.play().catch(error => {
+                    console.error("Audio play failed:", error);
+                });
+                }
                 gsap.fromTo(e.currentTarget.children[0].querySelectorAll("span"), {
                     y: "0%",
                 }, {
@@ -459,14 +546,9 @@ document.addEventListener("DOMContentLoaded", () => {
     serviceAnimation()
 
     function stringAnimation() {
-        let soundEnabled = false;
         let audioIndex = 0;
-        const audioFiles = ["/music/1.mp3", "/music/2.mp3"];
+        const audioFiles = ["/music/1.mp3", "/music/2.mp3", "/music/3.mp3", "/music/4.mp3", "/music/5.mp3", "/music/6.mp3", "/music/7.mp3", "/music/8.mp3"];
 
-        // Enable sound on first user interaction
-        document.addEventListener("click", () => {
-            soundEnabled = true;
-        });
 
         function adjustStrings() {
             const containers = document.querySelectorAll(".string-container");
@@ -491,9 +573,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 container.addEventListener("mouseenter", () => {
                     if (soundEnabled) {
                         const audio = new Audio(audioFiles[audioIndex]);
-                        audio.play();
+                        audio.volume = 0.8; // Set volume between 0.0 (silent) and 1.0 (full)
+                        audio.play().catch(error => {
+                    console.error("Audio play failed:", error);
+                });
                         audioIndex = (audioIndex + 1) % audioFiles.length;
                     }
+
 
                     gsap.to(path, {
                         duration: 0.2,
@@ -534,8 +620,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     stringAnimation();
-
-
 
     function footerAnimation() {
 
@@ -740,6 +824,8 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.addEventListener('mousedown', (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
+            const sound2 = new Audio('/music/buttonHover.mp3');
+
             for (let i = teamMembers.length - 1; i >= 0; i--) {
                 const member = teamMembers[i];
                 if (
@@ -756,6 +842,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     teamMembers.push(teamMembers.splice(i, 1)[0]);
                     break;
                 }
+            }
+            if (soundEnabled) {
+                sound2.play().catch(error => {
+                    console.error("Audio play failed:", error);
+                });
             }
         });
 

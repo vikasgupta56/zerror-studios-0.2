@@ -462,6 +462,9 @@ nav img {
 .showcase-cont {
   overflow: hidden;
 }
+.showcase-cont-cursor{
+  cursor: none;
+}
 .showcase-cont-wrap {
   width: 100%;
   height: fit-content;

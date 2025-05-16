@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
 
         // Sound to play when images are created
-        const sound = new Audio('/music/buttonHover.mp3');
+        const sound = new Audio('/music/buttonHover2.mp3');
 
         const section = document.querySelector("#section1-studio");
 
